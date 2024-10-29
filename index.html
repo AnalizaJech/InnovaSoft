@@ -34,6 +34,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            user-select: none !important; /* Evita la selección de texto */
+            cursor: pointer !important; /* Cambia el cursor a puntero */
+            
         }
         .card:hover {
             transform: scale(1.07);
@@ -232,12 +235,12 @@
     <!-- Cards Container -->
     <main class="p-8">
         <div class="cards-container  shadow-lg">
-            <div class="card">
+            <div class="card" onclick="location.href='iso-norms.html'">
                 <div class="icon">📃</div>
                 <h3 class="font-bold text-xl">Normas ISO</h3>
                 <p class="text-gray-600 mt-2">Explora las normativas ISO y su aplicación para garantizar la calidad del software.</p>
             </div>
-            <div class="card">
+            <div class="card" >
                 <div class="icon">💸</div>
                 <h3 class="font-bold text-xl">Costos y Presupuestos</h3>
                 <p class="text-gray-600 mt-2">Aprende a estimar y gestionar costos para mantener el presupuesto de tu proyecto bajo control.</p>
