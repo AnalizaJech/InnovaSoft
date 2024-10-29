@@ -6,190 +6,14 @@
     <title>InnovaSoft - Página Principal</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="bot.ico" type="image/x-icon">
-    <style>
-        body {
-            background: url('background.svg') no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        .cards-container {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: scroll;
-            padding: 0rem;
-            border-radius: 25px;
-            scrollbar-width: none; /* Firefox */
-        }
-        .cards-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari */
-        }
-        .card {
-            min-width: 300px;
-            max-width: 300px;
-            padding: 1rem;
-            background-color: white;
-            border-radius: 25px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            user-select: none !important; /* Evita la selección de texto */
-            cursor: pointer !important; /* Cambia el cursor a puntero */
-            
-        }
-        .card:hover {
-            transform: scale(1.07);
-        }
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        
-
-
-        .newsletter {
-            background: black;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 20px;
-            max-width: 900px;
-            margin: 2rem auto 0 auto;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            height: 200px; /* Ajustado para la altura requerida */
-        }
-
-        .newsletter-icons {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        .newsletter-icons span {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .red {
-            background-color: #FF62EF;
-        }
-        .green {
-            background-color: #57E8AB;
-        }
-        .yellow {
-            background-color: #FFF170;
-        }
-
-
-
-
-
-
-
-
-
-        /* Botón del Bot */
-        #bot-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 70px;
-            height: 70px;
-            padding: 10px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #bot-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Ventana del Chatbot */
-        #chatbot-window {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 320px;
-            height: 500px;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 15px;
-            animation: fadeIn 0.5s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .chat-header {
-            font-size: 1.25rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .chat-input {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding-top: 15px;
-        }
-        .chat-input textarea {
-            resize: none;
-            height: 45px;
-            width: 100%;
-            border-radius: 25px;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            outline: none;
-        }
-        .chat-input button {
-            background-color: #000;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .chat-bubble {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 15px;
-            max-width: 80%;
-            margin-top: 10px;
-        }
-
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 p-4">
     <!-- Header con Logo, Barra de Búsqueda y Navegación -->
     <header class="flex items-center justify-between px-8 py-4 h-20">
         <!-- Logo -->
         <div class="h-full flex items-center">
-            <img src="InnovaSoft.svg" alt="Logo InnovaSoft" class="h-full">
+            <img src="src/InnovaSoft.svg" alt="Logo InnovaSoft" class="h-full">
         </div>
 
         <!-- Barra de Búsqueda (visible solo en pantallas medianas y grandes) -->
@@ -197,7 +21,7 @@
             <div class="flex items-center h-full w-full max-w-2xl bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300">
                 <input type="text" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"'>
                 <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black">
-                    <img src="Vector 1.svg" alt="Icono Buscar" class="h-6 w-6">
+                    <img src="src/Vector 1.svg" alt="Icono Buscar" class="h-6 w-6">
                 </button>
             </div>
         </div>
@@ -226,7 +50,7 @@
             <div class="flex items-center w-full max-w-full bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300">
                 <input type="text" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"'>
                 <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black">
-                    <img src="Vector 1.svg" alt="Icono Buscar" class="h-6 w-6">
+                    <img src="src/Vector 1.svg" alt="Icono Buscar" class="h-6 w-6">
                 </button>
             </div>
         </div>
@@ -268,11 +92,6 @@
 
 
 
-
-
-
-
-
         <!-- Newsletter -->
         <!-- Contenedor de Novedades ISO -->
 <div class="mt-8 p-6 bg-black text-white rounded-lg shadow-md w-full max-w-[900px] mx-auto lg:w-[calc(300px*3+2*1.5rem)] lg:max-w-[calc(300px*3+2*1.5rem)]">
@@ -296,93 +115,31 @@
 
     </main>
 
-
-
     <!-- Chatbot Button and Window -->
     <div id="bot-button" class="blur">
-        <img src="bot.svg" alt="Chatbot">
+        <img src="src/bot.svg" alt="Chatbot">
     </div>
 
     <div id="chatbot-window">
         <div class="chat-header">
-            <img src="bot.svg" alt="Chatbot" class="h-8 w-8">
+            <img src="src/bot.svg" alt="Chatbot" class="h-8 w-8">
             <span>Consultale a Jech</span>
         </div>
         <div class="flex-grow mt-4">
             <div class="chat-bubble">
-                <p>...</p>
+                <p>Hola, en que puedo ayudarte hoy.</p>
             </div>
         </div>
         <div class="chat-input">
             <textarea placeholder="Escribe tus dudas..."></textarea>
             <button>
-                <img src="send.svg" alt="Enviar">
+                <img src="src/send.svg" alt="Enviar">
             </button>
         </div>
     </div>
 
-
-
     </main>
-
-    <script>
-        // JavaScript para mostrar/ocultar el menú desplegable en dispositivos móviles
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Habilitar arrastrar para desplazar cards
-        const cardsContainer = document.querySelector('.cards-container');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        cardsContainer.addEventListener('mousedown', (e) => {
-            isDown = true;
-            cardsContainer.classList.add('active');
-            startX = e.pageX - cardsContainer.offsetLeft;
-            scrollLeft = cardsContainer.scrollLeft;
-        });
-        cardsContainer.addEventListener('mouseleave', () => {
-            isDown = false;
-            cardsContainer.classList.remove('active');
-        });
-        cardsContainer.addEventListener('mouseup', () => {
-            isDown = false;
-            cardsContainer.classList.remove('active');
-        });
-        cardsContainer.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - cardsContainer.offsetLeft;
-            const walk = (x - startX) * 2; // Ajusta la velocidad
-            cardsContainer.scrollLeft = scrollLeft - walk;
-        });
-
-
-
-
-
-        // Mostrar/Ocultar Ventana del Chatbot
-        const botButton = document.getElementById('bot-button');
-        const chatbotWindow = document.getElementById('chatbot-window');
-        const closeChat = document.getElementById('close-chat');
-
-        botButton.addEventListener('click', () => {
-            if (chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '') {
-                chatbotWindow.style.display = 'flex';
-                botButton.innerHTML = '<img src="cerrar-bot.svg" alt="Cerrar">';
-            } else {
-                chatbotWindow.style.display = 'none';
-                botButton.innerHTML = '<img src="bot.svg" alt="Chatbot">';
-            }
-        });
-
-        closeChat?.addEventListener('click', () => {
-            chatbotWindow.style.display = 'none';
-            botButton.innerHTML = '<img src="bot.svg" alt="Chatbot">';
-        });
-    </script>
+<script src="script.js"></script>
+    
 </body>
 </html>
