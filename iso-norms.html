@@ -5,163 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Normas ISO</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f3f4f6;
-        }
-        .action-buttons {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        .content-container {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 1.5rem;
-        }
-        .icon-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .icon-buttons img {
-            width: 30px;
-            cursor: pointer;
-        }
-        /* Chatbot button */
-        #chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ffffff;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-        /* Chatbot window */
-        #chatbot-window {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 320px;
-            height: 500px;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-            display: none;
-            flex-direction: column;
-            padding: 15px;
-        }
-        .chat-header {
-            font-size: 1.25rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .chat-input {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding-top: 15px;
-        }
-        .chat-input textarea {
-            resize: none;
-            height: 45px;
-            width: 100%;
-            border-radius: 25px;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            outline: none;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
-<body class="p-6">
+<body class="bg-gray-100 p-8">
+
     <!-- Botón de regreso -->
-    <div class="mb-4">
-        <a href="index.html" class="text-blue-500 font-bold flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    <div class="flex items-center mb-6">
+        <a href="index.html" class="text-blue-500 flex items-center">
+            <svg class="w-6 h-6 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3H6a1 1 0 000 2h3v3a1 1 0 102 0v-3h3a1 1 0 000-2h-3V7z" clip-rule="evenodd" />
             </svg>
             Atrás
         </a>
     </div>
 
-    <!-- Título -->
-    <h1 class="text-3xl font-bold mb-2">Normas ISO</h1>
-
-    <!-- Botones de acción -->
-    <div class="action-buttons">
-        <button class="bg-green-500 text-white py-2 px-4 rounded">Crear Preguntas</button>
-        <button class="bg-blue-500 text-white py-2 px-4 rounded">Empezar Cuestionario</button>
-        <button class="bg-gray-500 text-white py-2 px-4 rounded">Descargar</button>
-        <button class="bg-yellow-500 text-white py-2 px-4 rounded">Guardar</button>
+    <!-- Encabezado y botones de acción -->
+    <div class="text-center mb-6">
+        <h1 class="text-3xl font-bold mb-4">Normas ISO</h1>
+        <div class="flex justify-center gap-4 mb-4">
+            <img src="question-icon.svg" alt="Crear Preguntas" class="w-8 h-8 cursor-pointer">
+            <img src="quiz-icon.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer">
+            <img src="download-icon.svg" alt="Descargar" class="w-8 h-8 cursor-pointer">
+            <img src="save-icon.svg" alt="Guardar" class="w-8 h-8 cursor-pointer">
+        </div>
+        <button class="bg-green-500 text-white py-2 px-6 rounded-lg font-semibold hover:bg-green-600">
+            Crear Preguntas
+        </button>
     </div>
 
     <!-- Contenido principal -->
-    <div class="content-container mt-4">
-        <div class="icon-buttons">
-            <img src="question-icon.svg" alt="Pregunta" title="Pregunta" />
-            <img src="play-icon.svg" alt="Play" title="Empezar" />
-            <img src="download-icon.svg" alt="Descargar" title="Descargar" />
-            <img src="save-icon.svg" alt="Guardar" title="Guardar" />
-        </div>
-
-        <h2 class="text-xl font-bold mb-2">¿Qué son las normas ISO?</h2>
-        <p class="text-gray-700">
-            ISO (Organización Internacional de Normalización) es una organización no gubernamental internacional que establece normas para asegurar calidad, seguridad y eficiencia en productos, servicios y sistemas. Fundada en 1947, ISO desarrolla y publica normas que son adoptadas por países de todo el mundo.
+    <main class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-xl font-semibold mb-4">¿Qué son las normas ISO?</h2>
+        <p class="text-gray-700 mb-4">
+            ISO (Organización Internacional de Normalización) es una organización no gubernamental
+            internacional que establece normas para asegurar calidad, seguridad y eficiencia en productos, 
+            servicios y sistemas. Fundada en 1947, ISO desarrolla y publica normas que son adoptadas por 
+            países de todo el mundo.
         </p>
-
-        <h3 class="text-lg font-bold mt-4">Objetivos de las normas ISO</h3>
-        <ul class="list-disc pl-6 text-gray-700">
-            <li>Uniformidad: Proporcionar un marco común que facilite el comercio y la colaboración internacional.</li>
-            <li>Calidad: Asegurar que productos y servicios cumplan con estándares de calidad y sean seguros para el consumidor.</li>
+        <h3 class="text-lg font-semibold mt-6">Objetivos de las normas ISO</h3>
+        <ul class="list-disc pl-5 text-gray-700">
+            <li><strong>Uniformidad:</strong> Proporcionar un marco común que facilite el comercio y la colaboración internacional.</li>
+            <li><strong>Calidad:</strong> Asegurar que productos y servicios cumplan con estándares de calidad y sean seguros para el consumidor.</li>
         </ul>
+    </main>
+
+    <!-- Chatbot Button -->
+    <div id="bot-button" class="fixed bottom-6 right-6 bg-white rounded-full p-4 shadow-lg cursor-pointer">
+        <img src="bot.svg" alt="Chatbot" class="w-10 h-10">
     </div>
+<style>
+    /* style.css */
 
-    <!-- Botón para abrir el chatbot -->
-    <div id="chatbot">
-        <img src="bot.svg" alt="Chatbot">
-    </div>
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    <!-- Ventana del chatbot -->
-    <div id="chatbot-window">
-        <div class="chat-header">
-            <img src="bot.svg" alt="Chatbot" class="h-6 w-6 mr-2">
-            <span>Consultale a Jech</span>
-        </div>
-        <div class="flex-grow mt-4">
-            <div class="chat-bubble">
-                <p>...</p>
-            </div>
-        </div>
-        <div class="chat-input">
-            <textarea placeholder="Escribe tus dudas..."></textarea>
-            <button>
-                <img src="send-icon.svg" alt="Enviar" class="h-6 w-6">
-            </button>
-        </div>
-    </div>
+.icon-buttons img {
+    width: 32px;
+    height: 32px;
+}
 
-    <script>
-        // Toggle chatbot window
-        const chatbotButton = document.getElementById('chatbot');
-        const chatbotWindow = document.getElementById('chatbot-window');
+</style>
+    <script src="script.js">
 
-        chatbotButton.addEventListener('click', () => {
-            if (chatbotWindow.style.display === 'none' || chatbotWindow.style.display === '') {
-                chatbotWindow.style.display = 'flex';
-            } else {
-                chatbotWindow.style.display = 'none';
-            }
-        });
+        // Mostrar/Ocultar el Chatbot
+document.getElementById('bot-button').addEventListener('click', function () {
+    const chatbotWindow = document.getElementById('chatbot-window');
+    chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'flex' : 'none';
+});
+
     </script>
 </body>
 </html>
