@@ -1,6 +1,8 @@
 body {
   background: url('src/background.svg') no-repeat center center fixed;
   background-size: cover;
+  font-family: Arial, sans-serif;
+
 }
 
 .cards-container {
@@ -163,3 +165,22 @@ body {
   max-width: 80%;
   margin-top: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

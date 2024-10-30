@@ -57,3 +57,36 @@ closeChat?.addEventListener('click', () => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// Cargar el Chatbot
+function loadChatbot() {
+  fetch('chatbot.html')
+      .then(response => response.text())
+      .then(data => {
+          document.body.insertAdjacentHTML('beforeend', data);
+          setupChatbotToggle();
+      });
+}
+
+// Mostrar/Ocultar el Chatbot
+function setupChatbotToggle() {
+  const botButton = document.getElementById('bot-button');
+  const chatbotWindow = document.getElementById('chatbot-window');
+  
+  botButton.addEventListener('click', () => {
+      chatbotWindow.classList.toggle('hidden');
+  });
+}
+
+window.addEventListener('DOMContentLoaded', loadChatbot);
