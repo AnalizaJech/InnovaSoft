@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Normas ISO</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
 <body class="bg-gray-100 p-6">
 
@@ -17,100 +18,109 @@
         </a>
 
         <!-- Botón de crear preguntas alineado a la derecha -->
-        <button class="bg-green-500 text-white font-semibold rounded-lg px-4 py-2 hover:bg-green-600">
+        <button onclick="showSection('createQuestionsSection')" class="bg-green-500 text-white font-semibold rounded-lg px-4 py-2 hover:bg-green-600">
             CREAR PREGUNTAS
         </button>
     </div>
 
+    <!-- Título principal Normas ISO -->
+    <h1 onclick="showSection('isoContent')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Normas ISO</h1>
 
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    <!-- Contenedor principal -->
-    <div class="bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto relative">
-
-        <!-- Título y Botón Crear Preguntas -->
-        <div class="flex justify-between items-center mb-4">
-            <h1 class="text-3xl font-bold text-gray-800">Normas ISO</h1>
-            
-        </div>
-
-        <!-- Botones de acción con íconos -->
-        <div class="flex space-x-6 mb-6">
-            <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario">
-            <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados">
-            <img src="src/Download.svg" alt="Descargar" class="w-8 h-8 cursor-pointer" title="Descargar">
-            <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
-        </div>
-
-        <!-- Contenido principal -->
-        <div class="text-gray-700">
-            <h2 class="text-xl font-semibold mb-2">¿Qué son las normas ISO?</h2>
-            <p class="mb-4">
-                ISO (Organización Internacional de Normalización) es una organización no gubernamental internacional que establece normas para asegurar calidad, seguridad y eficiencia en productos, servicios y sistemas. Fundada en 1947, ISO desarrolla y publica normas que son adoptadas por países de todo el mundo.
-            </p>
-            <h3 class="text-lg font-semibold">Objetivos de las normas ISO</h3>
-            <ul class="list-disc pl-5 space-y-1">
-                <li><strong>Uniformidad:</strong> Proporcionar un marco común que facilite el comercio y la colaboración internacional.</li>
-                <li><strong>Calidad:</strong> Asegurar que productos y servicios cumplan con estándares de calidad y sean seguros para el consumidor.</li>
-            </ul>
-        </div>
+    <!-- Botones de acción con íconos -->
+    <div class="flex space-x-6 mb-6">
+        <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
+        <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
+        <img id="downloadButton" src="src/Download.svg" alt="Descargar" class="w-8 h-8 cursor-pointer" title="Descargar" onclick="downloadContent()">
+        <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
     </div>
 
-   
-    
-    <!-- Botón de icono del chatbot -->
-    <button id="chatbotIcon" class="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg bg-white flex items-center justify-center">
-        <img src="src/bot.svg" alt="Icono de chatbot" class="w-8 h-8" id="iconImage">
-    </button>
-
-    <!-- Ventana de chat -->
-    <div id="chatbotWindow" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-lg p-4 flex flex-col" style="height: 30rem;">
-        <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center space-x-2">
-                <img src="src/bot.svg" alt="Icono de chatbot" class="w-6 h-6">
-                <h2 class="font-semibold text-gray-800">Consultale a Jech</h2>
-            </div>
-            <div class="relative">
-                <button onclick="toggleOptions()" class="text-gray-500 hover:text-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 13a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-                    </svg>
-                </button>
-                <div id="optionsMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-10">
-                    <button onclick="clearChat()" class="w-full flex items-center text-left px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg">
-                        <img src="src/trash.svg" alt="Eliminar" class="h-5 w-5 mr-2">
-                        Borrar chat
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="chatContent" class="rounded-lg p-2 flex-1 overflow-y-auto mb-4" style="max-height: 24rem;">
-            <!-- Mensaje inicial del chatbot -->
-            <div class="text-white bg-gray-700 p-2 rounded-lg mb-2 max-w-xs break-words">
-                Hola, ¿En qué puedo ayudarte hoy?
-            </div>
-        </div>
-        <div class="flex items-center space-x-2">
-            <input type="text" placeholder="Escribe tus dudas..." class="w-full p-2 text-sm border border-gray-300 rounded-lg focus:outline-none" id="chatInput" onkeypress="handleKeyPress(event)">
-            <button onclick="sendMessage()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
-                <img src="src/send.svg" alt="Enviar" class="h-5 w-5">
-            </button>
-        </div>
+    <!-- Sección principal de normas ISO -->
+    <div id="isoContent" class="section bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h2 class="text-xl font-semibold mb-2">¿Qué son las normas ISO?</h2>
+        <p class="mb-4">
+            ISO (Organización Internacional de Normalización) es una organización no gubernamental internacional que establece normas para asegurar calidad, seguridad y eficiencia en productos, servicios y sistemas. Fundada en 1947, ISO desarrolla y publica normas que son adoptadas por países de todo el mundo.
+        </p>
+        <h3 class="text-lg font-semibold">Objetivos de las normas ISO</h3>
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Uniformidad:</strong> Proporcionar un marco común que facilite el comercio y la colaboración internacional.</li>
+            <li><strong>Calidad:</strong> Asegurar que productos y servicios cumplan con estándares de calidad y sean seguros para el consumidor.</li>
+            <li><strong>Eficiencia:</strong> Mejorar procesos y sistemas para optimizar recursos y reducir costos.</li>
+            <li><strong>Sostenibilidad:</strong> Fomentar prácticas responsables desde el punto de vista ambiental y social.</li>
+        </ul>
+        <h3 class="text-lg font-semibold mt-4">Normas ISO en software</h3>
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>ISO/IEC 25010:</strong> Modelo de calidad del producto de software. Define características de calidad como funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.</li>
+            <li><strong>ISO/IEC 12207:</strong> Proceso de ciclo de vida del software. Establece un marco para el proceso de desarrollo y mantenimiento de software.</li>
+            <li><strong>ISO/IEC 27001:</strong> Gestión de la seguridad de la información. Proporciona requisitos para establecer y mejorar un sistema de gestión de la seguridad de la información (SGSI).</li>
+            <li><strong>ISO/IEC 15504 (SPICE):</strong> Evaluación de procesos de software. Ofrece un marco para evaluar y mejorar los procesos de desarrollo de software.</li>
+            <li><strong>ISO 9001:</strong> Sistema de gestión de calidad. Es aplicable y puede ayudar a las organizaciones de software a establecer un enfoque basado en procesos para la gestión de calidad.</li>
+        </ul>
+        <h3 class="text-lg font-semibold mt-4">Implementación de normas ISO en el desarrollo software</h3>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Evaluación inicial: Identificar el estado actual de los procesos y prácticas en relación con las normas ISO relevantes.</li>
+            <li>Formación y sensibilización: Capacitar al personal sobre las normas y su importancia.</li>
+            <li>Desarrollo de documentación: Crear o actualizar políticas, procedimientos y documentación.</li>
+            <li>Implementación de procesos: Integrar los procesos de acuerdo con las normas ISO en el ciclo de vida del desarrollo de software.</li>
+            <li>Auditorías internas: Realizar auditorías para verificar el cumplimiento de las normas.</li>
+            <li>Mejora continua: Establecer un ciclo de mejora continua.</li>
+        </ul>
+        <h3 class="text-lg font-semibold mt-4">Beneficios de aplicar normas ISO en software</h3>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Mejora de la calidad: Ayuda a producir software de mayor calidad.</li>
+            <li>Confianza del cliente: Aumenta la confianza del cliente en la organización y sus productos.</li>
+            <li>Eficiencia operativa: Optimiza procesos.</li>
+            <li>Cumplimiento normativo: Ayuda a cumplir con regulaciones.</li>
+            <li>Ventaja competitiva: Diferencia a la organización en el mercado.</li>
+        </ul>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Sección de videos relacionados -->
+    <div id="videoSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h2 class="text-2xl font-bold mb-4">Videos Relacionados</h2>
+        <p>Aquí puedes ver videos sobre las normas ISO.</p>
+    </div>
+
+    <!-- Sección de cuestionario -->
+    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h2 class="text-2xl font-bold mb-4">Cuestionario</h2>
+        <p>¿Para qué sirven las normas ISO?</p>
+    </div>
+
+    <!-- Sección para crear preguntas -->
+    <div id="createQuestionsSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h2 class="text-2xl font-bold mb-4">Crear Preguntas</h2>
+        <input type="text" placeholder="Escribe tu pregunta..." class="border p-2 w-full mb-4 rounded">
+        <button class="bg-green-500 text-white px-4 py-2 rounded">Agregar Pregunta</button>
+    </div>
+
+    <!-- Función JavaScript para la descarga de PDF -->
+    <script>
+        function downloadContent() {
+            const element = document.getElementById('isoContent');
+            html2pdf().from(element).set({
+                margin: 1,
+                filename: 'contenido_normas_iso.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: true },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            }).save();
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+
+            const downloadButton = document.getElementById('downloadButton');
+            if (sectionId === 'isoContent') {
+                downloadButton.style.display = 'inline';
+            } else {
+                downloadButton.style.display = 'none';
+            }
+        }
+    </script>
+
 </body>
 </html>
