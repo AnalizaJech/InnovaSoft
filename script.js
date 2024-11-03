@@ -46,7 +46,7 @@ if (cardsContainer) {
 
 
 
-
+//chatbot funcion UI
 const chatbotIcon = document.getElementById("chatbotIcon");
         const chatbotWindow = document.getElementById("chatbotWindow");
         const iconImage = document.getElementById("iconImage");
