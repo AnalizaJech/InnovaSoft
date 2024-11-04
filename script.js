@@ -122,3 +122,73 @@ const chatbotIcon = document.getElementById("chatbotIcon");
             }
         });
 
+
+
+//video normas ISO
+const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtnMobile = document.getElementById('prevBtnMobile');
+        const nextBtnMobile = document.getElementById('nextBtnMobile');
+
+        let scrollPosition = 0;
+        const cardWidth = carousel.querySelector('.flex-shrink-0').offsetWidth + 16; // Ajuste del desplazamiento
+
+        function scrollLeft() {
+            scrollPosition = Math.max(scrollPosition - cardWidth * 2, 0); // Desplaza dos tarjetas
+            carousel.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+
+        function scrollRight() {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            scrollPosition = Math.min(scrollPosition + cardWidth * 2, maxScroll); // Desplaza dos tarjetas
+            carousel.style.transform = `translateX(-${scrollPosition}px)`;
+        }
+
+        prevBtn.addEventListener('click', scrollLeft);
+        nextBtn.addEventListener('click', scrollRight);
+        prevBtnMobile.addEventListener('click', scrollLeft);
+        nextBtnMobile.addEventListener('click', scrollRight);
+
+//descargar contenido y mostrar secciones
+function downloadContent() {
+    const element = document.getElementById('isoContent');
+    if (element) {
+        html2pdf().from(element).set({
+            margin: 1,
+            filename: 'contenido_normas_iso.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, logging: true },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        }).save();
+    } else {
+        console.warn('Elemento isoContent no encontrado para la descarga.');
+    }
+}
+
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.add('hidden');
+    });
+
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.remove('hidden');
+    } else {
+        console.warn(`Sección con ID "${sectionId}" no encontrada.`);
+    }
+
+    const downloadButton = document.getElementById('downloadButton');
+    if (downloadButton) {
+        downloadButton.style.display = (sectionId === 'isoContent') ? 'inline' : 'none';
+    }
+}
+
+
+
+
+
+
+
+
