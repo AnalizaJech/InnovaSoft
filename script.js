@@ -152,17 +152,17 @@ const carousel = document.getElementById('carousel');
 
 //descargar contenido y mostrar secciones
 function downloadContent() {
-    const element = document.getElementById('isoContent');
+    const element = document.getElementById('Contenido');
     if (element) {
         html2pdf().from(element).set({
             margin: 1,
-            filename: 'contenido_normas_iso.pdf',
+            filename: 'Informacion_InnovaSoft.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2, logging: true },
             jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
         }).save();
     } else {
-        console.warn('Elemento isoContent no encontrado para la descarga.');
+        console.warn('Elemento Contenido no encontrado para la descarga.');
     }
 }
 
@@ -181,7 +181,7 @@ function showSection(sectionId) {
 
     const downloadButton = document.getElementById('downloadButton');
     if (downloadButton) {
-        downloadButton.style.display = (sectionId === 'isoContent') ? 'inline' : 'none';
+        downloadButton.style.display = (sectionId === 'Contenido') ? 'inline' : 'none';
     }
 }
 

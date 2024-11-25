@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura de Software</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="src/ISO.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    
+</head>
+<body class="bg-gray-100 p-6">
+    
+    <!-- Contenedor principal con botones alineados y responsive -->
+    <div class="flex flex-wrap sm:flex-nowrap justify-between items-center mb-6 space-y-2 sm:space-y-0">
+        <!-- Botón de regreso alineado a la izquierda -->
+        <a href="index.html" class="inline-flex items-center bg-blue-100 text-black font-semibold rounded-full px-4 py-2 hover:bg-blue-200">
+            <img src="src/Atras.svg" alt="Back Arrow" class="w-5 h-5 mr-2">
+            <span>REGRESAR</span>
+        </a>
+
+        <!-- Botón de crear preguntas alineado a la derecha -->
+        <button onclick="showSection('createQuestionsSection')" class="bg-green-500 text-white font-semibold rounded-lg px-4 py-2 hover:bg-green-600">
+            CREAR PREGUNTAS
+        </button>
+    </div>
+
+    <!-- Título principal Normas ISO -->
+    <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Arquitectura de Software</h1>
+
+    <!-- Botones de acción con íconos -->
+    <div class="flex space-x-6 mb-6">
+        <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
+        <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
+        <img id="downloadButton" src="src/Download.svg" alt="Descargar" class="w-8 h-8 cursor-pointer" title="Descargar" onclick="downloadContent()">
+        <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
+    </div>
+
+    <!-- Sección principal de normas ISO -->
+    <div id="Contenido" class="section bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <!-- Contenido de la sección ISO -->
+        <h2 class="text-xl font-semibold mb-2">¿Qué es la Arquitectura de Software?</h2>
+        <p class="mb-4">
+            La arquitectura de software es el diseño de alto nivel de un sistema, describiendo:
+        </p>
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Componentes:</strong> Módulos, servicios y subsistemas.</li>
+            <li><strong>Interacciones:</strong> Comunicación entre componentes, protocolos y dependencias.</li>
+            <li><strong>Restricciones y principios:</strong> Lineamientos técnicos y de negocio.</li>
+
+        </ul>
+        <p class="mb-4">
+            Es el marco que asegura que el software cumpla con los requisitos funcionales y no funcionales, como rendimiento, seguridad, escalabilidad y flexibilidad.
+        </p>
+
+
+        <h3 class="text-lg font-semibold">Roles de la Arquitectura en el Desarrollo de Software</h3>
+        <h2 class="text-sm font-semibold">Gestión de Complejidad:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Divide el sistema en partes manejables para facilitar el desarrollo y mantenimiento.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Soporte a Requisitos No Funcionales:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Proporciona soluciones para requisitos como rendimiento, seguridad y disponibilidad.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Facilitación del Trabajo Colaborativo:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Define estándares que permiten la colaboración en equipos distribuidos.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Base para Decisiones Técnicas:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Ayuda a seleccionar tecnologías y herramientas adecuadas.
+            </li>
+            
+        </ul>
+        
+
+        <h3 class="text-lg font-semibold mt-4">Estilos y Patrones de Arquitectura        </h3>
+        <h2 class="text-sm font-semibold">Arquitectura Monolítica:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Todo el sistema está integrado en un único código base.
+            </li>
+            <li>Ventajas: Simplicidad, menor costo inicial.
+            </li>
+            <li>Desventajas: Dificultad para escalar y actualizar.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Microservicios:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>El sistema se divide en servicios pequeños, independientes y desplegables por separado.
+            </li>
+            <li>Ventajas: Escalabilidad, flexibilidad tecnológica.
+            </li>
+            <li>Desventajas: Complejidad en la comunicación y orquestación.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Arquitectura Orientada a Eventos:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Los componentes reaccionan a eventos y se comunican de forma asíncrona.
+            </li>
+            <li>Usos comunes: Sistemas de mensajería, IoT.
+            </li>
+            <li>Herramientas: Apache Kafka, RabbitMQ.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Arquitectura en Capas:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Divide el sistema en niveles, como presentación, lógica de negocio y datos.
+            </li>
+            <li>Ventajas: Claridad y separación de responsabilidades.
+            </li>
+                        
+        </ul>
+        <h2 class="text-sm font-semibold">Arquitectura Hexagonal (Ports and Adapters):        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Facilita la interacción con diferentes tecnologías sin modificar la lógica central.
+            </li>
+            <li>Ideal para sistemas que requieren cambios tecnológicos frecuentes.
+            </li>
+                        
+        </ul>
+        <h2 class="text-sm font-semibold">Arquitectura Serverless:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Basada en servicios gestionados en la nube donde se ejecuta código bajo demanda.
+            </li>
+            <li>Proveedores: AWS Lambda, Azure Functions, Google Cloud Functions.
+            </li>
+                        
+        </ul>
+        <h2 class="text-sm font-semibold">Arquitectura Basada en Componentes (CBA):        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Los módulos reutilizables encapsulan funcionalidad específica.
+            </li>
+            <li>Ventajas: Promueve la reutilización y estandarización.
+            </li>
+                        
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Requisitos en la Arquitectura de Software            </h3>
+        <h2 class="text-sm font-semibold">Requisitos Funcionales:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Definen qué debe hacer el sistema, como características y funcionalidades específicas.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Requisitos No Funcionales (Calidad del Sistema):        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Escalabilidad: Capacidad para manejar cargas crecientes.
+            </li>
+            <li>Disponibilidad: Tiempo en el que el sistema está operativo.
+            </li>
+            <li>Seguridad: Protección contra accesos no autorizados y ciberataques.
+            </li>
+            <li>Mantenibilidad: Facilidad para realizar cambios y mejoras.
+            </li>
+            <li>Rendimiento: Respuesta rápida bajo distintas condiciones.
+            </li>
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Tendencias Actuales en Arquitectura de Software        </h3>
+        <h2 class="text-sm font-semibold">Arquitectura basada en Microservicios:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Adoptada por empresas que buscan escalabilidad y autonomía en el desarrollo.
+            </li>
+            <li>Herramientas clave: Kubernetes, Docker, Istio.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Arquitectura Event-Driven:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Ideal para sistemas de alta concurrencia o sistemas distribuidos.
+            </li>
+            <li>Ejemplo: Procesamiento en tiempo real en plataformas de streaming.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Plataformas en la Nube y Serverless:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Reducción de costos operativos y mayor elasticidad.
+            </li>
+            <li>Casos de uso: Backend para aplicaciones móviles, procesamiento de datos.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Edge Computing:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Procesamiento de datos más cerca del origen (IoT, redes 5G).
+            </li>
+            <li>Beneficios: Menor latencia, reducción de uso de ancho de banda.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Arquitectura Basada en API:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Estandarización de interacciones mediante API RESTful o GraphQL.
+            </li>
+            <li>Herramientas: Postman, Swagger.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Seguridad Integrada (Secure by Design):        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Consideración de la seguridad desde la concepción del diseño arquitectónico.
+            </li>
+            <li>Normas: OWASP, Zero Trust Architecture.
+            </li>
+            
+        </ul>
+
+
+        <h3 class="text-lg font-semibold mt-4">Herramientas Modernas para Diseñar y Gestionar Arquitecturas        </h3>
+        <h2 class="text-sm font-semibold">Modelado y Diseño:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>UML: Lenguaje estándar para diagramas de arquitectura.
+            </li>
+            <li>Herramientas: Lucidchart, Draw.io, PlantUML.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Gestión de Dependencias:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Docker, Kubernetes, Terraform para infraestructura como código.
+            </li>
+         
+        </ul>
+        <h2 class="text-sm font-semibold">Documentación y Visualización:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Structurizr, C4 Model.
+            </li>
+         
+        </ul>
+        <h2 class="text-sm font-semibold">Monitoreo y Observabilidad:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Prometheus, Grafana, ELK Stack (ElasticSearch, Logstash, Kibana).
+            </li>
+         
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Desafíos Actuales en la Arquitectura de Software        </h3>
+        <h2 class="text-sm font-semibold">Escalabilidad y Disponibilidad:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Diseñar sistemas que puedan escalar sin interrupciones.
+            </li>
+                
+        </ul>
+        <h2 class="text-sm font-semibold">Complejidad en Sistemas Distribuidos:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Manejo de consistencia, latencia y partición de datos.
+            </li>
+                
+        </ul>
+        <h2 class="text-sm font-semibold">Gestión de Costos en la Nube:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Optimización del uso de recursos.
+            </li>
+                
+        </ul>
+        <h2 class="text-sm font-semibold">Cumplimiento Normativo:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Garantizar el cumplimiento de regulaciones como GDPR o HIPAA.
+            </li>
+                
+        </ul>
+        <h2 class="text-sm font-semibold">Integración de Tecnologías Emergentes:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>IA, IoT, Blockchain y su impacto en las arquitecturas tradicionales.
+            </li>
+                
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Beneficios de una Buena Arquitectura de Software        </h3>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Facilita el desarrollo y mantenimiento.
+            </li>
+            <li>Garantiza escalabilidad y flexibilidad.
+            </li>
+            <li>Mejora la calidad y confiabilidad del software.
+            </li>
+            <li>Reduce costos a largo plazo mediante diseño eficiente.
+            </li>    
+        </ul>
+
+
+    </div>
+
+
+
+    <!-- Sección de videos en carrusel -->
+    <div id="videoSection" class="section hidden max-w-8xl mx-auto bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-center mb-4 text-blue-700">Explora las Normas ISO en Video</h2>
+        <p class="text-center text-gray-600 mb-8">
+            Descubre los conceptos clave, aplicaciones y beneficios de las normas ISO a través de estos videos informativos.
+            ¡Haz clic y empieza tu aprendizaje!
+        </p>
+
+        <!-- Contenedor del carrusel sin margen/padding en móvil -->
+        <div class="relative flex flex-col md:flex-row md:items-center md:px-6 px-0 mx-auto max-w-full">
+            <!-- Botón de desplazamiento izquierdo en pantalla grande -->
+            <button id="prevBtn" class="hidden md:block absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 w-10 h-10 rounded-full shadow-lg focus:outline-none opacity-75 hover:opacity-100 z-10 transition-opacity duration-300">
+                <img src="src/Anterior.svg" alt="Icono de flecha izquierda" class="rotate-180 w-6 h-6">
+            </button>
+    
+            <!-- Carrusel de videos sin margen/padding en móvil -->
+            <div class="overflow-hidden w-full mx-0 md:mx-8">
+                <div id="carousel" class="flex space-x-4 transition-transform duration-500 ease-in-out">
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/nbjZK4j9pSk" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/V0PA3pCeR20" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/7Uv1jzLVdOg" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <!-- Añade más iframes según sea necesario -->
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/QrWsBj6ARG0" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/O_QH7UrezFg" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/P0bVUZnakUY" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <!-- Añade más iframes según sea necesario -->
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/gj3WipVn4NQ" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/4ajJk0v34D4" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/HEQN8UHtnxM" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-80">
+                        <iframe src="https://www.youtube.com/embed/XwrSQCDLG_A" allowfullscreen class="w-full aspect-video rounded-lg shadow-md"></iframe>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Botón de desplazamiento derecho en pantalla grande -->
+            <button id="nextBtn" class="hidden md:block absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 w-10 h-10 rounded-full shadow-lg focus:outline-none opacity-75 hover:opacity-100 z-10 transition-opacity duration-300">
+                <img src="src/Siguiente.svg" alt="Icono de flecha derecha" class="w-6 h-6">
+            </button>
+    
+            <!-- Botones centrados solo en versión móvil -->
+            <div class="flex justify-center space-x-4 mt-4 md:hidden">
+                <!-- Botón de desplazamiento izquierdo -->
+                <button id="prevBtnMobile" class="bg-white p-2 w-10 h-10 rounded-full shadow-lg focus:outline-none opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="src/Anterior.svg" alt="Icono de flecha izquierda" class="w-6 h-6">
+                </button>
+    
+                <!-- Botón de desplazamiento derecho -->
+                <button id="nextBtnMobile" class="bg-white p-2 w-10 h-10 rounded-full shadow-lg focus:outline-none opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    <img src="src/Siguiente.svg" alt="Icono de flecha derecha" class="w-6 h-6">
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sección de cuestionario -->
+    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h2 class="text-2xl font-bold mb-4">Cuestionario</h2>
+        <p>¿Para qué sirven las normas ISO?</p>
+    </div>
+
+    <!-- Sección para crear preguntas -->
+    <div id="createQuestionsSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h2 class="text-2xl font-bold mb-4">Crear Preguntas</h2>
+        <input type="text" placeholder="Escribe tu pregunta..." class="border p-2 w-full mb-4 rounded">
+        <button class="bg-green-500 text-white px-4 py-2 rounded">Agregar Pregunta</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Botón de icono del chatbot -->
+<button id="chatbotIcon" class="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg bg-white flex items-center justify-center">
+    <img src="src/bot.svg" alt="Icono de chatbot" class="w-8 h-8" id="iconImage">
+</button>
+
+<!-- Ventana de chat -->
+<div id="chatbotWindow" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-lg p-4 flex flex-col" style="height: 30rem;">
+    <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center space-x-2">
+            <img src="src/bot.svg" alt="Icono de chatbot" class="w-6 h-6">
+            <h2 class="font-semibold text-gray-800">Consultale a Jech</h2>
+        </div>
+        <div class="relative">
+            <button onclick="toggleOptions()" class="text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 13a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                </svg>
+            </button>
+            <div id="optionsMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-10">
+                <button onclick="clearChat()" class="w-full flex items-center text-left px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg">
+                    <img src="src/trash.svg" alt="Eliminar" class="h-5 w-5 mr-2">
+                    Borrar chat
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="chatContent" class="rounded-lg p-2 flex-1 overflow-y-auto mb-4" style="max-height: 24rem;">
+        <!-- Mensaje inicial del chatbot -->
+        <div class="text-white bg-gray-700 p-2 rounded-lg mb-2 max-w-xs break-words">
+            Hola, ¿En qué puedo ayudarte hoy?
+        </div>
+    </div>
+    <div class="flex items-center space-x-2">
+        <input type="text" placeholder="Escribe tus dudas..." class="w-full p-2 text-sm border border-gray-300 rounded-lg focus:outline-none" id="chatInput" onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+            <img src="src/send.svg" alt="Enviar" class="h-5 w-5">
+        </button>
+    </div>
+</div>
+<script src="script.js"></script>
+
+
+
+
+</body>
+</html>

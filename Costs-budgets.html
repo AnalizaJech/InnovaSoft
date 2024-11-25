@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Normas ISO</title>
+    <title>Costos y presupuestos</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="src/ISO.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Título principal Normas ISO -->
-    <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Normas ISO</h1>
+    <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Costos y presupuestos</h1>
 
     <!-- Botones de acción con íconos -->
     <div class="flex space-x-6 mb-6">
@@ -39,42 +39,141 @@
     <!-- Sección principal de normas ISO -->
     <div id="Contenido" class="section bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
         <!-- Contenido de la sección ISO -->
-        <h2 class="text-xl font-semibold mb-2">¿Qué son las normas ISO?</h2>
+        <h2 class="text-xl font-semibold mb-2">Costos y Presupuestos en Proyectos de Desarrollo de Software: Guía para Profesionales</h2>
         <p class="mb-4">
-            ISO (Organización Internacional de Normalización) es una organización no gubernamental internacional que establece normas para asegurar calidad, seguridad y eficiencia en productos, servicios y sistemas. Fundada en 1947, ISO desarrolla y publica normas que son adoptadas por países de todo el mundo.
+            En el entorno actual, los proyectos de desarrollo de software requieren una planificación financiera sólida, especialmente considerando la creciente complejidad técnica, los plazos ajustados y la diversidad de equipos distribuidos. Para los profesionales, dominar la gestión de costos y presupuestos es esencial para garantizar la sostenibilidad del proyecto y maximizar el retorno de inversión (ROI).
         </p>
-        <h3 class="text-lg font-semibold">Objetivos de las normas ISO</h3>
+        <h3 class="text-lg font-semibold">Componentes Principales del Costo</h3>
+        <h2 class="text-sm font-semibold">Personal:</h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li><strong>Uniformidad:</strong> Proporcionar un marco común que facilite el comercio y la colaboración internacional.</li>
-            <li><strong>Calidad:</strong> Asegurar que productos y servicios cumplan con estándares de calidad y sean seguros para el consumidor.</li>
-            <li><strong>Eficiencia:</strong> Mejorar procesos y sistemas para optimizar recursos y reducir costos.</li>
-            <li><strong>Sostenibilidad:</strong> Fomentar prácticas responsables desde el punto de vista ambiental y social.</li>
+            <li>Representa entre el 50% y el 80% del presupuesto total.</li>
+            <li>Incluye costos de contratación, sueldos, beneficios, y horas extras. En entornos remotos, considera beneficios adicionales como equipos o acceso a internet.</li>
+            <li>Tendencia actual: La contratación de equipos remotos o distribuidos puede reducir costos y ampliar el acceso al talento global.</li>
+            
         </ul>
-        <h3 class="text-lg font-semibold mt-4">Normas ISO en software</h3>
+        <h2 class="text-sm font-semibold">Tecnología:</h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li><strong>ISO/IEC 25010:</strong> Modelo de calidad del producto de software. Define características de calidad como funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.</li>
-            <li><strong>ISO/IEC 12207:</strong> Proceso de ciclo de vida del software. Establece un marco para el proceso de desarrollo y mantenimiento de software.</li>
-            <li><strong>ISO/IEC 27001:</strong> Gestión de la seguridad de la información. Proporciona requisitos para establecer y mejorar un sistema de gestión de la seguridad de la información (SGSI).</li>
-            <li><strong>ISO/IEC 15504 (SPICE):</strong> Evaluación de procesos de software. Ofrece un marco para evaluar y mejorar los procesos de desarrollo de software.</li>
-            <li><strong>ISO 9001:</strong> Sistema de gestión de calidad. Es aplicable y puede ayudar a las organizaciones de software a establecer un enfoque basado en procesos para la gestión de calidad.</li>
+            <li>Costos de herramientas de desarrollo, entornos de pruebas y servicios en la nube (AWS, Azure, Google Cloud).</li>
+            <li>Tendencia actual: El uso de arquitecturas basadas en microservicios y tecnologías de contenedores (Docker, Kubernetes) puede incrementar costos iniciales, pero optimiza la escalabilidad a largo plazo.</li>
+    
         </ul>
-        <h3 class="text-lg font-semibold mt-4">Implementación de normas ISO en el desarrollo software</h3>
+        <h2 class="text-sm font-semibold">Infraestructura:</h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li>Evaluación inicial: Identificar el estado actual de los procesos y prácticas en relación con las normas ISO relevantes.</li>
-            <li>Formación y sensibilización: Capacitar al personal sobre las normas y su importancia.</li>
-            <li>Desarrollo de documentación: Crear o actualizar políticas, procedimientos y documentación.</li>
-            <li>Implementación de procesos: Integrar los procesos de acuerdo con las normas ISO en el ciclo de vida del desarrollo de software.</li>
-            <li>Auditorías internas: Realizar auditorías para verificar el cumplimiento de las normas.</li>
-            <li>Mejora continua: Establecer un ciclo de mejora continua.</li>
+            <li>Incluye hardware, software, licencias, y recursos para DevOps.</li>
+            <li>Tendencia actual: Plataformas de CI/CD (Continuous Integration/Continuous Delivery) automatizadas son esenciales para acelerar los tiempos de entrega.</li>
+    
         </ul>
-        <h3 class="text-lg font-semibold mt-4">Beneficios de aplicar normas ISO en software</h3>
+        <h2 class="text-sm font-semibold">Gestión del Proyecto:</h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li>Mejora de la calidad: Ayuda a producir software de mayor calidad.</li>
-            <li>Confianza del cliente: Aumenta la confianza del cliente en la organización y sus productos.</li>
-            <li>Eficiencia operativa: Optimiza procesos.</li>
-            <li>Cumplimiento normativo: Ayuda a cumplir con regulaciones.</li>
-            <li>Ventaja competitiva: Diferencia a la organización en el mercado.</li>
+            <li>Gastos en software de gestión (JIRA, Monday.com), reuniones, y herramientas de comunicación (Slack, Zoom).</li>
+            <li>Tendencia actual: Las metodologías ágiles y los frameworks como SAFe (Scaled Agile Framework) están redefiniendo cómo se asignan los costos de gestión.</li>
         </ul>
+        <h2 class="text-sm font-semibold">Capacitación:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Formación en tecnologías emergentes (IA, blockchain, big data) y metodologías modernas.</li>
+            <li>Tendencia actual: La capacitación continua es crítica debido a la rápida evolución tecnológica.</li>
+        </ul>
+        <h2 class="text-sm font-semibold">Otros:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Pruebas de seguridad, cumplimiento normativo (GDPR, CCPA), soporte post-lanzamiento y marketing.</li>  
+        </ul>
+
+
+        <h3 class="text-lg font-semibold mt-4">Técnicas Avanzadas para Estimar Costos</h3>
+        <h2 class="text-sm font-semibold">Estimación Paramétrica Avanzada:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Utiliza métricas como puntos de función ajustados por complejidad técnica y experiencia del equipo.</li>
+            <li>Herramientas: COCOMO II, SEER-SEM.</li>
+        </ul>
+        <h2 class="text-sm font-semibold">Estimación Predictiva Basada en IA:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Herramientas que usan aprendizaje automático para predecir costos basados en datos históricos.
+            </li>
+            <li>Tendencia actual: Plataformas como Planview o Clara.io integran IA para estimaciones más precisas.
+            </li>
+        </ul>
+        <h2 class="text-sm font-semibold">Evaluación de Riesgos Financieros:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Incorporar análisis de escenarios y técnicas Monte Carlo para prever desviaciones presupuestarias.
+            </li>
+        </ul>
+        <h2 class="text-sm font-semibold">Modelos Ágiles y Lean:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Dividir costos por iteraciones o MVPs (productos mínimos viables).
+            </li>
+            <li>Tendencia actual: Herramientas como Costimator permiten realizar estimaciones iterativas.
+            </li>
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Estrategias para el Control de Costos</h3>
+        <h2 class="text-sm font-semibold">Uso de KPIs Financieros:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Monitorizar métricas como el Valor Ganado (Earned Value), el Índice de Desempeño del Costo (CPI) y el Índice de Desempeño del Cronograma (SPI).
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Automatización del Monitoreo:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Herramientas como SAP, Oracle Primavera, o Monday.com permiten realizar un seguimiento en tiempo real del presupuesto.
+
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Gestión del Cambio en el Alcance:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Establecer procedimientos claros para evaluar el impacto financiero de nuevos requerimientos.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Revisión Continua:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Realizar auditorías periódicas para ajustar proyecciones y optimizar el flujo de caja.
+            </li>
+            
+        </ul>
+
+
+
+        <h3 class="text-lg font-semibold mt-4">Tendencias Actuales en Gestión de Costos y Presupuestos</h3>
+        <h2 class="text-sm font-semibold">Costos de Nube y SaaS:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>El uso de plataformas en la nube ha cambiado el modelo de costos de licencias únicas a suscripciones recurrentes.
+            </li>
+            <li>Recomendación: Implementar estrategias FinOps para optimizar costos en la nube.
+            </li>
+        </ul>
+        <h2 class="text-sm font-semibold">Adopción de DevOps y Automatización:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Los costos de herramientas y automatización aumentan inicialmente, pero reducen significativamente los gastos a largo plazo.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Impacto de la Inteligencia Artificial:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>La incorporación de IA y ML en productos puede requerir inversiones adicionales en infraestructura especializada (GPUs, TPUs).
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Enfoque en Sostenibilidad:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Los proyectos están adoptando estrategias para reducir huellas de carbono y optimizar el uso energético.
+            </li>
+            
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Beneficios de una Gestión Financiera Eficiente        </h3>
+        
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Sostenibilidad Financiera:</strong> Reducción de riesgos financieros.                          
+            </li>
+            <li><strong>Mayor Transparencia:</strong> Mejora la comunicación con stakeholders.            
+            </li>
+            <li><strong>Entrega a Tiempo:</strong> Optimización del cronograma sin exceder el presupuesto.
+            </li>
+            <li><strong>Competitividad:</strong> Proyectos mejor gestionados aumentan la satisfacción del cliente y posicionan la empresa en el mercado.
+            </li>
+        </ul>
+
     </div>
 
 

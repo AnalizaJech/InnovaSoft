@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Normas ISO</title>
+    <title>Ingeniería de Software</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="src/ISO.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Título principal Normas ISO -->
-    <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Normas ISO</h1>
+    <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Ingeniería de Software</h1>
 
     <!-- Botones de acción con íconos -->
     <div class="flex space-x-6 mb-6">
@@ -39,41 +39,184 @@
     <!-- Sección principal de normas ISO -->
     <div id="Contenido" class="section bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
         <!-- Contenido de la sección ISO -->
-        <h2 class="text-xl font-semibold mb-2">¿Qué son las normas ISO?</h2>
+        <h2 class="text-xl font-semibold mb-2">Ingeniería de Software: Guía Actualizada para Profesionales        </h2>
         <p class="mb-4">
-            ISO (Organización Internacional de Normalización) es una organización no gubernamental internacional que establece normas para asegurar calidad, seguridad y eficiencia en productos, servicios y sistemas. Fundada en 1947, ISO desarrolla y publica normas que son adoptadas por países de todo el mundo.
+            La ingeniería de software es una disciplina técnica y práctica que aborda el diseño, desarrollo, implementación y mantenimiento de software de manera sistemática. A medida que las necesidades empresariales y tecnológicas evolucionan, la ingeniería de software se convierte en un pilar fundamental para ofrecer soluciones escalables, seguras y eficientes.
         </p>
-        <h3 class="text-lg font-semibold">Objetivos de las normas ISO</h3>
+        <h3 class="text-lg font-semibold">¿Qué es la Ingeniería de Software?        </h3>
+        <p class="mb-4">
+            La ingeniería de software es la aplicación de principios de ingeniería al desarrollo de software. Implica el uso de procesos, metodologías y herramientas estructuradas para garantizar la calidad, fiabilidad y sostenibilidad de los productos de software.
+        </p>
+        <h2 class="text-sm font-semibold">Componentes Clave:        </h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li><strong>Uniformidad:</strong> Proporcionar un marco común que facilite el comercio y la colaboración internacional.</li>
-            <li><strong>Calidad:</strong> Asegurar que productos y servicios cumplan con estándares de calidad y sean seguros para el consumidor.</li>
-            <li><strong>Eficiencia:</strong> Mejorar procesos y sistemas para optimizar recursos y reducir costos.</li>
-            <li><strong>Sostenibilidad:</strong> Fomentar prácticas responsables desde el punto de vista ambiental y social.</li>
+            <li><strong>Requisitos:</strong> Recopilación y análisis de necesidades del cliente y los usuarios.</li>
+            <li><strong>Diseño:</strong> Planificación estructurada de la arquitectura, componentes y funcionalidades.</li>
+            <li><strong>Implementación:</strong> Codificación y desarrollo de las funcionalidades.</li>
+            <li><strong>Pruebas:</strong> Verificación y validación de la calidad y seguridad del software.</li>
+            <li><strong>Mantenimiento:</strong> Actualizaciones, soporte y mejoras post-implementación.</li>
         </ul>
-        <h3 class="text-lg font-semibold mt-4">Normas ISO en software</h3>
+
+        <h3 class="text-lg font-semibold mt-4">Ciclo de Vida del Desarrollo de Software (SDLC)</h3>
+        <p class="mb-4">
+            El SDLC es un modelo estructurado que guía el desarrollo de software desde la concepción hasta la entrega y mantenimiento.
+        </p>
+        <h2 class="text-sm font-semibold">Modelos Tradicionales:     </h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li><strong>ISO/IEC 25010:</strong> Modelo de calidad del producto de software. Define características de calidad como funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.</li>
-            <li><strong>ISO/IEC 12207:</strong> Proceso de ciclo de vida del software. Establece un marco para el proceso de desarrollo y mantenimiento de software.</li>
-            <li><strong>ISO/IEC 27001:</strong> Gestión de la seguridad de la información. Proporciona requisitos para establecer y mejorar un sistema de gestión de la seguridad de la información (SGSI).</li>
-            <li><strong>ISO/IEC 15504 (SPICE):</strong> Evaluación de procesos de software. Ofrece un marco para evaluar y mejorar los procesos de desarrollo de software.</li>
-            <li><strong>ISO 9001:</strong> Sistema de gestión de calidad. Es aplicable y puede ayudar a las organizaciones de software a establecer un enfoque basado en procesos para la gestión de calidad.</li>
+            <li><strong>Cascada (Waterfall):</strong> Proceso secuencial donde cada fase debe completarse antes de avanzar.</li>
+            <li><strong>Espiral:</strong> Combina desarrollo iterativo con la gestión de riesgos.</li>
+            
         </ul>
-        <h3 class="text-lg font-semibold mt-4">Implementación de normas ISO en el desarrollo software</h3>
+        <h2 class="text-sm font-semibold">Modelos Modernos: </h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li>Evaluación inicial: Identificar el estado actual de los procesos y prácticas en relación con las normas ISO relevantes.</li>
-            <li>Formación y sensibilización: Capacitar al personal sobre las normas y su importancia.</li>
-            <li>Desarrollo de documentación: Crear o actualizar políticas, procedimientos y documentación.</li>
-            <li>Implementación de procesos: Integrar los procesos de acuerdo con las normas ISO en el ciclo de vida del desarrollo de software.</li>
-            <li>Auditorías internas: Realizar auditorías para verificar el cumplimiento de las normas.</li>
-            <li>Mejora continua: Establecer un ciclo de mejora continua.</li>
+            <li><strong>Ágil:</strong> Metodología iterativa que promueve entregas rápidas y ajustes continuos.</li>
+            <li><strong>DevOps:</strong> Integra desarrollo y operaciones para acelerar el ciclo de vida y mejorar la calidad.</li>
+            
         </ul>
-        <h3 class="text-lg font-semibold mt-4">Beneficios de aplicar normas ISO en software</h3>
+
+
+        <h3 class="text-lg font-semibold mt-4">Tendencias Actuales en Ingeniería de Software</h3>
+        <h2 class="text-sm font-semibold">Desarrollo Ágil y Enfoques Híbridos:</h2>
         <ul class="list-disc pl-5 space-y-1">
-            <li>Mejora de la calidad: Ayuda a producir software de mayor calidad.</li>
-            <li>Confianza del cliente: Aumenta la confianza del cliente en la organización y sus productos.</li>
-            <li>Eficiencia operativa: Optimiza procesos.</li>
-            <li>Cumplimiento normativo: Ayuda a cumplir con regulaciones.</li>
-            <li>Ventaja competitiva: Diferencia a la organización en el mercado.</li>
+            <li>La combinación de metodologías como Ágil y DevOps permite flexibilidad y rapidez en la entrega.</li>
+            <li>Herramientas clave: JIRA, Trello, Azure DevOps.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Inteligencia Artificial y Aprendizaje Automático (ML):</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Aplicación de IA en pruebas automatizadas, optimización de código y generación de software.</li>
+            <li>Herramientas: GitHub Copilot, Test.ai, TensorFlow.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Desarrollo basado en la Nube:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Aumento del uso de plataformas en la nube para reducir costos y mejorar la escalabilidad.
+            </li>
+            <li>Proveedores líderes: AWS, Google Cloud, Microsoft Azure.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Enfoque en Seguridad (DevSecOps):        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Integración de la seguridad como parte del ciclo de desarrollo.
+            </li>
+            <li>Normas: ISO/IEC 27001, OWASP, GDPR.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Tecnologías Emergentes:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Blockchain:</strong> Aplicación en sistemas distribuidos y gestión de identidades.</li>
+            <li><strong>IoT (Internet de las Cosas):</strong> Desafíos de integración, latencia y seguridad en software para dispositivos conectados.</li>
+            <li><strong>Desarrollo de Software Responsable:</strong> Foco en sostenibilidad y ética en el diseño.</li>
+        </ul>
+        
+        <h3 class="text-lg font-semibold mt-4">Principales Áreas de Ingeniería de Software</h3>
+        <h2 class="text-sm font-semibold">Arquitectura de Software:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Diseño de sistemas modulares y escalables.
+            </li>
+            <li>Modelos populares: Microservicios, arquitectura en capas, arquitecturas orientadas a eventos.
+            </li>
+            
+        </ul>
+        
+        <h2 class="text-sm font-semibold">Gestión de Proyectos de Software:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Uso de metodologías para garantizar tiempos de entrega y control de costos.
+            </li>
+            <li>Herramientas: Monday.com, ClickUp.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Pruebas de Software (Testing):        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Pruebas Automatizadas:</strong> Selenium, Cypress.
+            </li>
+            <li><strong>Pruebas de Rendimiento:</strong> JMeter, Apache Benchmark.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Ingeniería de Requisitos:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Métodos para garantizar que los sistemas cumplen con las expectativas.
+            </li>
+            <li>Técnicas: Historias de usuario, diagramas UML.
+            </li>
+            
+        </ul>
+        <h2 class="text-sm font-semibold">Mantenimiento y Evolución:        </h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Actualización de software para atender cambios en el mercado o en las necesidades de los usuarios.
+            </li>            
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Normas y Buenas Prácticas</h3>
+        <h2 class="text-sm font-semibold">ISO/IEC 25010:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Modelo de calidad del software que evalúa aspectos como funcionalidad, usabilidad y eficiencia.
+            </li>
+             
+        </ul>
+        <h2 class="text-sm font-semibold">ISO/IEC 12207:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Ciclo de vida del software que define procesos y actividades esenciales.
+            </li>
+             
+        </ul>
+        <h2 class="text-sm font-semibold">PMBOK y Scrum:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Guías para la gestión de proyectos y metodologías ágiles.
+            </li>
+             
+        </ul>
+        <h2 class="text-sm font-semibold">OWASP:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Mejores prácticas para la seguridad de aplicaciones web.
+            </li>
+             
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Herramientas Modernas de Ingeniería de Software</h3>
+        
+        <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Control de Versiones:</strong> Git, GitHub, GitLab.
+            </li>
+            <li><strong>Gestión de Configuración:</strong> Ansible, Puppet, Chef.
+            </li>
+            <li><strong>CI/CD: </strong> Jenkins, GitHub Actions, CircleCI.
+            </li>
+            <li><strong>Monitoreo y Observabilidad:</strong> Prometheus, Grafana, Datadog.
+            </li> 
+            <li><strong>IDE Modernos:</strong> Visual Studio Code, IntelliJ IDEA, Eclipse.
+            </li>            
+        </ul>
+
+        <h3 class="text-lg font-semibold mt-4">Desafíos en la Ingeniería de Software Actual</h3>    
+        <h2 class="text-sm font-semibold">Escalabilidad:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Diseñar sistemas capaces de manejar millones de usuarios.
+            </li>
+             
+        </ul>
+        <h2 class="text-sm font-semibold">Ciberseguridad:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Proteger sistemas contra amenazas avanzadas.
+            </li>
+             
+        </ul>
+        <h2 class="text-sm font-semibold">Interoperabilidad:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Garantizar que sistemas heterogéneos puedan comunicarse eficientemente.
+            </li>
+             
+        </ul>
+        <h2 class="text-sm font-semibold">Retención del Talento:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+            <li>Mantener equipos capacitados en un mercado competitivo.
+            </li>
+             
         </ul>
     </div>
 
