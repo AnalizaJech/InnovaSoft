@@ -377,11 +377,181 @@
     </div>
 
 
-    <!-- Sección de cuestionario -->
-    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
-        <h2 class="text-2xl font-bold mb-4">Cuestionario</h2>
-        <p>¿Para qué sirven las normas ISO?</p>
+    <!-- Sección de cuestionario: Arquitectura de Software -->
+<div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+    <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Arquitectura de Software</h1>
+    <form id="quizFormArquitectura">
+        <!-- Pregunta 1 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">1. ¿Qué es la arquitectura de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="a" class="mr-2"> El diseño y la estructura de un sistema de software
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="b" class="mr-2"> La programación de los componentes del sistema
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="c" class="mr-2"> La base de datos utilizada en un sistema
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">2. ¿Cuál es el principal objetivo de una arquitectura de software bien definida?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="a" class="mr-2"> Reducir la complejidad del sistema y facilitar su mantenimiento
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="b" class="mr-2"> Maximizar el rendimiento del sistema
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="c" class="mr-2"> Asegurar que el sistema sea compatible con múltiples plataformas
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">3. ¿Qué patrón arquitectónico se utiliza para mejorar la escalabilidad de los sistemas?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="a" class="mr-2"> Modelo cliente-servidor
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="b" class="mr-2"> Arquitectura de microservicios
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="c" class="mr-2"> Arquitectura monolítica
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">4. ¿Qué es un "Componente" en la arquitectura de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="a" class="mr-2"> Una unidad funcional del sistema que puede ser desarrollada y testeada de manera independiente
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="b" class="mr-2"> Un componente que gestiona las bases de datos del sistema
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="c" class="mr-2"> Un equipo que desarrolla el software
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">5. ¿Cuál es la ventaja de utilizar una arquitectura orientada a servicios (SOA)?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="a" class="mr-2"> Mejora la flexibilidad y la reutilización de los componentes del sistema
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="b" class="mr-2"> Simplifica el desarrollo de aplicaciones móviles
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="c" class="mr-2"> Asegura la integridad de los datos en todo el sistema
+                </label>
+            </div>
+        </div>
+
+        <!-- Botón Finalizar -->
+        <div class="text-center mt-6">
+            <button type="button" onclick="evaluateQuizArquitectura()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Finalizar Cuestionario
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Modal con Resultados -->
+<div id="resultModalArquitectura" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+        <h2 id="resultMessageArquitectura" class="text-2xl font-bold text-center mb-4"></h2>
+        <p id="resultDetailsArquitectura" class="text-lg text-center mb-6"></p>
+        <div id="correctAnswersArquitectura" class="text-left mb-6"></div>
+        <div class="text-center">
+            <button onclick="closeModalArquitectura()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
+                Cerrar
+            </button>
+        </div>
     </div>
+</div>
+
+<script>
+    // Respuestas correctas para Arquitectura de Software
+    const correctAnswersArquitectura = {
+        question1: "a",
+        question2: "a",
+        question3: "b",
+        question4: "a",
+        question5: "a"
+    };
+
+    // Respuestas mostradas para el usuario
+    const answerTextArquitectura = {
+        question1: "El diseño y la estructura de un sistema de software",
+        question2: "Reducir la complejidad del sistema y facilitar su mantenimiento",
+        question3: "Arquitectura de microservicios",
+        question4: "Una unidad funcional del sistema que puede ser desarrollada y testeada de manera independiente",
+        question5: "Mejora la flexibilidad y la reutilización de los componentes del sistema"
+    };
+
+    function evaluateQuizArquitectura() {
+        let totalQuestions = Object.keys(correctAnswersArquitectura).length;
+        let correctCount = 0;
+        let answersDisplay = '';
+
+        // Verificar respuestas
+        for (let question in correctAnswersArquitectura) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (userAnswer && userAnswer.value === correctAnswersArquitectura[question]) {
+                correctCount++;
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
+                    </div>
+                `;
+            } else {
+                const correctAnswer = answerTextArquitectura[question];
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
+                        <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Calcular porcentaje
+        let percentage = (correctCount / totalQuestions) * 100;
+
+        // Mostrar resultados en el modal
+        const resultMessage = document.getElementById("resultMessageArquitectura");
+        const resultDetails = document.getElementById("resultDetailsArquitectura");
+        resultMessage.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
+        resultDetails.innerText = `Tu puntuación es: ${percentage}%`;
+
+        // Mostrar respuestas correctas
+        const correctAnswersDiv = document.getElementById("correctAnswersArquitectura");
+        correctAnswersDiv.innerHTML = answersDisplay;
+
+        // Mostrar el modal
+        document.getElementById("resultModalArquitectura").classList.remove("hidden");
+    }
+
+    function closeModalArquitectura() {
+        document.getElementById("resultModalArquitectura").classList.add("hidden");
+    }
+</script>
 
     <!-- Sección para crear preguntas -->
     <div id="createQuestionsSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">

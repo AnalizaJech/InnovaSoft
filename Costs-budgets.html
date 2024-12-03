@@ -269,11 +269,181 @@
     </div>
 
 
-    <!-- Sección de cuestionario -->
-    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
-        <h2 class="text-2xl font-bold mb-4">Cuestionario</h2>
-        <p>¿Para qué sirven las normas ISO?</p>
+    <!-- Sección de cuestionario: Costos y Presupuestos en el Desarrollo de Software -->
+<div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+    <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Costos y Presupuestos en el Desarrollo de Software</h1>
+    <form id="quizFormCostos">
+        <!-- Pregunta 1 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">1. ¿Qué es un presupuesto en el contexto del desarrollo de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="a" class="mr-2"> Un pronóstico de los ingresos esperados
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="b" class="mr-2"> Un análisis de los costos de hardware y software
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="c" class="mr-2"> Un plan para administrar los recursos financieros en un proyecto de software
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">2. ¿Qué herramienta se utiliza comúnmente para calcular los costos en el desarrollo de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="a" class="mr-2"> Análisis de costos
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="b" class="mr-2"> Modelos de estimación como COCOMO
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="c" class="mr-2"> Indicadores financieros
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">3. ¿Cuál es la principal dificultad en la estimación de costos en el desarrollo de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="a" class="mr-2"> La incertidumbre en los requisitos y el alcance del proyecto
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="b" class="mr-2"> La disponibilidad de recursos
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="c" class="mr-2"> El número de desarrolladores en el proyecto
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">4. ¿Qué es el costo de mantenimiento en el ciclo de vida del software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="a" class="mr-2"> El costo de corrección de errores después de la implementación
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="b" class="mr-2"> Los costos de la planificación y diseño inicial
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="c" class="mr-2"> Los costos asociados a la instalación del software
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">5. ¿Por qué es importante realizar una estimación precisa de costos en el desarrollo de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="a" class="mr-2"> Para ajustar el presupuesto y evitar sobrecostos
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="b" class="mr-2"> Para definir el precio de venta del software
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="c" class="mr-2"> Para determinar el tamaño del equipo de desarrollo
+                </label>
+            </div>
+        </div>
+
+        <!-- Botón Finalizar -->
+        <div class="text-center mt-6">
+            <button type="button" onclick="evaluateQuizCostos()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Finalizar Cuestionario
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Modal con Resultados -->
+<div id="resultModalCostos" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+        <h2 id="resultMessageCostos" class="text-2xl font-bold text-center mb-4"></h2>
+        <p id="resultDetailsCostos" class="text-lg text-center mb-6"></p>
+        <div id="correctAnswersCostos" class="text-left mb-6"></div>
+        <div class="text-center">
+            <button onclick="closeModalCostos()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
+                Cerrar
+            </button>
+        </div>
     </div>
+</div>
+
+<script>
+    // Respuestas correctas para Costos y Presupuestos en el Desarrollo de Software
+    const correctAnswersCostos = {
+        question1: "c",
+        question2: "b",
+        question3: "a",
+        question4: "a",
+        question5: "a"
+    };
+
+    // Respuestas mostradas para el usuario
+    const answerTextCostos = {
+        question1: "Un plan para administrar los recursos financieros en un proyecto de software",
+        question2: "Modelos de estimación como COCOMO",
+        question3: "La incertidumbre en los requisitos y el alcance del proyecto",
+        question4: "El costo de corrección de errores después de la implementación",
+        question5: "Para ajustar el presupuesto y evitar sobrecostos"
+    };
+
+    function evaluateQuizCostos() {
+        let totalQuestions = Object.keys(correctAnswersCostos).length;
+        let correctCount = 0;
+        let answersDisplay = '';
+
+        // Verificar respuestas
+        for (let question in correctAnswersCostos) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (userAnswer && userAnswer.value === correctAnswersCostos[question]) {
+                correctCount++;
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
+                    </div>
+                `;
+            } else {
+                const correctAnswer = answerTextCostos[question];
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
+                        <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Calcular porcentaje
+        let percentage = (correctCount / totalQuestions) * 100;
+
+        // Mostrar resultados en el modal
+        const resultMessageCostos = document.getElementById("resultMessageCostos");
+        const resultDetailsCostos = document.getElementById("resultDetailsCostos");
+        resultMessageCostos.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
+        resultDetailsCostos.innerText = `Tu puntuación es: ${percentage}%`;
+
+        // Mostrar respuestas correctas
+        const correctAnswersDivCostos = document.getElementById("correctAnswersCostos");
+        correctAnswersDivCostos.innerHTML = answersDisplay;
+
+        // Mostrar el modal
+        document.getElementById("resultModalCostos").classList.remove("hidden");
+    }
+
+    function closeModalCostos() {
+        document.getElementById("resultModalCostos").classList.add("hidden");
+    }
+</script>
 
     <!-- Sección para crear preguntas -->
     <div id="createQuestionsSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">

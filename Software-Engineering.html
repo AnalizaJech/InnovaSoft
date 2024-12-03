@@ -292,11 +292,182 @@
     </div>
 
 
-    <!-- Sección de cuestionario -->
-    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
-        <h2 class="text-2xl font-bold mb-4">Cuestionario</h2>
-        <p>¿Para qué sirven las normas ISO?</p>
+    <!-- Sección de cuestionario: Ingeniería de Software -->
+<div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+    <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Ingeniería de Software</h1>
+    <form id="quizFormSoftware">
+        <!-- Pregunta 1 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">1. ¿Qué es la ingeniería de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="a" class="mr-2"> El desarrollo de aplicaciones móviles
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="b" class="mr-2"> La creación de bases de datos
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="c" class="mr-2"> La disciplina que trata con el desarrollo, operación y mantenimiento de sistemas de software
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">2. ¿Cuál es el propósito de los modelos de desarrollo de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="a" class="mr-2"> Asegurar que el software funcione según lo esperado
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="b" class="mr-2"> Optimizar los costos del software
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="c" class="mr-2"> Mejorar la comunicación entre desarrolladores
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">3. ¿Cuál es una característica clave del modelo ágil de desarrollo?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="a" class="mr-2"> Planificación rígida y detallada
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="b" class="mr-2"> Desarrollo iterativo e incremental
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="c" class="mr-2"> Solo documentación y pruebas extensivas
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">4. ¿Qué es un ciclo de vida del software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="a" class="mr-2"> Un modelo para gestionar la calidad del software
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="b" class="mr-2"> Un conjunto de etapas a través de las cuales pasa el software durante su desarrollo
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="c" class="mr-2"> Un proceso para optimizar los costos de desarrollo
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">5. ¿Cuál es el propósito de la fase de pruebas en ingeniería de software?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="a" class="mr-2"> Garantizar que el software sea desarrollado a tiempo
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="b" class="mr-2"> Verificar que el software cumpla con los requisitos y sea libre de errores
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="c" class="mr-2"> Evaluar la interacción entre los usuarios y el sistema
+                </label>
+            </div>
+        </div>
+
+        <!-- Botón Finalizar -->
+        <div class="text-center mt-6">
+            <button type="button" onclick="evaluateQuizSoftware()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Finalizar Cuestionario
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Modal con Resultados -->
+<div id="resultModalSoftware" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+        <h2 id="resultMessageSoftware" class="text-2xl font-bold text-center mb-4"></h2>
+        <p id="resultDetailsSoftware" class="text-lg text-center mb-6"></p>
+        <div id="correctAnswersSoftware" class="text-left mb-6"></div>
+        <div class="text-center">
+            <button onclick="closeModalSoftware()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
+                Cerrar
+            </button>
+        </div>
     </div>
+</div>
+
+<script>
+    // Respuestas correctas para Ingeniería de Software
+    const correctAnswersSoftware = {
+        question1: "c",
+        question2: "a",
+        question3: "b",
+        question4: "b",
+        question5: "b"
+    };
+
+    // Respuestas mostradas para el usuario
+    const answerTextSoftware = {
+        question1: "La disciplina que trata con el desarrollo, operación y mantenimiento de sistemas de software",
+        question2: "Asegurar que el software funcione según lo esperado",
+        question3: "Desarrollo iterativo e incremental",
+        question4: "Un conjunto de etapas a través de las cuales pasa el software durante su desarrollo",
+        question5: "Verificar que el software cumpla con los requisitos y sea libre de errores"
+    };
+
+    function evaluateQuizSoftware() {
+        let totalQuestions = Object.keys(correctAnswersSoftware).length;
+        let correctCount = 0;
+        let answersDisplay = '';
+
+        // Verificar respuestas
+        for (let question in correctAnswersSoftware) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (userAnswer && userAnswer.value === correctAnswersSoftware[question]) {
+                correctCount++;
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
+                    </div>
+                `;
+            } else {
+                const correctAnswer = answerTextSoftware[question];
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
+                        <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Calcular porcentaje
+        let percentage = (correctCount / totalQuestions) * 100;
+
+        // Mostrar resultados en el modal
+        const resultMessage = document.getElementById("resultMessageSoftware");
+        const resultDetails = document.getElementById("resultDetailsSoftware");
+        resultMessage.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
+        resultDetails.innerText = `Tu puntuación es: ${percentage}%`;
+
+        // Mostrar respuestas correctas
+        const correctAnswersDiv = document.getElementById("correctAnswersSoftware");
+        correctAnswersDiv.innerHTML = answersDisplay;
+
+        // Mostrar el modal
+        document.getElementById("resultModalSoftware").classList.remove("hidden");
+    }
+
+    function closeModalSoftware() {
+        document.getElementById("resultModalSoftware").classList.add("hidden");
+    }
+</script>
+
 
     <!-- Sección para crear preguntas -->
     <div id="createQuestionsSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">

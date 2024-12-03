@@ -254,11 +254,181 @@
     </div>
 
 
-    <!-- Sección de cuestionario -->
-    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
-        <h2 class="text-2xl font-bold mb-4">Cuestionario</h2>
-        <p>¿Para qué sirven las normas ISO?</p>
+    <!-- Sección de cuestionario: Validación y Verificación -->
+<div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+    <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Validación y Verificación</h1>
+    <form id="quizFormValidez">
+        <!-- Pregunta 1 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">1. ¿Cuál es la diferencia principal entre validación y verificación?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="a" class="mr-2"> La verificación asegura que el software cumple con los requisitos, mientras que la validación asegura que el software satisface las necesidades del usuario
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="b" class="mr-2"> La validación asegura que el software cumple con los requisitos, mientras que la verificación asegura que el software satisface las necesidades del usuario
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question1" value="c" class="mr-2"> Ambas son lo mismo
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">2. ¿En qué fase del ciclo de vida del software se realiza la validación?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="a" class="mr-2"> En la fase de desarrollo
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="b" class="mr-2"> En la fase de pruebas
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question2" value="c" class="mr-2"> En la fase de mantenimiento
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">3. ¿Cuál es una técnica común utilizada para la verificación?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="a" class="mr-2"> Revisiones de código
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="b" class="mr-2"> Entrevistas con usuarios
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question3" value="c" class="mr-2"> Test de rendimiento
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">4. ¿Qué tipo de pruebas se realizan para la validación?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="a" class="mr-2"> Pruebas unitarias
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="b" class="mr-2"> Pruebas de aceptación
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question4" value="c" class="mr-2"> Pruebas de integración
+                </label>
+            </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="mb-6">
+            <p class="text-xl font-medium">5. ¿Qué se busca al realizar un proceso de verificación?</p>
+            <div class="mt-4 space-y-3">
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="a" class="mr-2"> Asegurarse de que el software funcione correctamente
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="b" class="mr-2"> Verificar que el software cumpla con los requisitos del cliente
+                </label>
+                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                    <input type="radio" name="question5" value="c" class="mr-2"> Asegurar que el software sea fácil de usar
+                </label>
+            </div>
+        </div>
+
+        <!-- Botón Finalizar -->
+        <div class="text-center mt-6">
+            <button type="button" onclick="evaluateQuizValidez()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Finalizar Cuestionario
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Modal con Resultados -->
+<div id="resultModalValidez" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+        <h2 id="resultMessageValidez" class="text-2xl font-bold text-center mb-4"></h2>
+        <p id="resultDetailsValidez" class="text-lg text-center mb-6"></p>
+        <div id="correctAnswersValidez" class="text-left mb-6"></div>
+        <div class="text-center">
+            <button onclick="closeModalValidez()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
+                Cerrar
+            </button>
+        </div>
     </div>
+</div>
+
+<script>
+    // Respuestas correctas para Validación y Verificación
+    const correctAnswersValidez = {
+        question1: "a",
+        question2: "b",
+        question3: "a",
+        question4: "b",
+        question5: "b"
+    };
+
+    // Respuestas mostradas para el usuario
+    const answerTextValidez = {
+        question1: "La verificación asegura que el software cumple con los requisitos, mientras que la validación asegura que el software satisface las necesidades del usuario",
+        question2: "En la fase de pruebas",
+        question3: "Revisiones de código",
+        question4: "Pruebas de aceptación",
+        question5: "Verificar que el software cumpla con los requisitos del cliente"
+    };
+
+    function evaluateQuizValidez() {
+        let totalQuestions = Object.keys(correctAnswersValidez).length;
+        let correctCount = 0;
+        let answersDisplay = '';
+
+        // Verificar respuestas
+        for (let question in correctAnswersValidez) {
+            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+            if (userAnswer && userAnswer.value === correctAnswersValidez[question]) {
+                correctCount++;
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
+                    </div>
+                `;
+            } else {
+                const correctAnswer = answerTextValidez[question];
+                answersDisplay += `
+                    <div class="mb-4">
+                        <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
+                        <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
+                        <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Calcular porcentaje
+        let percentage = (correctCount / totalQuestions) * 100;
+
+        // Mostrar resultados en el modal
+        const resultMessage = document.getElementById("resultMessageValidez");
+        const resultDetails = document.getElementById("resultDetailsValidez");
+        resultMessage.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
+        resultDetails.innerText = `Tu puntuación es: ${percentage}%`;
+
+        // Mostrar respuestas correctas
+        const correctAnswersDiv = document.getElementById("correctAnswersValidez");
+        correctAnswersDiv.innerHTML = answersDisplay;
+
+        // Mostrar el modal
+        document.getElementById("resultModalValidez").classList.remove("hidden");
+    }
+
+    function closeModalValidez() {
+        document.getElementById("resultModalValidez").classList.add("hidden");
+    }
+</script>
 
     <!-- Sección para crear preguntas -->
     <div id="createQuestionsSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
