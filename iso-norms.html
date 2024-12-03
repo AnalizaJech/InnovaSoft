@@ -29,12 +29,12 @@
     <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Normas ISO</h1>
 
     <!-- Botones de acción con íconos -->
-    <div class="flex space-x-6 mb-6">
-        <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
-        <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
-        <img id="downloadButton" src="src/Download.svg" alt="Descargar" class="w-8 h-8 cursor-pointer" title="Descargar" onclick="downloadContent()">
-        <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
-    </div>
+<div class="flex space-x-6 mb-6">
+    <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
+    <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
+    <img id="downloadButton" src="src/Download.svg" alt="Descargar" class="w-8 h-8 cursor-pointer" title="Descargar" onclick="downloadContent()">
+    <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
+</div>
 
     <!-- Sección principal de normas ISO -->
     <div id="Contenido" class="section bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
@@ -269,6 +269,20 @@
 </div>
 
 <script>
+    // Función para mostrar y ocultar secciones
+    function showSection(sectionId) {
+        console.log(`Mostrando sección: ${sectionId}`);  // Verifica si la función se está ejecutando correctamente
+
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            if (section.id === sectionId) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+    }
+
     // Respuestas correctas para Normas ISO
     const correctAnswersISO = {
         question1: "a",
@@ -338,23 +352,16 @@
 </script>
 
 
+
+
+
+
     <!-- Sección para crear preguntas -->
     <div id="createQuestionsSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
         <h2 class="text-2xl font-bold mb-4">Crear Preguntas</h2>
         <input type="text" placeholder="Escribe tu pregunta..." class="border p-2 w-full mb-4 rounded">
         <button class="bg-green-500 text-white px-4 py-2 rounded">Agregar Pregunta</button>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
