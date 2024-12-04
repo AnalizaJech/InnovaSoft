@@ -145,6 +145,80 @@ function normalizeString(str) {
 }
 
 
+let isReading = false; // Variable para controlar si está leyendo o no
+let selectedVoice = null; // Para almacenar la voz seleccionada
+
+// Obtener las voces disponibles (esto puede ser asincrónico, así que lo manejamos con un evento)
+function getVoices() {
+    const voices = window.speechSynthesis.getVoices();
+
+    // Elegir la voz más natural disponible (puedes ajustar esto según las voces disponibles en el navegador)
+    selectedVoice = voices.find(voice => voice.name.toLowerCase().includes('natural') || voice.name.toLowerCase().includes('español'));
+
+    if (!selectedVoice) {
+        // Si no encontramos una voz natural, seleccionamos la primera disponible
+        selectedVoice = voices[0];
+    }
+}
+
+// Función para alternar el estado de lectura
+function toggleReading() {
+    const voiceButton = document.getElementById('read-content-button');
+    const musicIcon = document.getElementById('music-icon');
+
+    if (isReading) {
+        // Si ya está leyendo, detener la lectura y restaurar el icono
+        window.speechSynthesis.cancel(); // Detener la lectura
+
+        voiceButton.classList.remove('bg-green-500');  // Eliminar color "activo"
+        voiceButton.classList.add('bg-gray-300');     // Restaurar color gris
+        
+        // Cambiar icono a Music-on
+        musicIcon.src = "src/music-on.svg";
+        
+        isReading = false; // Cambiar el estado a no leer
+    } else {
+        // Si no está leyendo, comenzar la lectura y cambiar el color del botón
+        const content = document.body.innerText; // Obtener todo el texto de la página
+        const utterance = new SpeechSynthesisUtterance(content); // Crear el objeto de habla
+
+        // Configurar la voz seleccionada
+        utterance.voice = selectedVoice; // Usar la voz seleccionada
+        utterance.rate = 1; // Velocidad de lectura
+        utterance.pitch = 1; // Tonalidad de la voz
+        utterance.volume = 1; // Volumen
+
+        // Iniciar la lectura
+        window.speechSynthesis.speak(utterance);
+
+        voiceButton.classList.remove('bg-gray-300'); // Eliminar color gris
+        voiceButton.classList.add('bg-green-500');   // Cambiar a color "gamer" (verde)
+
+        // Cambiar icono a Music-off
+        musicIcon.src = "src/music-off.svg";
+
+        isReading = true; // Cambiar el estado a "leyendo"
+    }
+}
+
+// Asegurarse de que la síntesis de voz se detenga cuando el usuario abandona la página
+window.addEventListener('beforeunload', function() {
+    if (isReading) {
+        window.speechSynthesis.cancel(); // Detener la lectura si está en curso
+    }
+});
+
+// Esperar a que las voces se carguen
+if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = getVoices;
+} else {
+    // Si las voces ya están cargadas
+    getVoices();
+}
+
+
+
+
 
 
 
