@@ -17,15 +17,31 @@
             <img src="src/InnovaSoft.svg" alt="Logo InnovaSoft" class="h-full">
         </div>
 
-        <!-- Barra de Búsqueda (visible solo en pantallas medianas y grandes) -->
+        <!-- Barra de Búsqueda -->
         <div class="h-full flex-grow mx-8 hidden md:flex">
-            <div class="flex items-center h-full w-full max-w-2xl bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300">
-                <input type="text" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"'>
-                <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black">
+            <div class="flex items-center h-full w-full max-w-2xl bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300 relative">
+                <input type="text" id="search-input" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"' onkeydown="handleKeyDown(event)">
+                
+                <!-- Botón de búsqueda por voz -->
+                <button id="voice-search-button" class="h-12 w-16 flex items-center justify-center rounded-full bg-gray-300" onclick="startVoiceSearch()">
+                    <img src="src/Microfono.svg" alt="Icono Buscar por voz" class="h-6 w-6">
+                </button>
+
+                
+                <!-- Botón de búsqueda normal -->
+                <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black" onclick="searchContent()">
                     <img src="src/Send bar.svg" alt="Icono Buscar" class="h-6 w-6">
                 </button>
             </div>
         </div>
+        
+
+
+
+
+
+
+
 
         <!-- Botones de Navegación (visible solo en pantallas medianas y grandes) -->
         <div class="h-full hidden md:flex space-x-4">

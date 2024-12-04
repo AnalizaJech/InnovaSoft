@@ -1,3 +1,76 @@
+// Función para la búsqueda por voz
+function startVoiceSearch() {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "es-ES";  // Idioma español
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById('search-input').value = transcript; // Coloca el texto dictado en el input
+        searchContent(); // Llama a la función de búsqueda para redirigir al archivo
+    };
+
+    recognition.onerror = function(event) {
+        console.error("Error en el reconocimiento de voz: ", event.error);
+    };
+}
+
+// Función para manejar la tecla "Enter" para la búsqueda
+function handleKeyDown(event) {
+    if (event.key === "Enter") {
+        searchContent(); // Ejecutar la búsqueda cuando el usuario presione Enter
+    }
+}
+
+// Función para normalizar cadenas (sin tildes y compararlas)
+function normalizeString(str) {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+// Función para la búsqueda al hacer clic en el botón de "Buscar"
+function searchContent() {
+    const searchInput = normalizeString(document.getElementById('search-input').value);
+    const htmlFiles = [
+        { file: 'index.html', title: 'Página principal' },
+        { file: 'Costs-budgets.html', title: 'Costos y Presupuestos' },
+        { file: 'iso-norms.html', title: 'Normas ISO' },
+        { file: 'login.html', title: 'Iniciar sesión' },
+        { file: 'register.html', title: 'Registrarse' },
+        { file: 'Software-Engineering.html', title: 'Ingeniería de Software' },
+        { file: 'Software-Architecture.html', title: 'Arquitectura de Software' },
+        { file: 'Verification-Validation.html', title: 'Verificación y Validación' }
+    ];
+
+    let found = false;
+
+    // Buscar en los archivos HTML
+    htmlFiles.forEach(file => {
+        const normalizedTitle = normalizeString(file.title); // Normalizar el título
+        if (normalizedTitle.includes(searchInput)) {
+            found = true;
+            window.location.href = file.file; // Redirigir al archivo al encontrar el título
+        }
+    });
+
+    // Si no se encuentra nada, mostrar un mensaje en consola
+    if (!found && searchInput.length > 0) {
+        console.log('No se encontraron resultados para: ' + searchInput);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // JavaScript para mostrar/ocultar el menú desplegable en dispositivos móviles
 const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
