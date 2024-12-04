@@ -163,41 +163,42 @@ function getVoices() {
 
 // Función para alternar el estado de lectura
 function toggleReading() {
+    console.log('toggleReading called');
+    
     const voiceButton = document.getElementById('read-content-button');
     const musicIcon = document.getElementById('music-icon');
 
     if (isReading) {
-        // Si ya está leyendo, detener la lectura y restaurar el icono
+        console.log('Stopping reading');
         window.speechSynthesis.cancel(); // Detener la lectura
 
-        voiceButton.classList.remove('bg-green-500');  // Eliminar color "activo"
-        voiceButton.classList.add('bg-gray-300');     // Restaurar color gris
-        
-        // Cambiar icono a Music-on
+        voiceButton.classList.remove('bg-green-500');
+        voiceButton.classList.add('bg-gray-300');
         musicIcon.src = "src/Music-on.svg";
-        
-        isReading = false; // Cambiar el estado a no leer
+        isReading = false;
     } else {
-        // Si no está leyendo, comenzar la lectura y cambiar el color del botón
-        const content = document.body.innerText; // Obtener todo el texto de la página
-        const utterance = new SpeechSynthesisUtterance(content); // Crear el objeto de habla
+        console.log('Starting reading');
+        
+        // Obtener el contenido completo de la página
+        const content = document.body.textContent || document.body.innerText;
+        
+        // Imprimir el contenido que se va a leer
+        console.log('Content to be read:', content);
+        
+        // Verificar si hay un valor "undefined" en el contenido
+        if (content.includes('undefined')) {
+            console.log('Error: Undefined value found in content');
+        }
 
-        // Configurar la voz seleccionada
-        utterance.voice = selectedVoice; // Usar la voz seleccionada
-        utterance.rate = 1; // Velocidad de lectura
-        utterance.pitch = 1; // Tonalidad de la voz
-        utterance.volume = 1; // Volumen
-
+        const utterance = new SpeechSynthesisUtterance(content);
+        
         // Iniciar la lectura
         window.speechSynthesis.speak(utterance);
 
-        voiceButton.classList.remove('bg-gray-300'); // Eliminar color gris
-        voiceButton.classList.add('bg-green-500');   // Cambiar a color "gamer" (verde)
-
-        // Cambiar icono a Music-off
+        voiceButton.classList.remove('bg-gray-300');
+        voiceButton.classList.add('bg-green-500');
         musicIcon.src = "src/Music-off.svg";
-
-        isReading = true; // Cambiar el estado a "leyendo"
+        isReading = true;
     }
 }
 
@@ -212,9 +213,11 @@ window.addEventListener('beforeunload', function() {
 if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = getVoices;
 } else {
-    // Si las voces ya están cargadas
-    getVoices();
+    getVoices(); // Si las voces ya están cargadas
 }
+
+
+
 
 
 
