@@ -174,7 +174,7 @@ function toggleReading() {
         voiceButton.classList.add('bg-gray-300');     // Restaurar color gris
         
         // Cambiar icono a Music-on
-        musicIcon.src = "src/music-on.svg";
+        musicIcon.src = "src/Music-on.svg";
         
         isReading = false; // Cambiar el estado a no leer
     } else {
@@ -195,7 +195,7 @@ function toggleReading() {
         voiceButton.classList.add('bg-green-500');   // Cambiar a color "gamer" (verde)
 
         // Cambiar icono a Music-off
-        musicIcon.src = "src/music-off.svg";
+        musicIcon.src = "src/Music-off.svg";
 
         isReading = true; // Cambiar el estado a "leyendo"
     }
