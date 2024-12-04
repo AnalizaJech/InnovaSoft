@@ -1,27 +1,33 @@
-// Función para la búsqueda por voz
-function startVoiceSearch() {
-    // Obtener el botón de búsqueda por voz
-    const voiceButton = document.getElementById('voice-search-button');
+// Función para la búsqueda por voz (para móvil y escritorio)
+function startVoiceSearch(version) {
+    const voiceButton = document.getElementById(`voice-search-button-${version}`);
+    const voiceIcon = document.getElementById(`voice-icon-${version}`);
+    const searchInput = document.getElementById(`search-input-${version}`); // Usamos el mismo input para ambas versiones
 
     // Cambiar el color del botón para indicar que está grabando
     voiceButton.classList.add('bg-blue-500');  // Cambiar a azul para indicar que está grabando
     voiceButton.classList.remove('bg-gray-300');  // Eliminar el color gris inicial
 
+    // Iniciar el reconocimiento de voz
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     recognition.lang = "es-ES";  // Idioma español
     recognition.start();
 
     recognition.onresult = function(event) {
         const transcript = event.results[0][0].transcript;
-        document.getElementById('search-input').value = transcript; // Coloca el texto dictado en el input
-        searchContent(); // Llama a la función de búsqueda para redirigir al archivo
+        searchInput.value = transcript; // Coloca el texto dictado en el input
+
+        // Llamar a la función de búsqueda inmediatamente después de que se haya colocado el texto
+        setTimeout(function() {
+            searchContent(version); // Llama a la función de búsqueda y redirige al archivo
+        }, 500); // Retardo de 500ms (medio segundo) para que el texto se escriba en el input
     };
 
     recognition.onerror = function(event) {
         console.error("Error en el reconocimiento de voz: ", event.error);
+        alert("Hubo un error al intentar reconocer tu voz. Intenta de nuevo.");
     };
 
-    // Cuando termine el reconocimiento de voz, restaurar el color original del botón
     recognition.onend = function() {
         voiceButton.classList.remove('bg-blue-500');  // Eliminar el color azul
         voiceButton.classList.add('bg-gray-300');    // Restaurar el color gris original
@@ -29,88 +35,15 @@ function startVoiceSearch() {
 }
 
 // Función para manejar la tecla "Enter" para la búsqueda
-function handleKeyDown(event) {
+function handleKeyDown(event, version) {
     if (event.key === "Enter") {
-        searchContent(); // Ejecutar la búsqueda cuando el usuario presione Enter
+        searchContent(version); // Ejecutar la búsqueda cuando el usuario presione Enter
     }
-}
-
-// Función para normalizar cadenas (sin tildes y compararlas)
-function normalizeString(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
 // Función para la búsqueda al hacer clic en el botón de "Buscar"
-function searchContent() {
-    const searchInput = normalizeString(document.getElementById('search-input').value);
-    const htmlFiles = [
-        { file: 'index.html', title: 'Página principal' },
-        { file: 'Costs-budgets.html', title: 'Costos y Presupuestos' },
-        { file: 'iso-norms.html', title: 'Normas ISO' },
-        { file: 'login.html', title: 'Iniciar sesión' },
-        { file: 'register.html', title: 'Registrarse' },
-        { file: 'Software-Engineering.html', title: 'Ingeniería de Software' },
-        { file: 'Software-Architecture.html', title: 'Arquitectura de Software' },
-        { file: 'Verification-Validation.html', title: 'Verificación y Validación' }
-    ];
-
-    let found = false;
-
-    // Buscar en los archivos HTML
-    htmlFiles.forEach(file => {
-        const normalizedTitle = normalizeString(file.title); // Normalizar el título
-        if (normalizedTitle.includes(searchInput)) {
-            found = true;
-            window.location.href = file.file; // Redirigir al archivo al encontrar el título
-        }
-    });
-
-    // Si no se encuentra nada, mostrar un mensaje en consola
-    if (!found && searchInput.length > 0) {
-        console.log('No se encontraron resultados para: ' + searchInput);
-    }
-}
-
-
-// Función para la búsqueda por voz en versión móvil
-function startVoiceSearchMobile() {
-    const voiceButtonMobile = document.getElementById('voice-search-button-mobile');
-
-    // Cambiar el color del botón para indicar que está grabando
-    voiceButtonMobile.classList.add('bg-blue-500');  // Cambiar a azul para indicar que está grabando
-    voiceButtonMobile.classList.remove('bg-gray-300');  // Eliminar el color gris inicial
-
-    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-    recognition.lang = "es-ES";  // Idioma español
-    recognition.start();
-
-    recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        document.getElementById('mobile-search-input').value = transcript; // Coloca el texto dictado en el input
-        searchContent(); // Llama a la función de búsqueda para redirigir al archivo
-    };
-
-    recognition.onerror = function(event) {
-        console.error("Error en el reconocimiento de voz: ", event.error);
-    };
-
-    // Cuando termine el reconocimiento de voz, restaurar el color original del botón
-    recognition.onend = function() {
-        voiceButtonMobile.classList.remove('bg-blue-500');  // Eliminar el color azul
-        voiceButtonMobile.classList.add('bg-gray-300');    // Restaurar el color gris original
-    };
-}
-
-// Función para manejar la tecla "Enter" para la búsqueda en versión móvil
-function handleKeyDown(event) {
-    if (event.key === "Enter") {
-        searchContent(); // Ejecutar la búsqueda cuando el usuario presione Enter
-    }
-}
-
-// Función para la búsqueda al hacer clic en el botón de "Buscar" en versión móvil
-function searchContent() {
-    const searchInput = normalizeString(document.getElementById('mobile-search-input').value);
+function searchContent(version) {
+    const searchInput = normalizeString(document.getElementById(`search-input-${version}`).value);
     const htmlFiles = [
         { file: 'index.html', title: 'Página principal' },
         { file: 'Costs-budgets.html', title: 'Costos y Presupuestos' },
@@ -145,76 +78,114 @@ function normalizeString(str) {
 }
 
 
-let isReading = false; // Variable para controlar si está leyendo o no
-let selectedVoice = null; // Para almacenar la voz seleccionada
 
-// Obtener las voces disponibles (esto puede ser asincrónico, así que lo manejamos con un evento)
+
+
+
+
+
+
+
+
+
+
+
+let isReading = false;  // Variable para controlar el estado de lectura
+let selectedVoice = null;  // Variable para almacenar la voz seleccionada
+
+// Obtener las voces disponibles
 function getVoices() {
     const voices = window.speechSynthesis.getVoices();
-
-    // Elegir la voz más natural disponible (puedes ajustar esto según las voces disponibles en el navegador)
-    selectedVoice = voices.find(voice => voice.name.toLowerCase().includes('natural') || voice.name.toLowerCase().includes('español'));
-
+    
+    // Buscar voz natural en español
+    selectedVoice = voices.find(voice => voice.lang === 'es-ES' || voice.lang === 'es-MX' || voice.lang === 'es-AR' || voice.name.includes('natural'));
+    
+    // Si no encontramos una voz natural, seleccionamos la primera disponible
     if (!selectedVoice) {
-        // Si no encontramos una voz natural, seleccionamos la primera disponible
         selectedVoice = voices[0];
     }
+    console.log("Voz seleccionada:", selectedVoice);  // Para depuración
 }
 
-// Función para alternar el estado de lectura
+// Función para alternar la lectura del contenido
 function toggleReading() {
-    console.log('toggleReading called');
-    
     const voiceButton = document.getElementById('read-content-button');
     const musicIcon = document.getElementById('music-icon');
+    
+    // Obtener todas las voces disponibles (esto puede ser asincrónico)
+    let voices = [];
+    function getVoicesAsync() {
+        voices = speechSynthesis.getVoices();
+    }
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = getVoicesAsync;
+    } else {
+        getVoicesAsync();
+    }
+    
+    // Elegir la voz adecuada
+    let selectedVoice = voices.find(voice => voice.lang === 'es-ES' || voice.lang === 'es-MX' || voice.lang === 'es-AR');
+    if (!selectedVoice) {
+        selectedVoice = voices[0];  // Si no se encuentra, seleccionamos la primera disponible
+    }
 
     if (isReading) {
-        console.log('Stopping reading');
-        window.speechSynthesis.cancel(); // Detener la lectura
-
+        // Si ya está leyendo, detener la lectura
+        window.speechSynthesis.cancel();
+        
+        // Restaurar el estado del botón y el ícono
         voiceButton.classList.remove('bg-green-500');
         voiceButton.classList.add('bg-gray-300');
         musicIcon.src = "src/Music-on.svg";
-        isReading = false;
+        isReading = false;  // Cambiar el estado a no leer
     } else {
-        console.log('Starting reading');
-        
-        // Obtener el contenido completo de la página
-        const content = document.body.textContent || document.body.innerText;
-        
-        // Imprimir el contenido que se va a leer
-        console.log('Content to be read:', content);
-        
-        // Verificar si hay un valor "undefined" en el contenido
-        if (content.includes('undefined')) {
-            console.log('Error: Undefined value found in content');
-        }
+        // Si no está leyendo, comenzar la lectura del contenido
+        const content = document.body.textContent || document.body.innerText;  // Obtener todo el texto de la página
+        const utterance = new SpeechSynthesisUtterance(content);  // Crear el objeto de habla
 
-        const utterance = new SpeechSynthesisUtterance(content);
-        
+        // Configurar la voz seleccionada
+        utterance.voice = selectedVoice;
+        utterance.rate = 1.1;  // Velocidad de lectura (ajustable entre 0.5 a 2)
+        utterance.pitch = 1.2;  // Tono de la voz (ajustable entre 0.5 y 2)
+        utterance.volume = 1;  // Volumen (0 es silenciado, 1 es máximo)
+
         // Iniciar la lectura
         window.speechSynthesis.speak(utterance);
 
+        // Cambiar el estado del botón y el ícono
         voiceButton.classList.remove('bg-gray-300');
         voiceButton.classList.add('bg-green-500');
         musicIcon.src = "src/Music-off.svg";
-        isReading = true;
+        isReading = true;  // Cambiar el estado a "leyendo"
     }
 }
 
 // Asegurarse de que la síntesis de voz se detenga cuando el usuario abandona la página
 window.addEventListener('beforeunload', function() {
     if (isReading) {
-        window.speechSynthesis.cancel(); // Detener la lectura si está en curso
+        window.speechSynthesis.cancel();  // Detener la lectura si está en curso
     }
 });
 
-// Esperar a que las voces se carguen
+// Esperar a que las voces se carguen antes de usarlas
 if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = getVoices;
 } else {
-    getVoices(); // Si las voces ya están cargadas
+    getVoices();  // Si las voces ya están cargadas
 }
+
+// Función para listar todas las voces disponibles en la consola (opcional)
+function listAllVoices() {
+    const voices = window.speechSynthesis.getVoices();
+    voices.forEach(voice => {
+        console.log(`${voice.name} (${voice.lang})`);
+    });
+}
+
+// Llamar a listAllVoices() para revisar todas las voces disponibles (puedes hacerlo solo para depuración)
+// listAllVoices();
+
+
 
 
 
