@@ -23,9 +23,12 @@
                 <input type="text" id="search-input" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"' onkeydown="handleKeyDown(event)">
                 
                 <!-- Botón de búsqueda por voz -->
-                <button id="voice-search-button" class="h-12 w-16 flex items-center justify-center rounded-full bg-gray-300" onclick="startVoiceSearch()">
-                    <img src="src/Microfono.svg" alt="Icono Buscar por voz" class="h-6 w-6">
+                <button id="voice-search-button" class="h-12 w-16 flex items-center justify-center rounded-full bg-gray-300 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out duration-300" onclick="startVoiceSearch()">
+                    <img src="src/Microfono.svg" alt="Icono Buscar por voz" class="h-6 w-6 text-white">
                 </button>
+                
+
+
 
                 
                 <!-- Botón de búsqueda normal -->
@@ -34,7 +37,7 @@
                 </button>
             </div>
         </div>
-        
+
 
 
 
@@ -60,18 +63,26 @@
     </header>
 
     <!-- Menú Desplegable (visible solo en pantallas pequeñas) -->
-    <div id="mobile-menu" class="hidden px-8 py-4 bg-white shadow-md rounded-lg space-y-4 md:hidden">
-        <a href="login.html" class="block text-black font-semibold bg-gray-100 py-2 px-4 rounded hover:bg-gray-200 transition-all">Iniciar Sesión</a>
-        <a href="register.html" class="block text-white font-semibold bg-black py-2 px-4 rounded hover:bg-gray-800 transition-all">Registrarse</a>
-        <div class="mt-4">
-            <div class="flex items-center w-full max-w-full bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300">
-                <input type="text" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"'>
-                <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black">
-                    <img src="src/Send bar.svg" alt="Icono Buscar" class="h-6 w-6">
-                </button>
-            </div>
+<div id="mobile-menu" class="hidden px-8 py-4 bg-white shadow-md rounded-lg space-y-4 md:hidden">
+    <a href="login.html" class="block text-black font-semibold bg-gray-100 py-2 px-4 rounded hover:bg-gray-200 transition-all">Iniciar Sesión</a>
+    <a href="register.html" class="block text-white font-semibold bg-black py-2 px-4 rounded hover:bg-gray-800 transition-all">Registrarse</a>
+    <div class="mt-4">
+        <div class="flex items-center w-full max-w-full bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300">
+            <input type="text" id="mobile-search-input" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"' onkeydown="handleKeyDown(event)">
+            
+            <!-- Botón de búsqueda por voz en versión móvil -->
+            <button id="voice-search-button-mobile" class="h-12 w-16 flex items-center justify-center rounded-full bg-gray-300 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out duration-300" onclick="startVoiceSearchMobile()">
+                <img src="src/Microfono.svg" alt="Icono Buscar por voz" class="h-6 w-6 text-white">
+            </button>
+            
+            <!-- Botón de búsqueda normal en versión móvil -->
+            <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black" onclick="searchContent()">
+                <img src="src/Send bar.svg" alt="Icono Buscar" class="h-6 w-6">
+            </button>
         </div>
     </div>
+</div>
+
 
     <!-- Cards Container -->
     <main class="p-8">
