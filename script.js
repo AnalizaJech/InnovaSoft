@@ -357,20 +357,42 @@ const carousel = document.getElementById('carousel');
         nextBtnMobile.addEventListener('click', scrollRight);
 
 //descargar contenido y mostrar secciones
-function downloadContent() {
-    const element = document.getElementById('Contenido');
-    if (element) {
-        html2pdf().from(element).set({
-            margin: 1,
-            filename: 'Informacion_InnovaSoft.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, logging: true },
-            jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-        }).save();
-    } else {
-        console.warn('Elemento Contenido no encontrado para la descarga.');
-    }
+function downloadContent(button) {
+    // Mostrar el overlay de carga
+    const loadingOverlay = document.getElementById("loadingOverlay");
+    loadingOverlay.classList.remove("hidden");
+
+    // Obtener el archivo a descargar desde el atributo `data-file`
+    const fileUrl = button.getAttribute("data-file");
+
+    // Simular el proceso de descarga
+    setTimeout(() => {
+        if (fileUrl) {
+            // Crear un enlace para descargar el archivo
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = fileUrl.split('/').pop();
+            link.click();
+        } else {
+            console.error("Archivo no especificado.");
+        }
+
+        // Ocultar el overlay después de completar la descarga
+        loadingOverlay.classList.add("hidden");
+    }, 3000); // Simula un tiempo de espera de 3 segundos
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.section');

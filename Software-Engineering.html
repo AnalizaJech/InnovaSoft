@@ -31,16 +31,33 @@
     <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Ingeniería de Software</h1>
 
     <!-- Botones de acción con íconos -->
-    <div class="flex space-x-6 mb-6">
-        <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
-        <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
-        <img id="downloadButton" src="src/Download.svg" alt="Descargar" class="w-8 h-8 cursor-pointer" title="Descargar" onclick="downloadContent()">
-        <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
+<div class="flex space-x-6 mb-6">
+    <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
+    <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
+
+    <!-- Contenedor del botón de descarga -->
+    <div class="relative">
+        <!-- Botón de descarga -->
+        <img id="downloadButton" src="src/Download.svg" alt="Descargar"
+             class="w-8 h-8 cursor-pointer" title="Descargar"
+             data-file="PDF/ingenieria.pdf" onclick="downloadContent(this)">
     </div>
 
-    <!-- Sección principal de normas ISO -->
+    <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
+</div>
+
+<!-- Overlay de carga -->
+<div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
+    <!-- Spinner animado -->
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white border-opacity-75 mb-6"></div>
+    <!-- Texto -->
+    <p class="text-white text-xl font-semibold text-center">Procesando tu descarga...</p>
+</div>
+
+
+    <!-- Sección principal -->
     <div id="Contenido" class="section bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
-        <!-- Contenido de la sección ISO -->
+        <!-- Contenido de la sección-->
         <h2 class="text-xl font-semibold mb-2">Ingeniería de Software: Guía Actualizada para Profesionales        </h2>
         <p class="mb-4">
             La ingeniería de software es una disciplina técnica y práctica que aborda el diseño, desarrollo, implementación y mantenimiento de software de manera sistemática. A medida que las necesidades empresariales y tecnológicas evolucionan, la ingeniería de software se convierte en un pilar fundamental para ofrecer soluciones escalables, seguras y eficientes.
