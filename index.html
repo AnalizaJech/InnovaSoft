@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="src/ISO.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body class="bg-gray-100 p-4">
     <!-- Header con Logo, Barra de Búsqueda y Navegación -->
@@ -18,21 +17,21 @@
         </div>
 
         <!-- Barra de Búsqueda (versión escritorio) -->
-<div class="h-full flex-grow mx-8 hidden md:flex">
-    <div class="flex items-center h-full w-full max-w-2xl bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300 relative">
-        <input type="text" id="search-input-desktop" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"' onkeydown="handleKeyDown(event, 'desktop')">
-        
-        <!-- Botón de búsqueda por voz (en escritorio) -->
-        <button id="voice-search-button-desktop" class="h-12 w-16 flex items-center justify-center rounded-full bg-gray-300 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out duration-300" onclick="startVoiceSearch('desktop')">
-            <img id="voice-icon-desktop" src="src/Microfono.svg" alt="Icono Buscar por voz" class="h-6 w-6 text-white">
-        </button>
-        
-        <!-- Botón de búsqueda normal -->
-        <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black" onclick="searchContent('desktop')">
-            <img src="src/Send bar.svg" alt="Icono Buscar" class="h-6 w-6">
-        </button>
-    </div>
-</div>
+        <div class="h-full flex-grow mx-8 hidden md:flex">
+            <div class="flex items-center h-full w-full max-w-2xl bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300 relative">
+                <input type="text" id="search-input-desktop" class="flex-grow px-4 text-gray-700 placeholder-gray-500 focus:outline-none" placeholder='Busca temas como "modelado de software"' onkeydown="handleKeyDown(event, 'desktop')">
+                
+                <!-- Botón de búsqueda por voz (en escritorio) -->
+                <button id="voice-search-button-desktop" class="h-12 w-16 flex items-center justify-center rounded-full bg-gray-300 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out duration-300" onclick="startVoiceSearch('desktop')">
+                    <img id="voice-icon-desktop" src="src/Microfono.svg" alt="Icono Buscar por voz" class="h-6 w-6 text-white">
+                </button>
+                
+                <!-- Botón de búsqueda normal -->
+                <button class="h-12 w-16 flex items-center justify-center rounded-full bg-black" onclick="searchContent('desktop')">
+                    <img src="src/Send bar.svg" alt="Icono Buscar" class="h-6 w-6">
+                </button>
+            </div>
+        </div>
 
 
 
@@ -56,34 +55,34 @@
     </header>
 
     <!-- Menú Desplegable (visible solo en pantallas pequeñas) -->
-<div id="mobile-menu" class="hidden px-8 py-4 bg-white shadow-md rounded-lg space-y-4 md:hidden">
-    <a href="login.html" class="block text-black font-semibold bg-gray-100 py-2 px-4 rounded hover:bg-gray-200 transition-all">Iniciar Sesión</a>
-    <a href="register.html" class="block text-white font-semibold bg-black py-2 px-4 rounded hover:bg-gray-800 transition-all">Registrarse</a>
-    <div class="mt-4">
-        <!-- Contenedor principal para el campo de búsqueda y los botones -->
-        <div class="flex items-center w-full bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300">
-            <!-- Input de búsqueda -->
-            <input type="text" id="search-input-mobile" 
-                   class="flex-grow min-w-0 px-4 text-gray-700 placeholder-gray-500 focus:outline-none" 
-                   placeholder='Busca temas como "modelado de software"' 
-                   onkeydown="handleKeyDown(event, 'mobile')">
+    <div id="mobile-menu" class="hidden px-8 py-4 bg-white shadow-md rounded-lg space-y-4 md:hidden">
+        <a href="login.html" class="block text-black font-semibold bg-gray-100 py-2 px-4 rounded hover:bg-gray-200 transition-all">Iniciar Sesión</a>
+        <a href="register.html" class="block text-white font-semibold bg-black py-2 px-4 rounded hover:bg-gray-800 transition-all">Registrarse</a>
+        <div class="mt-4">
+            <!-- Contenedor principal para el campo de búsqueda y los botones -->
+            <div class="flex items-center w-full bg-white rounded-full shadow-md overflow-hidden border-2 border-gray-300">
+                <!-- Input de búsqueda -->
+                <input type="text" id="search-input-mobile" 
+                    class="flex-grow min-w-0 px-4 text-gray-700 placeholder-gray-500 focus:outline-none" 
+                    placeholder='Busca temas como "modelado de software"' 
+                    onkeydown="handleKeyDown(event, 'mobile')">
 
-            <!-- Botón de búsqueda por voz -->
-            <button id="voice-search-button-mobile" 
-                    class="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-gray-300 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out duration-300" 
-                    onclick="startVoiceSearch('mobile')">
-                <img id="voice-icon-mobile" src="src/Microfono.svg" alt="Buscar por voz" class="h-6 w-6">
-            </button>
+                <!-- Botón de búsqueda por voz -->
+                <button id="voice-search-button-mobile" 
+                        class="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-gray-300 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ease-in-out duration-300" 
+                        onclick="startVoiceSearch('mobile')">
+                    <img id="voice-icon-mobile" src="src/Microfono.svg" alt="Buscar por voz" class="h-6 w-6">
+                </button>
 
-            <!-- Botón de búsqueda normal -->
-            <button id="search-button-mobile" 
-                    class="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700 transition-all ease-in-out duration-300" 
-                    onclick="searchContent('mobile')">
-                <img src="src/Send bar.svg" alt="Buscar" class="h-6 w-6">
-            </button>
+                <!-- Botón de búsqueda normal -->
+                <button id="search-button-mobile" 
+                        class="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-full bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700 transition-all ease-in-out duration-300" 
+                        onclick="searchContent('mobile')">
+                    <img src="src/Send bar.svg" alt="Buscar" class="h-6 w-6">
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
 
 
@@ -121,11 +120,7 @@
 
         
 
-
-
-
-                <!-- Newsletter -->
-                <!-- Contenedor de Novedades ISO -->
+        <!-- Newsletter -->
         <div class="mt-8 p-6 bg-black text-white rounded-lg shadow-md w-full max-w-[900px] mx-auto lg:w-[calc(300px*3+2*1.5rem)] lg:max-w-[calc(300px*3+2*1.5rem)]">
             <div class="flex items-center mb-4">
                 <div class="flex space-x-2">

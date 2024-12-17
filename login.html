@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="src/ISO.ico" type="image/x-icon">
 </head>
 <body class="bg-gray-100 flex items-center justify-center h-screen">
+  <!-- Botón para regresar -->
   <div class="absolute top-4 left-4 text-sm md:text-base">
     <a href="index.html" class="flex items-center text-gray-600 hover:text-black">
       <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -17,13 +18,14 @@
     </a>
   </div>
   
+  <!-- Contenedor principal -->
   <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto px-4 md:px-24 space-y-8 md:space-x-24">
-    <!-- Logo fuera del contenedor de los campos -->
+    <!-- Logo -->
     <div class="flex justify-center">
-      <img src="src/InnovaSoft1.svg" alt="InnovaSoft Logo" class="h-24 md:h-32">
+      <img src="src/InnovaSoft1.svg" alt="Logo de InnovaSoft" class="h-24 md:h-32">
     </div>
     
-    <!-- Contenedor de los campos de inicio de sesión con proporciones ajustadas -->
+    <!-- Formulario de inicio de sesión -->
     <div class="w-full max-w-sm md:max-w-md bg-white rounded-lg shadow-lg p-6 md:p-10">
       <form action="#" method="POST" class="space-y-4 md:space-y-6">
         <div>
@@ -35,15 +37,23 @@
           <input type="password" id="password" placeholder="Ejemplo: Jezer123" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
         </div>
         <button type="submit" class="w-full bg-black text-white font-bold py-2 rounded-md hover:bg-gray-800">Ingresar</button>
-        <p class="text-center text-gray-600 mt-4">¿Aún no tienes cuenta? <a href="register.html" class="text-blue-500 font-semibold">Regístrate Aquí</a></p>
+        <p class="text-center text-gray-600 mt-4">
+          ¿Aún no tienes cuenta? 
+          <a href="register.html" class="text-blue-500 font-semibold">Regístrate Aquí</a>
+        </p>
       </form>
+
+      <!-- Separador -->
       <div class="flex items-center my-4">
         <hr class="flex-grow border-t">
         <span class="mx-4 text-gray-500">o</span>
         <hr class="flex-grow border-t">
       </div>
-      <button class="w-full flex items-center justify-center border border-gray-300 py-2 rounded-md hover:bg-gray-100">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo" class="h-6 mr-2"> Ingresa con Google
+
+      <!-- Botón de Google -->
+      <button type="button" class="w-full flex items-center justify-center border border-gray-300 py-2 rounded-md hover:bg-gray-100">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Logo de Google" class="h-6 mr-2">
+        Ingresa con Google
       </button>
     </div>
   </div>

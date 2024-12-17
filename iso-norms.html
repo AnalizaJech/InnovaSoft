@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="src/ISO.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    
 </head>
 <body class="bg-gray-100 p-6">
     
@@ -31,28 +30,28 @@
     <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Normas ISO</h1>
 
     <!-- Botones de acción con íconos -->
-<div class="flex space-x-6 mb-6">
-    <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
-    <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
-    
-    <!-- Contenedor del botón de descarga -->
-    <div class="relative">
-        <!-- Botón de descarga -->
-        <img id="downloadButton" src="src/Download.svg" alt="Descargar"
-             class="w-8 h-8 cursor-pointer" title="Descargar"
-             data-file="PDF/ISO.pdf" onclick="downloadContent(this)">
+    <div class="flex space-x-6 mb-6">
+        <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
+        <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
+        
+        <!-- Contenedor del botón de descarga -->
+        <div class="relative">
+            <!-- Botón de descarga -->
+            <img id="downloadButton" src="src/Download.svg" alt="Descargar"
+                class="w-8 h-8 cursor-pointer" title="Descargar"
+                data-file="PDF/ISO.pdf" onclick="downloadContent(this)">
+        </div>
+
+        <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
     </div>
 
-    <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
-</div>
-
-<!-- Overlay de carga -->
-<div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
-    <!-- Spinner animado -->
-    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white border-opacity-75 mb-6"></div>
-    <!-- Texto -->
-    <p class="text-white text-xl font-semibold text-center">Procesando tu descarga...</p>
-</div>
+    <!-- Overlay de carga -->
+    <div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
+        <!-- Spinner animado -->
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white border-opacity-75 mb-6"></div>
+        <!-- Texto -->
+        <p class="text-white text-xl font-semibold text-center">Procesando tu descarga...</p>
+    </div>
 
 
     <!-- Sección principal -->
@@ -181,246 +180,243 @@
 
 
     <!-- Sección de cuestionario: Normas ISO -->
-<div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
-    <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Normas ISO</h1>
-    <form id="quizFormISO">
-        <!-- Pregunta 1 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">1. ¿Qué significa ISO?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question1" value="a" class="mr-2"> Organización Internacional de Estandarización
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question1" value="b" class="mr-2"> Institución Superior de Organismos
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question1" value="c" class="mr-2"> Orden Internacional de Sistemas
-                </label>
+    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Normas ISO</h1>
+        <form id="quizFormISO">
+            <!-- Pregunta 1 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">1. ¿Qué significa ISO?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question1" value="a" class="mr-2"> Organización Internacional de Estandarización
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question1" value="b" class="mr-2"> Institución Superior de Organismos
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question1" value="c" class="mr-2"> Orden Internacional de Sistemas
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 2 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">2. ¿Cuál es la norma ISO enfocada en sistemas de gestión de calidad?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question2" value="a" class="mr-2"> ISO 27001
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question2" value="b" class="mr-2"> ISO 9001
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question2" value="c" class="mr-2"> ISO 14001
-                </label>
+            <!-- Pregunta 2 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">2. ¿Cuál es la norma ISO enfocada en sistemas de gestión de calidad?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question2" value="a" class="mr-2"> ISO 27001
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question2" value="b" class="mr-2"> ISO 9001
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question2" value="c" class="mr-2"> ISO 14001
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 3 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">3. ¿Qué norma ISO es relevante para la gestión ambiental?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question3" value="a" class="mr-2"> ISO 27001
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question3" value="b" class="mr-2"> ISO 9001
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question3" value="c" class="mr-2"> ISO 14001
-                </label>
+            <!-- Pregunta 3 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">3. ¿Qué norma ISO es relevante para la gestión ambiental?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question3" value="a" class="mr-2"> ISO 27001
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question3" value="b" class="mr-2"> ISO 9001
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question3" value="c" class="mr-2"> ISO 14001
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 4 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">4. ¿Qué significa la sigla "ITIL" en gestión de servicios TI?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question4" value="a" class="mr-2"> Information Technology Infrastructure Library
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question4" value="b" class="mr-2"> International Technology Integration List
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question4" value="c" class="mr-2"> Information Technology International Library
-                </label>
+            <!-- Pregunta 4 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">4. ¿Qué significa la sigla "ITIL" en gestión de servicios TI?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question4" value="a" class="mr-2"> Information Technology Infrastructure Library
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question4" value="b" class="mr-2"> International Technology Integration List
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question4" value="c" class="mr-2"> Information Technology International Library
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 5 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">5. ¿Qué norma ISO se refiere a la seguridad de la información?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question5" value="a" class="mr-2"> ISO 27001
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question5" value="b" class="mr-2"> ISO 9001
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question5" value="c" class="mr-2"> ISO 14001
-                </label>
+            <!-- Pregunta 5 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">5. ¿Qué norma ISO se refiere a la seguridad de la información?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question5" value="a" class="mr-2"> ISO 27001
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question5" value="b" class="mr-2"> ISO 9001
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question5" value="c" class="mr-2"> ISO 14001
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Botón Finalizar -->
-        <div class="text-center mt-6">
-            <button type="button" onclick="evaluateQuizISO()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                Finalizar Cuestionario
-            </button>
-        </div>
-    </form>
-</div>
-
-<!-- Modal con Resultados -->
-<div id="resultModal" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
-    <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
-        <h2 id="resultMessage" class="text-2xl font-bold text-center mb-4"></h2>
-        <p id="resultDetails" class="text-lg text-center mb-6"></p>
-        <div id="correctAnswers" class="text-left mb-6"></div>
-        <div class="text-center">
-            <button onclick="closeModal()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
-                Cerrar
-            </button>
-        </div>
+            <!-- Botón Finalizar -->
+            <div class="text-center mt-6">
+                <button type="button" onclick="evaluateQuizISO()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Finalizar Cuestionario
+                </button>
+            </div>
+        </form>
     </div>
-</div>
 
-<script>
-    // Función para mostrar y ocultar secciones
-    function showSection(sectionId) {
-        console.log(`Mostrando sección: ${sectionId}`);  // Verifica si la función se está ejecutando correctamente
-
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            if (section.id === sectionId) {
-                section.classList.remove('hidden');
-            } else {
-                section.classList.add('hidden');
-            }
-        });
-    }
-
-    // Respuestas correctas para Normas ISO
-    const correctAnswersISO = {
-        question1: "a",
-        question2: "b",
-        question3: "c",
-        question4: "a",
-        question5: "a"
-    };
-
-    // Respuestas mostradas para el usuario
-    const answerTextISO = {
-        question1: "Organización Internacional de Estandarización",
-        question2: "ISO 9001",
-        question3: "ISO 14001",
-        question4: "Information Technology Infrastructure Library",
-        question5: "ISO 27001"
-    };
-
-    function evaluateQuizISO() {
-        let totalQuestions = Object.keys(correctAnswersISO).length;
-        let correctCount = 0;
-        let answersDisplay = '';
-
-        // Verificar respuestas
-        for (let question in correctAnswersISO) {
-            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
-            if (userAnswer && userAnswer.value === correctAnswersISO[question]) {
-                correctCount++;
-                answersDisplay += `
-                    <div class="mb-4">
-                        <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
-                        <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
-                    </div>
-                `;
-            } else {
-                const correctAnswer = answerTextISO[question];
-                answersDisplay += `
-                    <div class="mb-4">
-                        <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
-                        <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
-                        <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
-                    </div>
-                `;
-            }
-        }
-
-        // Calcular porcentaje
-        let percentage = (correctCount / totalQuestions) * 100;
-
-        // Mostrar resultados en el modal
-        const resultMessage = document.getElementById("resultMessage");
-        const resultDetails = document.getElementById("resultDetails");
-        resultMessage.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
-        resultDetails.innerText = `Tu puntuación es: ${percentage}%`;
-
-        // Mostrar respuestas correctas
-        const correctAnswersDiv = document.getElementById("correctAnswers");
-        correctAnswersDiv.innerHTML = answersDisplay;
-
-        // Mostrar el modal
-        document.getElementById("resultModal").classList.remove("hidden");
-    }
-
-    function closeModal() {
-        document.getElementById("resultModal").classList.add("hidden");
-    }
-</script>
-
-
-
-
-
-
-
-
-
-<!-- Botón de icono del chatbot -->
-<button id="chatbotIcon" class="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg bg-white flex items-center justify-center">
-    <img src="src/bot.svg" alt="Icono de chatbot" class="w-8 h-8" id="iconImage">
-</button>
-
-<!-- Ventana de chat -->
-<div id="chatbotWindow" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-lg p-4 flex flex-col" style="height: 30rem;">
-    <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center space-x-2">
-            <img src="src/bot.svg" alt="Icono de chatbot" class="w-6 h-6">
-            <h2 class="font-semibold text-gray-800">Consultale a Jech</h2>
-        </div>
-        <div class="relative">
-            <button onclick="toggleOptions()" class="text-gray-500 hover:text-gray-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 13a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-                </svg>
-            </button>
-            <div id="optionsMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-10">
-                <button onclick="clearChat()" class="w-full flex items-center text-left px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg">
-                    <img src="src/trash.svg" alt="Eliminar" class="h-5 w-5 mr-2">
-                    Borrar chat
+    <!-- Modal con Resultados -->
+    <div id="resultModal" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+            <h2 id="resultMessage" class="text-2xl font-bold text-center mb-4"></h2>
+            <p id="resultDetails" class="text-lg text-center mb-6"></p>
+            <div id="correctAnswers" class="text-left mb-6"></div>
+            <div class="text-center">
+                <button onclick="closeModal()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
+                    Cerrar
                 </button>
             </div>
         </div>
     </div>
-    <div id="chatContent" class="rounded-lg p-2 flex-1 overflow-y-auto mb-4" style="max-height: 24rem;">
-        <!-- Mensaje inicial del chatbot -->
-        <div class="text-white bg-gray-700 p-2 rounded-lg mb-2 max-w-xs break-words">
-            Hola, ¿En qué puedo ayudarte hoy?
+
+    <script>
+        // Función para mostrar y ocultar secciones
+        function showSection(sectionId) {
+            console.log(`Mostrando sección: ${sectionId}`);  // Verifica si la función se está ejecutando correctamente
+
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+
+        // Respuestas correctas para Normas ISO
+        const correctAnswersISO = {
+            question1: "a",
+            question2: "b",
+            question3: "c",
+            question4: "a",
+            question5: "a"
+        };
+
+        // Respuestas mostradas para el usuario
+        const answerTextISO = {
+            question1: "Organización Internacional de Estandarización",
+            question2: "ISO 9001",
+            question3: "ISO 14001",
+            question4: "Information Technology Infrastructure Library",
+            question5: "ISO 27001"
+        };
+
+        function evaluateQuizISO() {
+            let totalQuestions = Object.keys(correctAnswersISO).length;
+            let correctCount = 0;
+            let answersDisplay = '';
+
+            // Verificar respuestas
+            for (let question in correctAnswersISO) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswersISO[question]) {
+                    correctCount++;
+                    answersDisplay += `
+                        <div class="mb-4">
+                            <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
+                            <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
+                        </div>
+                    `;
+                } else {
+                    const correctAnswer = answerTextISO[question];
+                    answersDisplay += `
+                        <div class="mb-4">
+                            <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
+                            <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
+                            <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            // Calcular porcentaje
+            let percentage = (correctCount / totalQuestions) * 100;
+
+            // Mostrar resultados en el modal
+            const resultMessage = document.getElementById("resultMessage");
+            const resultDetails = document.getElementById("resultDetails");
+            resultMessage.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
+            resultDetails.innerText = `Tu puntuación es: ${percentage}%`;
+
+            // Mostrar respuestas correctas
+            const correctAnswersDiv = document.getElementById("correctAnswers");
+            correctAnswersDiv.innerHTML = answersDisplay;
+
+            // Mostrar el modal
+            document.getElementById("resultModal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("resultModal").classList.add("hidden");
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- Botón de icono del chatbot -->
+    <button id="chatbotIcon" class="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg bg-white flex items-center justify-center">
+        <img src="src/bot.svg" alt="Icono de chatbot" class="w-8 h-8" id="iconImage">
+    </button>
+
+    <!-- Ventana de chat -->
+    <div id="chatbotWindow" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-lg p-4 flex flex-col" style="height: 30rem;">
+        <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+                <img src="src/bot.svg" alt="Icono de chatbot" class="w-6 h-6">
+                <h2 class="font-semibold text-gray-800">Consultale a Jech</h2>
+            </div>
+            <div class="relative">
+                <button onclick="toggleOptions()" class="text-gray-500 hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 13a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                    </svg>
+                </button>
+                <div id="optionsMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-10">
+                    <button onclick="clearChat()" class="w-full flex items-center text-left px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg">
+                        <img src="src/trash.svg" alt="Eliminar" class="h-5 w-5 mr-2">
+                        Borrar chat
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="chatContent" class="rounded-lg p-2 flex-1 overflow-y-auto mb-4" style="max-height: 24rem;">
+            <!-- Mensaje inicial del chatbot -->
+            <div class="text-white bg-gray-700 p-2 rounded-lg mb-2 max-w-xs break-words">
+                Hola, ¿En qué puedo ayudarte hoy?
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <input type="text" placeholder="Escribe tus dudas..." class="w-full p-2 text-sm border border-gray-300 rounded-lg focus:outline-none" id="chatInput" onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+                <img src="src/send.svg" alt="Enviar" class="h-5 w-5">
+            </button>
         </div>
     </div>
-    <div class="flex items-center space-x-2">
-        <input type="text" placeholder="Escribe tus dudas..." class="w-full p-2 text-sm border border-gray-300 rounded-lg focus:outline-none" id="chatInput" onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
-            <img src="src/send.svg" alt="Enviar" class="h-5 w-5">
-        </button>
-    </div>
-</div>
-<script src="script.js"></script>
-
-
-
+    <script src="script.js"></script>
 
 </body>
 </html>

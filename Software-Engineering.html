@@ -6,8 +6,7 @@
     <title>Ingeniería de Software</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="src/ISO.ico" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>  
 </head>
 <body class="bg-gray-100 p-6">
     
@@ -31,28 +30,28 @@
     <h1 onclick="showSection('Contenido')" class="text-3xl font-bold text-gray-800 cursor-pointer mb-4">Ingeniería de Software</h1>
 
     <!-- Botones de acción con íconos -->
-<div class="flex space-x-6 mb-6">
-    <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
-    <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
+    <div class="flex space-x-6 mb-6">
+        <img src="src/Quiz.svg" alt="Empezar Cuestionario" class="w-8 h-8 cursor-pointer" title="Empezar Cuestionario" onclick="showSection('quizSection')">
+        <img src="src/Stream.svg" alt="Videos Relacionados" class="w-8 h-8 cursor-pointer" title="Videos Relacionados" onclick="showSection('videoSection')">
 
-    <!-- Contenedor del botón de descarga -->
-    <div class="relative">
-        <!-- Botón de descarga -->
-        <img id="downloadButton" src="src/Download.svg" alt="Descargar"
-             class="w-8 h-8 cursor-pointer" title="Descargar"
-             data-file="PDF/ingenieria.pdf" onclick="downloadContent(this)">
+        <!-- Contenedor del botón de descarga -->
+        <div class="relative">
+            <!-- Botón de descarga -->
+            <img id="downloadButton" src="src/Download.svg" alt="Descargar"
+                class="w-8 h-8 cursor-pointer" title="Descargar"
+                data-file="PDF/ingenieria.pdf" onclick="downloadContent(this)">
+        </div>
+
+        <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
     </div>
 
-    <img src="src/Save.svg" alt="Guardar" class="w-8 h-8 cursor-pointer" title="Guardar">
-</div>
-
-<!-- Overlay de carga -->
-<div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
-    <!-- Spinner animado -->
-    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white border-opacity-75 mb-6"></div>
-    <!-- Texto -->
-    <p class="text-white text-xl font-semibold text-center">Procesando tu descarga...</p>
-</div>
+    <!-- Overlay de carga -->
+    <div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
+        <!-- Spinner animado -->
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white border-opacity-75 mb-6"></div>
+        <!-- Texto -->
+        <p class="text-white text-xl font-semibold text-center">Procesando tu descarga...</p>
+    </div>
 
 
     <!-- Sección principal -->
@@ -244,9 +243,9 @@
     <!-- Sección de videos en carrusel -->
     <div id="videoSection" class="section hidden max-w-8xl mx-auto bg-white shadow-lg rounded-lg p-6">
         <h2 class="text-2xl font-bold text-center mb-4 text-blue-700">Explora la Ingeniería de Software</h2>
-<p class="text-center text-gray-600 mb-8">
-    Adéntrate en los fundamentos, metodologías y mejores prácticas de la ingeniería de software. Estos videos te brindarán una comprensión integral del desarrollo y mantenimiento de sistemas de software de alta calidad. ¡Haz clic y comienza tu aprendizaje!
-</p>
+        <p class="text-center text-gray-600 mb-8">
+            Adéntrate en los fundamentos, metodologías y mejores prácticas de la ingeniería de software. Estos videos te brindarán una comprensión integral del desarrollo y mantenimiento de sistemas de software de alta calidad. ¡Haz clic y comienza tu aprendizaje!
+        </p>
 
 
         <!-- Contenedor del carrusel sin margen/padding en móvil -->
@@ -312,233 +311,226 @@
 
 
     <!-- Sección de cuestionario: Ingeniería de Software -->
-<div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
-    <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Ingeniería de Software</h1>
-    <form id="quizFormSoftware">
-        <!-- Pregunta 1 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">1. ¿Qué es la ingeniería de software?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question1" value="a" class="mr-2"> El desarrollo de aplicaciones móviles
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question1" value="b" class="mr-2"> La creación de bases de datos
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question1" value="c" class="mr-2"> La disciplina que trata con el desarrollo, operación y mantenimiento de sistemas de software
-                </label>
+    <div id="quizSection" class="section hidden bg-white p-8 rounded-lg shadow-md max-w-8xl mx-auto relative text-gray-700">
+        <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">Cuestionario: Ingeniería de Software</h1>
+        <form id="quizFormSoftware">
+            <!-- Pregunta 1 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">1. ¿Qué es la ingeniería de software?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question1" value="a" class="mr-2"> El desarrollo de aplicaciones móviles
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question1" value="b" class="mr-2"> La creación de bases de datos
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question1" value="c" class="mr-2"> La disciplina que trata con el desarrollo, operación y mantenimiento de sistemas de software
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 2 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">2. ¿Cuál es el propósito de los modelos de desarrollo de software?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question2" value="a" class="mr-2"> Asegurar que el software funcione según lo esperado
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question2" value="b" class="mr-2"> Optimizar los costos del software
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question2" value="c" class="mr-2"> Mejorar la comunicación entre desarrolladores
-                </label>
+            <!-- Pregunta 2 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">2. ¿Cuál es el propósito de los modelos de desarrollo de software?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question2" value="a" class="mr-2"> Asegurar que el software funcione según lo esperado
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question2" value="b" class="mr-2"> Optimizar los costos del software
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question2" value="c" class="mr-2"> Mejorar la comunicación entre desarrolladores
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 3 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">3. ¿Cuál es una característica clave del modelo ágil de desarrollo?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question3" value="a" class="mr-2"> Planificación rígida y detallada
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question3" value="b" class="mr-2"> Desarrollo iterativo e incremental
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question3" value="c" class="mr-2"> Solo documentación y pruebas extensivas
-                </label>
+            <!-- Pregunta 3 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">3. ¿Cuál es una característica clave del modelo ágil de desarrollo?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question3" value="a" class="mr-2"> Planificación rígida y detallada
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question3" value="b" class="mr-2"> Desarrollo iterativo e incremental
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question3" value="c" class="mr-2"> Solo documentación y pruebas extensivas
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 4 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">4. ¿Qué es un ciclo de vida del software?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question4" value="a" class="mr-2"> Un modelo para gestionar la calidad del software
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question4" value="b" class="mr-2"> Un conjunto de etapas a través de las cuales pasa el software durante su desarrollo
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question4" value="c" class="mr-2"> Un proceso para optimizar los costos de desarrollo
-                </label>
+            <!-- Pregunta 4 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">4. ¿Qué es un ciclo de vida del software?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question4" value="a" class="mr-2"> Un modelo para gestionar la calidad del software
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question4" value="b" class="mr-2"> Un conjunto de etapas a través de las cuales pasa el software durante su desarrollo
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question4" value="c" class="mr-2"> Un proceso para optimizar los costos de desarrollo
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Pregunta 5 -->
-        <div class="mb-6">
-            <p class="text-xl font-medium">5. ¿Cuál es el propósito de la fase de pruebas en ingeniería de software?</p>
-            <div class="mt-4 space-y-3">
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question5" value="a" class="mr-2"> Garantizar que el software sea desarrollado a tiempo
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question5" value="b" class="mr-2"> Verificar que el software cumpla con los requisitos y sea libre de errores
-                </label>
-                <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
-                    <input type="radio" name="question5" value="c" class="mr-2"> Evaluar la interacción entre los usuarios y el sistema
-                </label>
+            <!-- Pregunta 5 -->
+            <div class="mb-6">
+                <p class="text-xl font-medium">5. ¿Cuál es el propósito de la fase de pruebas en ingeniería de software?</p>
+                <div class="mt-4 space-y-3">
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question5" value="a" class="mr-2"> Garantizar que el software sea desarrollado a tiempo
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question5" value="b" class="mr-2"> Verificar que el software cumpla con los requisitos y sea libre de errores
+                    </label>
+                    <label class="block p-2 bg-gray-100 rounded-lg hover:bg-blue-50">
+                        <input type="radio" name="question5" value="c" class="mr-2"> Evaluar la interacción entre los usuarios y el sistema
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Botón Finalizar -->
-        <div class="text-center mt-6">
-            <button type="button" onclick="evaluateQuizSoftware()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                Finalizar Cuestionario
-            </button>
-        </div>
-    </form>
-</div>
-
-<!-- Modal con Resultados -->
-<div id="resultModalSoftware" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
-    <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
-        <h2 id="resultMessageSoftware" class="text-2xl font-bold text-center mb-4"></h2>
-        <p id="resultDetailsSoftware" class="text-lg text-center mb-6"></p>
-        <div id="correctAnswersSoftware" class="text-left mb-6"></div>
-        <div class="text-center">
-            <button onclick="closeModalSoftware()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
-                Cerrar
-            </button>
-        </div>
+            <!-- Botón Finalizar -->
+            <div class="text-center mt-6">
+                <button type="button" onclick="evaluateQuizSoftware()" class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Finalizar Cuestionario
+                </button>
+            </div>
+        </form>
     </div>
-</div>
 
-<script>
-    // Respuestas correctas para Ingeniería de Software
-    const correctAnswersSoftware = {
-        question1: "c",
-        question2: "a",
-        question3: "b",
-        question4: "b",
-        question5: "b"
-    };
-
-    // Respuestas mostradas para el usuario
-    const answerTextSoftware = {
-        question1: "La disciplina que trata con el desarrollo, operación y mantenimiento de sistemas de software",
-        question2: "Asegurar que el software funcione según lo esperado",
-        question3: "Desarrollo iterativo e incremental",
-        question4: "Un conjunto de etapas a través de las cuales pasa el software durante su desarrollo",
-        question5: "Verificar que el software cumpla con los requisitos y sea libre de errores"
-    };
-
-    function evaluateQuizSoftware() {
-        let totalQuestions = Object.keys(correctAnswersSoftware).length;
-        let correctCount = 0;
-        let answersDisplay = '';
-
-        // Verificar respuestas
-        for (let question in correctAnswersSoftware) {
-            const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
-            if (userAnswer && userAnswer.value === correctAnswersSoftware[question]) {
-                correctCount++;
-                answersDisplay += `
-                    <div class="mb-4">
-                        <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
-                        <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
-                    </div>
-                `;
-            } else {
-                const correctAnswer = answerTextSoftware[question];
-                answersDisplay += `
-                    <div class="mb-4">
-                        <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
-                        <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
-                        <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
-                    </div>
-                `;
-            }
-        }
-
-        // Calcular porcentaje
-        let percentage = (correctCount / totalQuestions) * 100;
-
-        // Mostrar resultados en el modal
-        const resultMessage = document.getElementById("resultMessageSoftware");
-        const resultDetails = document.getElementById("resultDetailsSoftware");
-        resultMessage.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
-        resultDetails.innerText = `Tu puntuación es: ${percentage}%`;
-
-        // Mostrar respuestas correctas
-        const correctAnswersDiv = document.getElementById("correctAnswersSoftware");
-        correctAnswersDiv.innerHTML = answersDisplay;
-
-        // Mostrar el modal
-        document.getElementById("resultModalSoftware").classList.remove("hidden");
-    }
-
-    function closeModalSoftware() {
-        document.getElementById("resultModalSoftware").classList.add("hidden");
-    }
-</script>
-
-
-
-
-
-
-
-
-
-
-<!-- Botón de icono del chatbot -->
-<button id="chatbotIcon" class="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg bg-white flex items-center justify-center">
-    <img src="src/bot.svg" alt="Icono de chatbot" class="w-8 h-8" id="iconImage">
-</button>
-
-<!-- Ventana de chat -->
-<div id="chatbotWindow" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-lg p-4 flex flex-col" style="height: 30rem;">
-    <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center space-x-2">
-            <img src="src/bot.svg" alt="Icono de chatbot" class="w-6 h-6">
-            <h2 class="font-semibold text-gray-800">Consultale a Jech</h2>
-        </div>
-        <div class="relative">
-            <button onclick="toggleOptions()" class="text-gray-500 hover:text-gray-800">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 13a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-                </svg>
-            </button>
-            <div id="optionsMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-10">
-                <button onclick="clearChat()" class="w-full flex items-center text-left px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg">
-                    <img src="src/trash.svg" alt="Eliminar" class="h-5 w-5 mr-2">
-                    Borrar chat
+    <!-- Modal con Resultados -->
+    <div id="resultModalSoftware" class="modal fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+            <h2 id="resultMessageSoftware" class="text-2xl font-bold text-center mb-4"></h2>
+            <p id="resultDetailsSoftware" class="text-lg text-center mb-6"></p>
+            <div id="correctAnswersSoftware" class="text-left mb-6"></div>
+            <div class="text-center">
+                <button onclick="closeModalSoftware()" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full focus:outline-none">
+                    Cerrar
                 </button>
             </div>
         </div>
     </div>
-    <div id="chatContent" class="rounded-lg p-2 flex-1 overflow-y-auto mb-4" style="max-height: 24rem;">
-        <!-- Mensaje inicial del chatbot -->
-        <div class="text-white bg-gray-700 p-2 rounded-lg mb-2 max-w-xs break-words">
-            Hola, ¿En qué puedo ayudarte hoy?
+
+    <script>
+        // Respuestas correctas para Ingeniería de Software
+        const correctAnswersSoftware = {
+            question1: "c",
+            question2: "a",
+            question3: "b",
+            question4: "b",
+            question5: "b"
+        };
+
+        // Respuestas mostradas para el usuario
+        const answerTextSoftware = {
+            question1: "La disciplina que trata con el desarrollo, operación y mantenimiento de sistemas de software",
+            question2: "Asegurar que el software funcione según lo esperado",
+            question3: "Desarrollo iterativo e incremental",
+            question4: "Un conjunto de etapas a través de las cuales pasa el software durante su desarrollo",
+            question5: "Verificar que el software cumpla con los requisitos y sea libre de errores"
+        };
+
+        function evaluateQuizSoftware() {
+            let totalQuestions = Object.keys(correctAnswersSoftware).length;
+            let correctCount = 0;
+            let answersDisplay = '';
+
+            // Verificar respuestas
+            for (let question in correctAnswersSoftware) {
+                const userAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (userAnswer && userAnswer.value === correctAnswersSoftware[question]) {
+                    correctCount++;
+                    answersDisplay += `
+                        <div class="mb-4">
+                            <p class="font-semibold text-green-600">Pregunta ${question.charAt(question.length-1)}: Correcta</p>
+                            <p class="text-gray-700">Tu respuesta: ${userAnswer.parentElement.innerText.trim()}</p>
+                        </div>
+                    `;
+                } else {
+                    const correctAnswer = answerTextSoftware[question];
+                    answersDisplay += `
+                        <div class="mb-4">
+                            <p class="font-semibold text-red-600">Pregunta ${question.charAt(question.length-1)}: Incorrecta</p>
+                            <p class="text-gray-700">Tu respuesta: ${userAnswer ? userAnswer.parentElement.innerText.trim() : 'No seleccionada'}</p>
+                            <p class="text-gray-700">Respuesta correcta: ${correctAnswer}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            // Calcular porcentaje
+            let percentage = (correctCount / totalQuestions) * 100;
+
+            // Mostrar resultados en el modal
+            const resultMessage = document.getElementById("resultMessageSoftware");
+            const resultDetails = document.getElementById("resultDetailsSoftware");
+            resultMessage.innerText = `Resultado: ${correctCount} de ${totalQuestions} respuestas correctas`;
+            resultDetails.innerText = `Tu puntuación es: ${percentage}%`;
+
+            // Mostrar respuestas correctas
+            const correctAnswersDiv = document.getElementById("correctAnswersSoftware");
+            correctAnswersDiv.innerHTML = answersDisplay;
+
+            // Mostrar el modal
+            document.getElementById("resultModalSoftware").classList.remove("hidden");
+        }
+
+        function closeModalSoftware() {
+            document.getElementById("resultModalSoftware").classList.add("hidden");
+        }
+    </script>
+
+
+
+
+
+
+    <!-- Botón de icono del chatbot -->
+    <button id="chatbotIcon" class="fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg bg-white flex items-center justify-center">
+        <img src="src/bot.svg" alt="Icono de chatbot" class="w-8 h-8" id="iconImage">
+    </button>
+
+    <!-- Ventana de chat -->
+    <div id="chatbotWindow" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-lg p-4 flex flex-col" style="height: 30rem;">
+        <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+                <img src="src/bot.svg" alt="Icono de chatbot" class="w-6 h-6">
+                <h2 class="font-semibold text-gray-800">Consultale a Jech</h2>
+            </div>
+            <div class="relative">
+                <button onclick="toggleOptions()" class="text-gray-500 hover:text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM10 13a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                    </svg>
+                </button>
+                <div id="optionsMenu" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg z-10">
+                    <button onclick="clearChat()" class="w-full flex items-center text-left px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg">
+                        <img src="src/trash.svg" alt="Eliminar" class="h-5 w-5 mr-2">
+                        Borrar chat
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="chatContent" class="rounded-lg p-2 flex-1 overflow-y-auto mb-4" style="max-height: 24rem;">
+            <!-- Mensaje inicial del chatbot -->
+            <div class="text-white bg-gray-700 p-2 rounded-lg mb-2 max-w-xs break-words">
+                Hola, ¿En qué puedo ayudarte hoy?
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <input type="text" placeholder="Escribe tus dudas..." class="w-full p-2 text-sm border border-gray-300 rounded-lg focus:outline-none" id="chatInput" onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+                <img src="src/send.svg" alt="Enviar" class="h-5 w-5">
+            </button>
         </div>
     </div>
-    <div class="flex items-center space-x-2">
-        <input type="text" placeholder="Escribe tus dudas..." class="w-full p-2 text-sm border border-gray-300 rounded-lg focus:outline-none" id="chatInput" onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
-            <img src="src/send.svg" alt="Enviar" class="h-5 w-5">
-        </button>
-    </div>
-</div>
-<script src="script.js"></script>
-
-
-
+    <script src="script.js"></script>
 
 
 </body>
