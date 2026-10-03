@@ -1,0 +1,589 @@
+[
+  {
+    "id": "engineering",
+    "file": "Software-Engineering.html",
+    "title": "Ingeniería de software",
+    "description": "Construye una base sólida para desarrollar productos que resuelven problemas reales.",
+    "pdf": "ingenieria.pdf",
+    "category": "Fundamentos",
+    "number": "01",
+    "icon": "code",
+    "article": "\n        <!-- Contenido de la sección-->\n        <h2>Ingeniería de Software: Guía Actualizada para Profesionales        </h2>\n        <p>\n            La ingeniería de software es una disciplina técnica y práctica que aborda el diseño, desarrollo, implementación y mantenimiento de software de manera sistemática. A medida que las necesidades empresariales y tecnológicas evolucionan, la ingeniería de software se convierte en un pilar fundamental para ofrecer soluciones escalables, seguras y eficientes.\n        </p>\n        <h3>¿Qué es la Ingeniería de Software?        </h3>\n        <p>\n            La ingeniería de software es la aplicación de principios de ingeniería al desarrollo de software. Implica el uso de procesos, metodologías y herramientas estructuradas para garantizar la calidad, fiabilidad y sostenibilidad de los productos de software.\n        </p>\n        <h3>Componentes Clave:        </h3>\n        <ul>\n            <li><strong>Requisitos:</strong> Recopilación y análisis de necesidades del cliente y los usuarios.</li>\n            <li><strong>Diseño:</strong> Planificación estructurada de la arquitectura, componentes y funcionalidades.</li>\n            <li><strong>Implementación:</strong> Codificación y desarrollo de las funcionalidades.</li>\n            <li><strong>Pruebas:</strong> Verificación y validación de la calidad y seguridad del software.</li>\n            <li><strong>Mantenimiento:</strong> Actualizaciones, soporte y mejoras post-implementación.</li>\n        </ul>\n\n        <h3>Ciclo de Vida del Desarrollo de Software (SDLC)</h3>\n        <p>\n            El SDLC es un modelo estructurado que guía el desarrollo de software desde la concepción hasta la entrega y mantenimiento.\n        </p>\n        <h3>Modelos Tradicionales:     </h3>\n        <ul>\n            <li><strong>Cascada (Waterfall):</strong> Proceso secuencial donde cada fase debe completarse antes de avanzar.</li>\n            <li><strong>Espiral:</strong> Combina desarrollo iterativo con la gestión de riesgos.</li>\n            \n        </ul>\n        <h3>Modelos Modernos: </h3>\n        <ul>\n            <li><strong>Ágil:</strong> Metodología iterativa que promueve entregas rápidas y ajustes continuos.</li>\n            <li><strong>DevOps:</strong> Integra desarrollo y operaciones para acelerar el ciclo de vida y mejorar la calidad.</li>\n            \n        </ul>\n\n\n        <h3>Tendencias Actuales en Ingeniería de Software</h3>\n        <h3>Desarrollo Ágil y Enfoques Híbridos:</h3>\n        <ul>\n            <li>La combinación de metodologías como Ágil y DevOps permite flexibilidad y rapidez en la entrega.</li>\n            <li>Herramientas clave: JIRA, Trello, Azure DevOps.\n            </li>\n            \n        </ul>\n        <h3>Inteligencia Artificial y Aprendizaje Automático (ML):</h3>\n        <ul>\n            <li>Aplicación de IA en pruebas automatizadas, optimización de código y generación de software.</li>\n            <li>Herramientas: GitHub Copilot, Test.ai, TensorFlow.\n            </li>\n            \n        </ul>\n        <h3>Desarrollo basado en la Nube:        </h3>\n        <ul>\n            <li>Aumento del uso de plataformas en la nube para reducir costos y mejorar la escalabilidad.\n            </li>\n            <li>Proveedores líderes: AWS, Google Cloud, Microsoft Azure.\n            </li>\n            \n        </ul>\n        <h3>Enfoque en Seguridad (DevSecOps):        </h3>\n        <ul>\n            <li>Integración de la seguridad como parte del ciclo de desarrollo.\n            </li>\n            <li>Normas: ISO/IEC 27001, OWASP, GDPR.\n            </li>\n            \n        </ul>\n        <h3>Tecnologías Emergentes:        </h3>\n        <ul>\n            <li><strong>Blockchain:</strong> Aplicación en sistemas distribuidos y gestión de identidades.</li>\n            <li><strong>IoT (Internet de las Cosas):</strong> Desafíos de integración, latencia y seguridad en software para dispositivos conectados.</li>\n            <li><strong>Desarrollo de Software Responsable:</strong> Foco en sostenibilidad y ética en el diseño.</li>\n        </ul>\n        \n        <h3>Principales Áreas de Ingeniería de Software</h3>\n        <h3>Arquitectura de Software:        </h3>\n        <ul>\n            <li>Diseño de sistemas modulares y escalables.\n            </li>\n            <li>Modelos populares: Microservicios, arquitectura en capas, arquitecturas orientadas a eventos.\n            </li>\n            \n        </ul>\n        \n        <h3>Gestión de Proyectos de Software:        </h3>\n        <ul>\n            <li>Uso de metodologías para garantizar tiempos de entrega y control de costos.\n            </li>\n            <li>Herramientas: Monday.com, ClickUp.\n            </li>\n            \n        </ul>\n        <h3>Pruebas de Software (Testing):        </h3>\n        <ul>\n            <li><strong>Pruebas Automatizadas:</strong> Selenium, Cypress.\n            </li>\n            <li><strong>Pruebas de Rendimiento:</strong> JMeter, Apache Benchmark.\n            </li>\n            \n        </ul>\n        <h3>Ingeniería de Requisitos:        </h3>\n        <ul>\n            <li>Métodos para garantizar que los sistemas cumplen con las expectativas.\n            </li>\n            <li>Técnicas: Historias de usuario, diagramas UML.\n            </li>\n            \n        </ul>\n        <h3>Mantenimiento y Evolución:        </h3>\n        <ul>\n            <li>Actualización de software para atender cambios en el mercado o en las necesidades de los usuarios.\n            </li>            \n        </ul>\n\n        <h3>Normas y Buenas Prácticas</h3>\n        <h3>ISO/IEC 25010:</h3>\n        <ul>\n            <li>Modelo de calidad del software que evalúa aspectos como funcionalidad, usabilidad y eficiencia.\n            </li>\n             \n        </ul>\n        <h3>ISO/IEC 12207:</h3>\n        <ul>\n            <li>Ciclo de vida del software que define procesos y actividades esenciales.\n            </li>\n             \n        </ul>\n        <h3>PMBOK y Scrum:</h3>\n        <ul>\n            <li>Guías para la gestión de proyectos y metodologías ágiles.\n            </li>\n             \n        </ul>\n        <h3>OWASP:</h3>\n        <ul>\n            <li>Mejores prácticas para la seguridad de aplicaciones web.\n            </li>\n             \n        </ul>\n\n        <h3>Herramientas Modernas de Ingeniería de Software</h3>\n        \n        <ul>\n            <li><strong>Control de Versiones:</strong> Git, GitHub, GitLab.\n            </li>\n            <li><strong>Gestión de Configuración:</strong> Ansible, Puppet, Chef.\n            </li>\n            <li><strong>CI/CD: </strong> Jenkins, GitHub Actions, CircleCI.\n            </li>\n            <li><strong>Monitoreo y Observabilidad:</strong> Prometheus, Grafana, Datadog.\n            </li> \n            <li><strong>IDE Modernos:</strong> Visual Studio Code, IntelliJ IDEA, Eclipse.\n            </li>            \n        </ul>\n\n        <h3>Desafíos en la Ingeniería de Software Actual</h3>    \n        <h3>Escalabilidad:</h3>\n        <ul>\n            <li>Diseñar sistemas capaces de manejar millones de usuarios.\n            </li>\n             \n        </ul>\n        <h3>Ciberseguridad:</h3>\n        <ul>\n            <li>Proteger sistemas contra amenazas avanzadas.\n            </li>\n             \n        </ul>\n        <h3>Interoperabilidad:</h3>\n        <ul>\n            <li>Garantizar que sistemas heterogéneos puedan comunicarse eficientemente.\n            </li>\n             \n        </ul>\n        <h3>Retención del Talento:</h3>\n        <ul>\n            <li>Mantener equipos capacitados en un mercado competitivo.\n            </li>\n             \n        </ul>\n    ",
+    "questions": [
+      {
+        "prompt": "1. ¿Qué es la ingeniería de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "El desarrollo de aplicaciones móviles"
+          },
+          {
+            "value": "b",
+            "text": "La creación de bases de datos"
+          },
+          {
+            "value": "c",
+            "text": "La disciplina que trata con el desarrollo, operación y mantenimiento de sistemas de software"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "prompt": "2. ¿Cuál es el propósito de los modelos de desarrollo de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Asegurar que el software funcione según lo esperado"
+          },
+          {
+            "value": "b",
+            "text": "Optimizar los costos del software"
+          },
+          {
+            "value": "c",
+            "text": "Mejorar la comunicación entre desarrolladores"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "3. ¿Cuál es una característica clave del modelo ágil de desarrollo?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Planificación rígida y detallada"
+          },
+          {
+            "value": "b",
+            "text": "Desarrollo iterativo e incremental"
+          },
+          {
+            "value": "c",
+            "text": "Solo documentación y pruebas extensivas"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "prompt": "4. ¿Qué es un ciclo de vida del software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Un modelo para gestionar la calidad del software"
+          },
+          {
+            "value": "b",
+            "text": "Un conjunto de etapas a través de las cuales pasa el software durante su desarrollo"
+          },
+          {
+            "value": "c",
+            "text": "Un proceso para optimizar los costos de desarrollo"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "prompt": "5. ¿Cuál es el propósito de la fase de pruebas en ingeniería de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Garantizar que el software sea desarrollado a tiempo"
+          },
+          {
+            "value": "b",
+            "text": "Verificar que el software cumpla con los requisitos y sea libre de errores"
+          },
+          {
+            "value": "c",
+            "text": "Evaluar la interacción entre los usuarios y el sistema"
+          }
+        ],
+        "answer": "b"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/unupVqLwayA",
+      "https://www.youtube.com/embed/YFin8nNnARA",
+      "https://www.youtube.com/embed/B9jcCjfK1_Y",
+      "https://www.youtube.com/embed/oA73y7BGr_8",
+      "https://www.youtube.com/embed/r6tCve-dqfo",
+      "https://www.youtube.com/embed/HEQN8UHtnxM",
+      "https://www.youtube.com/embed/XwrSQCDLG_A"
+    ],
+    "minutes": 8
+  },
+  {
+    "id": "architecture",
+    "file": "Software-Architecture.html",
+    "title": "Arquitectura de software",
+    "description": "Toma decisiones de diseño para crear sistemas mantenibles y escalables.",
+    "pdf": "arquitectura.pdf",
+    "category": "Diseño de sistemas",
+    "number": "02",
+    "icon": "layers",
+    "article": "\n        <!-- Contenido de la sección -->\n        <h2>¿Qué es la Arquitectura de Software?</h2>\n        <p>\n            La arquitectura de software es el diseño de alto nivel de un sistema, describiendo:\n        </p>\n        <ul>\n            <li><strong>Componentes:</strong> Módulos, servicios y subsistemas.</li>\n            <li><strong>Interacciones:</strong> Comunicación entre componentes, protocolos y dependencias.</li>\n            <li><strong>Restricciones y principios:</strong> Lineamientos técnicos y de negocio.</li>\n\n        </ul>\n        <p>\n            Es el marco que asegura que el software cumpla con los requisitos funcionales y no funcionales, como rendimiento, seguridad, escalabilidad y flexibilidad.\n        </p>\n\n\n        <h3>Roles de la Arquitectura en el Desarrollo de Software</h3>\n        <h3>Gestión de Complejidad:</h3>\n        <ul>\n            <li>Divide el sistema en partes manejables para facilitar el desarrollo y mantenimiento.\n            </li>\n            \n        </ul>\n        <h3>Soporte a Requisitos No Funcionales:        </h3>\n        <ul>\n            <li>Proporciona soluciones para requisitos como rendimiento, seguridad y disponibilidad.\n            </li>\n            \n        </ul>\n        <h3>Facilitación del Trabajo Colaborativo:        </h3>\n        <ul>\n            <li>Define estándares que permiten la colaboración en equipos distribuidos.\n            </li>\n            \n        </ul>\n        <h3>Base para Decisiones Técnicas:        </h3>\n        <ul>\n            <li>Ayuda a seleccionar tecnologías y herramientas adecuadas.\n            </li>\n            \n        </ul>\n        \n\n        <h3>Estilos y Patrones de Arquitectura        </h3>\n        <h3>Arquitectura Monolítica:        </h3>\n        <ul>\n            <li>Todo el sistema está integrado en un único código base.\n            </li>\n            <li>Ventajas: Simplicidad, menor costo inicial.\n            </li>\n            <li>Desventajas: Dificultad para escalar y actualizar.\n            </li>\n            \n        </ul>\n        <h3>Microservicios:        </h3>\n        <ul>\n            <li>El sistema se divide en servicios pequeños, independientes y desplegables por separado.\n            </li>\n            <li>Ventajas: Escalabilidad, flexibilidad tecnológica.\n            </li>\n            <li>Desventajas: Complejidad en la comunicación y orquestación.\n            </li>\n            \n        </ul>\n        <h3>Arquitectura Orientada a Eventos:        </h3>\n        <ul>\n            <li>Los componentes reaccionan a eventos y se comunican de forma asíncrona.\n            </li>\n            <li>Usos comunes: Sistemas de mensajería, IoT.\n            </li>\n            <li>Herramientas: Apache Kafka, RabbitMQ.\n            </li>\n            \n        </ul>\n        <h3>Arquitectura en Capas:        </h3>\n        <ul>\n            <li>Divide el sistema en niveles, como presentación, lógica de negocio y datos.\n            </li>\n            <li>Ventajas: Claridad y separación de responsabilidades.\n            </li>\n                        \n        </ul>\n        <h3>Arquitectura Hexagonal (Ports and Adapters):        </h3>\n        <ul>\n            <li>Facilita la interacción con diferentes tecnologías sin modificar la lógica central.\n            </li>\n            <li>Ideal para sistemas que requieren cambios tecnológicos frecuentes.\n            </li>\n                        \n        </ul>\n        <h3>Arquitectura Serverless:        </h3>\n        <ul>\n            <li>Basada en servicios gestionados en la nube donde se ejecuta código bajo demanda.\n            </li>\n            <li>Proveedores: AWS Lambda, Azure Functions, Google Cloud Functions.\n            </li>\n                        \n        </ul>\n        <h3>Arquitectura Basada en Componentes (CBA):        </h3>\n        <ul>\n            <li>Los módulos reutilizables encapsulan funcionalidad específica.\n            </li>\n            <li>Ventajas: Promueve la reutilización y estandarización.\n            </li>\n                        \n        </ul>\n\n        <h3>Requisitos en la Arquitectura de Software            </h3>\n        <h3>Requisitos Funcionales:        </h3>\n        <ul>\n            <li>Definen qué debe hacer el sistema, como características y funcionalidades específicas.\n            </li>\n            \n        </ul>\n        <h3>Requisitos No Funcionales (Calidad del Sistema):        </h3>\n        <ul>\n            <li>Escalabilidad: Capacidad para manejar cargas crecientes.\n            </li>\n            <li>Disponibilidad: Tiempo en el que el sistema está operativo.\n            </li>\n            <li>Seguridad: Protección contra accesos no autorizados y ciberataques.\n            </li>\n            <li>Mantenibilidad: Facilidad para realizar cambios y mejoras.\n            </li>\n            <li>Rendimiento: Respuesta rápida bajo distintas condiciones.\n            </li>\n        </ul>\n\n        <h3>Tendencias Actuales en Arquitectura de Software        </h3>\n        <h3>Arquitectura basada en Microservicios:        </h3>\n        <ul>\n            <li>Adoptada por empresas que buscan escalabilidad y autonomía en el desarrollo.\n            </li>\n            <li>Herramientas clave: Kubernetes, Docker, Istio.\n            </li>\n            \n        </ul>\n        <h3>Arquitectura Event-Driven:        </h3>\n        <ul>\n            <li>Ideal para sistemas de alta concurrencia o sistemas distribuidos.\n            </li>\n            <li>Ejemplo: Procesamiento en tiempo real en plataformas de streaming.\n            </li>\n            \n        </ul>\n        <h3>Plataformas en la Nube y Serverless:        </h3>\n        <ul>\n            <li>Reducción de costos operativos y mayor elasticidad.\n            </li>\n            <li>Casos de uso: Backend para aplicaciones móviles, procesamiento de datos.\n            </li>\n            \n        </ul>\n        <h3>Edge Computing:        </h3>\n        <ul>\n            <li>Procesamiento de datos más cerca del origen (IoT, redes 5G).\n            </li>\n            <li>Beneficios: Menor latencia, reducción de uso de ancho de banda.\n            </li>\n            \n        </ul>\n        <h3>Arquitectura Basada en API:        </h3>\n        <ul>\n            <li>Estandarización de interacciones mediante API RESTful o GraphQL.\n            </li>\n            <li>Herramientas: Postman, Swagger.\n            </li>\n            \n        </ul>\n        <h3>Seguridad Integrada (Secure by Design):        </h3>\n        <ul>\n            <li>Consideración de la seguridad desde la concepción del diseño arquitectónico.\n            </li>\n            <li>Normas: OWASP, Zero Trust Architecture.\n            </li>\n            \n        </ul>\n\n\n        <h3>Herramientas Modernas para Diseñar y Gestionar Arquitecturas        </h3>\n        <h3>Modelado y Diseño:        </h3>\n        <ul>\n            <li>UML: Lenguaje estándar para diagramas de arquitectura.\n            </li>\n            <li>Herramientas: Lucidchart, Draw.io, PlantUML.\n            </li>\n            \n        </ul>\n        <h3>Gestión de Dependencias:        </h3>\n        <ul>\n            <li>Docker, Kubernetes, Terraform para infraestructura como código.\n            </li>\n         \n        </ul>\n        <h3>Documentación y Visualización:        </h3>\n        <ul>\n            <li>Structurizr, C4 Model.\n            </li>\n         \n        </ul>\n        <h3>Monitoreo y Observabilidad:        </h3>\n        <ul>\n            <li>Prometheus, Grafana, ELK Stack (ElasticSearch, Logstash, Kibana).\n            </li>\n         \n        </ul>\n\n        <h3>Desafíos Actuales en la Arquitectura de Software        </h3>\n        <h3>Escalabilidad y Disponibilidad:        </h3>\n        <ul>\n            <li>Diseñar sistemas que puedan escalar sin interrupciones.\n            </li>\n                \n        </ul>\n        <h3>Complejidad en Sistemas Distribuidos:        </h3>\n        <ul>\n            <li>Manejo de consistencia, latencia y partición de datos.\n            </li>\n                \n        </ul>\n        <h3>Gestión de Costos en la Nube:        </h3>\n        <ul>\n            <li>Optimización del uso de recursos.\n            </li>\n                \n        </ul>\n        <h3>Cumplimiento Normativo:        </h3>\n        <ul>\n            <li>Garantizar el cumplimiento de regulaciones como GDPR o HIPAA.\n            </li>\n                \n        </ul>\n        <h3>Integración de Tecnologías Emergentes:        </h3>\n        <ul>\n            <li>IA, IoT, Blockchain y su impacto en las arquitecturas tradicionales.\n            </li>\n                \n        </ul>\n\n        <h3>Beneficios de una Buena Arquitectura de Software        </h3>\n        <ul>\n            <li>Facilita el desarrollo y mantenimiento.\n            </li>\n            <li>Garantiza escalabilidad y flexibilidad.\n            </li>\n            <li>Mejora la calidad y confiabilidad del software.\n            </li>\n            <li>Reduce costos a largo plazo mediante diseño eficiente.\n            </li>    \n        </ul>\n\n\n    ",
+    "questions": [
+      {
+        "prompt": "1. ¿Qué es la arquitectura de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "El diseño y la estructura de un sistema de software"
+          },
+          {
+            "value": "b",
+            "text": "La programación de los componentes del sistema"
+          },
+          {
+            "value": "c",
+            "text": "La base de datos utilizada en un sistema"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "2. ¿Cuál es el principal objetivo de una arquitectura de software bien definida?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Reducir la complejidad del sistema y facilitar su mantenimiento"
+          },
+          {
+            "value": "b",
+            "text": "Maximizar el rendimiento del sistema"
+          },
+          {
+            "value": "c",
+            "text": "Asegurar que el sistema sea compatible con múltiples plataformas"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "3. ¿Qué patrón arquitectónico se utiliza para mejorar la escalabilidad de los sistemas?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Modelo cliente-servidor"
+          },
+          {
+            "value": "b",
+            "text": "Arquitectura de microservicios"
+          },
+          {
+            "value": "c",
+            "text": "Arquitectura monolítica"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "prompt": "4. ¿Qué es un \"Componente\" en la arquitectura de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Una unidad funcional del sistema que puede ser desarrollada y testeada de manera independiente"
+          },
+          {
+            "value": "b",
+            "text": "Un componente que gestiona las bases de datos del sistema"
+          },
+          {
+            "value": "c",
+            "text": "Un equipo que desarrolla el software"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "5. ¿Cuál es la ventaja de utilizar una arquitectura orientada a servicios (SOA)?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Mejora la flexibilidad y la reutilización de los componentes del sistema"
+          },
+          {
+            "value": "b",
+            "text": "Simplifica el desarrollo de aplicaciones móviles"
+          },
+          {
+            "value": "c",
+            "text": "Asegura la integridad de los datos en todo el sistema"
+          }
+        ],
+        "answer": "a"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/MbX0hGRiJm8",
+      "https://www.youtube.com/embed/rNRxowifa1o",
+      "https://www.youtube.com/embed/dHv9RUhdjO4",
+      "https://www.youtube.com/embed/7ukajubprdE",
+      "https://www.youtube.com/embed/HOi_Wb7SVkw",
+      "https://www.youtube.com/embed/PKyTFZtRztk",
+      "https://www.youtube.com/embed/0uAzkvHvMvc",
+      "https://www.youtube.com/embed/Q47bdwX5NAE",
+      "https://www.youtube.com/embed/0Qdcx0AcjHc",
+      "https://www.youtube.com/embed/2IJ29e0xTDc"
+    ],
+    "minutes": 8
+  },
+  {
+    "id": "iso",
+    "file": "iso-norms.html",
+    "title": "Normas ISO",
+    "description": "Entiende los estándares que orientan la calidad y la seguridad del software.",
+    "pdf": "ISO.pdf",
+    "category": "Calidad",
+    "number": "03",
+    "icon": "shield",
+    "article": "\n        <!-- Contenido de la sección -->\n        <h2>¿Qué son las normas ISO?</h2>\n        <p>\n            ISO (Organización Internacional de Normalización) es una organización no gubernamental internacional que establece normas para asegurar calidad, seguridad y eficiencia en productos, servicios y sistemas. Fundada en 1947, ISO desarrolla y publica normas que son adoptadas por países de todo el mundo.\n        </p>\n        <h3>Objetivos de las normas ISO</h3>\n        <ul>\n            <li><strong>Uniformidad:</strong> Proporcionar un marco común que facilite el comercio y la colaboración internacional.</li>\n            <li><strong>Calidad:</strong> Asegurar que productos y servicios cumplan con estándares de calidad y sean seguros para el consumidor.</li>\n            <li><strong>Eficiencia:</strong> Mejorar procesos y sistemas para optimizar recursos y reducir costos.</li>\n            <li><strong>Sostenibilidad:</strong> Fomentar prácticas responsables desde el punto de vista ambiental y social.</li>\n        </ul>\n        <h3>Normas ISO en software</h3>\n        <ul>\n            <li><strong>ISO/IEC 25010:</strong> Modelo de calidad del producto de software. Define características de calidad como funcionalidad, fiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.</li>\n            <li><strong>ISO/IEC 12207:</strong> Proceso de ciclo de vida del software. Establece un marco para el proceso de desarrollo y mantenimiento de software.</li>\n            <li><strong>ISO/IEC 27001:</strong> Gestión de la seguridad de la información. Proporciona requisitos para establecer y mejorar un sistema de gestión de la seguridad de la información (SGSI).</li>\n            <li><strong>ISO/IEC 15504 (SPICE):</strong> Evaluación de procesos de software. Ofrece un marco para evaluar y mejorar los procesos de desarrollo de software.</li>\n            <li><strong>ISO 9001:</strong> Sistema de gestión de calidad. Es aplicable y puede ayudar a las organizaciones de software a establecer un enfoque basado en procesos para la gestión de calidad.</li>\n        </ul>\n        <h3>Implementación de normas ISO en el desarrollo software</h3>\n        <ul>\n            <li>Evaluación inicial: Identificar el estado actual de los procesos y prácticas en relación con las normas ISO relevantes.</li>\n            <li>Formación y sensibilización: Capacitar al personal sobre las normas y su importancia.</li>\n            <li>Desarrollo de documentación: Crear o actualizar políticas, procedimientos y documentación.</li>\n            <li>Implementación de procesos: Integrar los procesos de acuerdo con las normas ISO en el ciclo de vida del desarrollo de software.</li>\n            <li>Auditorías internas: Realizar auditorías para verificar el cumplimiento de las normas.</li>\n            <li>Mejora continua: Establecer un ciclo de mejora continua.</li>\n        </ul>\n        <h3>Beneficios de aplicar normas ISO en software</h3>\n        <ul>\n            <li>Mejora de la calidad: Ayuda a producir software de mayor calidad.</li>\n            <li>Confianza del cliente: Aumenta la confianza del cliente en la organización y sus productos.</li>\n            <li>Eficiencia operativa: Optimiza procesos.</li>\n            <li>Cumplimiento normativo: Ayuda a cumplir con regulaciones.</li>\n            <li>Ventaja competitiva: Diferencia a la organización en el mercado.</li>\n        </ul>\n    ",
+    "questions": [
+      {
+        "prompt": "1. ¿Qué significa ISO?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Organización Internacional de Estandarización"
+          },
+          {
+            "value": "b",
+            "text": "Institución Superior de Organismos"
+          },
+          {
+            "value": "c",
+            "text": "Orden Internacional de Sistemas"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "2. ¿Cuál es la norma ISO enfocada en sistemas de gestión de calidad?",
+        "options": [
+          {
+            "value": "a",
+            "text": "ISO 27001"
+          },
+          {
+            "value": "b",
+            "text": "ISO 9001"
+          },
+          {
+            "value": "c",
+            "text": "ISO 14001"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "prompt": "3. ¿Qué norma ISO es relevante para la gestión ambiental?",
+        "options": [
+          {
+            "value": "a",
+            "text": "ISO 27001"
+          },
+          {
+            "value": "b",
+            "text": "ISO 9001"
+          },
+          {
+            "value": "c",
+            "text": "ISO 14001"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "prompt": "4. ¿Qué significa la sigla \"ITIL\" en gestión de servicios TI?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Information Technology Infrastructure Library"
+          },
+          {
+            "value": "b",
+            "text": "International Technology Integration List"
+          },
+          {
+            "value": "c",
+            "text": "Information Technology International Library"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "5. ¿Qué norma ISO se refiere a la seguridad de la información?",
+        "options": [
+          {
+            "value": "a",
+            "text": "ISO 27001"
+          },
+          {
+            "value": "b",
+            "text": "ISO 9001"
+          },
+          {
+            "value": "c",
+            "text": "ISO 14001"
+          }
+        ],
+        "answer": "a"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/nbjZK4j9pSk",
+      "https://www.youtube.com/embed/V0PA3pCeR20",
+      "https://www.youtube.com/embed/7Uv1jzLVdOg",
+      "https://www.youtube.com/embed/QrWsBj6ARG0",
+      "https://www.youtube.com/embed/O_QH7UrezFg",
+      "https://www.youtube.com/embed/P0bVUZnakUY",
+      "https://www.youtube.com/embed/gj3WipVn4NQ",
+      "https://www.youtube.com/embed/4ajJk0v34D4",
+      "https://www.youtube.com/embed/HEQN8UHtnxM",
+      "https://www.youtube.com/embed/XwrSQCDLG_A"
+    ],
+    "minutes": 8
+  },
+  {
+    "id": "validation",
+    "file": "Verification-Validation.html",
+    "title": "Verificación y validación",
+    "description": "Comprueba que construyes correctamente el producto que tus usuarios necesitan.",
+    "pdf": "Validacion.pdf",
+    "category": "Calidad",
+    "number": "04",
+    "icon": "check",
+    "article": "\n        <!-- Contenido -->\n        <h2>Verificación y Validación en Ingeniería de Software</h2>\n    <p>\n        La Verificación y Validación (V&amp;V) son procesos esenciales que garantizan la calidad del software. A través de estos, se asegura que el software cumple con los requisitos especificados y satisface las necesidades del usuario final.\n    </p>\n\n    <h3>Definiciones Clave</h3>\n    <ul>\n        <li><strong>Verificación:</strong> Evalúa si el software se desarrolla correctamente. Responde a la pregunta: \"¿Estamos construyendo el producto correctamente?\"</li>\n        <li><strong>Validación:</strong> Evalúa si el software cumple con los requisitos del cliente. Responde a la pregunta: \"¿Estamos construyendo el producto correcto?\"</li>\n    </ul>\n\n    <h3>Objetivos de la Verificación y Validación</h3>\n    <ul>\n        <li>Garantizar la calidad del producto en todas las etapas del desarrollo.</li>\n        <li>Detectar defectos temprano para reducir costos y riesgos.</li>\n        <li>Cumplir con requisitos funcionales y no funcionales.</li>\n        <li>Asegurar la satisfacción del usuario final.</li>\n    </ul>\n\n    <h3>Diferencias entre Verificación y Validación</h3>\n    <div>\n        <table>\n            <thead>\n                <tr>\n                    <th>Aspecto</th>\n                    <th>Verificación</th>\n                    <th>Validación</th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr>\n                    <td>Propósito</td>\n                    <td>Confirmar que el software se desarrolla conforme a especificaciones.</td>\n                    <td>Asegurar que el producto cumple con las necesidades del cliente.</td>\n                </tr>\n                <tr>\n                    <td>Método</td>\n                    <td>Revisiones, análisis estáticos y pruebas internas.</td>\n                    <td>Pruebas dinámicas y de aceptación por el cliente.</td>\n                </tr>\n                <tr>\n                    <td>Momento</td>\n                    <td>Durante el desarrollo.</td>\n                    <td>Al final del desarrollo o antes del despliegue.</td>\n                </tr>\n                <tr>\n                    <td>Responsable</td>\n                    <td>Equipo técnico.</td>\n                    <td>Usuario final o cliente.</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    \n\n    <h3>Procesos y Técnicas de Verificación</h3>\n    <ul>\n        <li><strong>Revisiones de Código:</strong> Inspecciones manuales o automáticas para garantizar estándares. Herramientas: SonarQube, CodeClimate.</li>\n        <li><strong>Análisis Estático:</strong> Evaluación del código sin ejecutarlo. Herramientas: Checkmarx, Coverity.</li>\n        <li><strong>Pruebas Unitarias:</strong> Validación de componentes individuales. Herramientas: JUnit, NUnit, pytest.</li>\n        <li><strong>Modelado y Simulación:</strong> Verificación en entornos controlados para escenarios críticos.</li>\n    </ul>\n\n    <h3>Procesos y Técnicas de Validación</h3>\n    <ul>\n        <li><strong>Pruebas Funcionales:</strong> Evaluación del cumplimiento de requisitos definidos.</li>\n        <li><strong>Pruebas de Usuario:</strong> Validación en entornos reales o simulados.</li>\n        <li><strong>Pruebas de Aceptación:</strong> Confirmación de aptitud para el despliegue.</li>\n        <li><strong>Pruebas de Integración y Sistema:</strong> Validación del funcionamiento de flujos y componentes completos.</li>\n    </ul>\n\n    <h3>Tendencias Modernas en Verificación y Validación</h3>\n    <ul>\n        <li><strong>Automatización:</strong> Uso de herramientas como Selenium y TestComplete para acelerar las pruebas.</li>\n        <li><strong>Testing en DevOps:</strong> Integración continua en pipelines CI/CD. Herramientas: Jenkins, GitHub Actions.</li>\n        <li><strong>Inteligencia Artificial:</strong> Generación de casos de prueba y predicción de defectos.</li>\n        <li><strong>Shift Left Testing:</strong> Realizar pruebas en etapas tempranas del desarrollo.</li>\n        <li><strong>Pruebas Basadas en Riesgos:</strong> Priorización en áreas críticas para optimizar recursos.</li>\n    </ul>\n\n    <h3>Normas y Estándares de Verificación y Validación</h3>\n    <ul>\n        <li><strong>ISO/IEC 29119:</strong> Marco estándar para pruebas de software.</li>\n        <li><strong>IEEE 1012:</strong> Planificación y ejecución de actividades de V&amp;V.</li>\n        <li><strong>CMMI:</strong> Define niveles de madurez para procesos de software.</li>\n    </ul>\n\n    <h3>Beneficios de una Buena Estrategia de V&amp;V</h3>\n    <ul>\n        <li>Reducción de costos al detectar errores tempranos.</li>\n        <li>Mejora en la calidad y confiabilidad del software.</li>\n        <li>Cumplimiento de estándares y regulaciones.</li>\n        <li>Mayor confianza del cliente y stakeholders.</li>\n    </ul>\n    ",
+    "questions": [
+      {
+        "prompt": "1. ¿Cuál es la diferencia principal entre validación y verificación?",
+        "options": [
+          {
+            "value": "a",
+            "text": "La verificación asegura que el software cumple con los requisitos, mientras que la validación asegura que el software satisface las necesidades del usuario"
+          },
+          {
+            "value": "b",
+            "text": "La validación asegura que el software cumple con los requisitos, mientras que la verificación asegura que el software satisface las necesidades del usuario"
+          },
+          {
+            "value": "c",
+            "text": "Ambas son lo mismo"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "2. ¿En qué fase del ciclo de vida del software se realiza la validación?",
+        "options": [
+          {
+            "value": "a",
+            "text": "En la fase de desarrollo"
+          },
+          {
+            "value": "b",
+            "text": "En la fase de pruebas"
+          },
+          {
+            "value": "c",
+            "text": "En la fase de mantenimiento"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "prompt": "3. ¿Cuál es una técnica común utilizada para la verificación?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Revisiones de código"
+          },
+          {
+            "value": "b",
+            "text": "Entrevistas con usuarios"
+          },
+          {
+            "value": "c",
+            "text": "Test de rendimiento"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "4. ¿Qué tipo de pruebas se realizan para la validación?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Pruebas unitarias"
+          },
+          {
+            "value": "b",
+            "text": "Pruebas de aceptación"
+          },
+          {
+            "value": "c",
+            "text": "Pruebas de integración"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "prompt": "5. ¿Qué se busca al realizar un proceso de verificación?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Asegurarse de que el software funcione correctamente"
+          },
+          {
+            "value": "b",
+            "text": "Verificar que el software cumpla con los requisitos del cliente"
+          },
+          {
+            "value": "c",
+            "text": "Asegurar que el software sea fácil de usar"
+          }
+        ],
+        "answer": "b"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/RdARpYfruLE",
+      "https://www.youtube.com/embed/4ToSz3v0s48",
+      "https://www.youtube.com/embed/ddZ8PK8is_A",
+      "https://www.youtube.com/embed/CM9yvzHwuDg",
+      "https://www.youtube.com/embed/8X1HehvnGJQ",
+      "https://www.youtube.com/embed/fWAcLiLA-N4",
+      "https://www.youtube.com/embed/1yG5zyfS7kw",
+      "https://www.youtube.com/embed/cRtjPSSiIzU",
+      "https://www.youtube.com/embed/ag7DF8LTVSs",
+      "https://www.youtube.com/embed/Yll1oqEezP4",
+      "https://www.youtube.com/embed/Brij_8l3BVQ",
+      "https://www.youtube.com/embed/Tpb3v5QYwI4",
+      "https://www.youtube.com/embed/BDWJ8IfWa70",
+      "https://www.youtube.com/embed/RNCH_SJkAWs",
+      "https://www.youtube.com/embed/imnkju_3NtY",
+      "https://www.youtube.com/embed/NmSkV1kIxdU",
+      "https://www.youtube.com/embed/qabDfoaubBM",
+      "https://www.youtube.com/embed/t6Jpig4WOoI"
+    ],
+    "minutes": 8
+  },
+  {
+    "id": "costs",
+    "file": "Costs-budgets.html",
+    "title": "Costos y presupuestos",
+    "description": "Estima, planifica y controla los recursos de tu próximo proyecto.",
+    "pdf": "Costos.pdf",
+    "category": "Gestión",
+    "number": "05",
+    "icon": "chart",
+    "article": "\n        <!-- Contenido de la sección-->\n        <h2>Costos y Presupuestos en Proyectos de Desarrollo de Software: Guía para Profesionales</h2>\n        <p>\n            En el entorno actual, los proyectos de desarrollo de software requieren una planificación financiera sólida, especialmente considerando la creciente complejidad técnica, los plazos ajustados y la diversidad de equipos distribuidos. Para los profesionales, dominar la gestión de costos y presupuestos es esencial para garantizar la sostenibilidad del proyecto y maximizar el retorno de inversión (ROI).\n        </p>\n        <h3>Componentes Principales del Costo</h3>\n        <h3>Personal:</h3>\n        <ul>\n            <li>Representa entre el 50% y el 80% del presupuesto total.</li>\n            <li>Incluye costos de contratación, sueldos, beneficios, y horas extras. En entornos remotos, considera beneficios adicionales como equipos o acceso a internet.</li>\n            <li>Tendencia actual: La contratación de equipos remotos o distribuidos puede reducir costos y ampliar el acceso al talento global.</li>\n            \n        </ul>\n        <h3>Tecnología:</h3>\n        <ul>\n            <li>Costos de herramientas de desarrollo, entornos de pruebas y servicios en la nube (AWS, Azure, Google Cloud).</li>\n            <li>Tendencia actual: El uso de arquitecturas basadas en microservicios y tecnologías de contenedores (Docker, Kubernetes) puede incrementar costos iniciales, pero optimiza la escalabilidad a largo plazo.</li>\n    \n        </ul>\n        <h3>Infraestructura:</h3>\n        <ul>\n            <li>Incluye hardware, software, licencias, y recursos para DevOps.</li>\n            <li>Tendencia actual: Plataformas de CI/CD (Continuous Integration/Continuous Delivery) automatizadas son esenciales para acelerar los tiempos de entrega.</li>\n    \n        </ul>\n        <h3>Gestión del Proyecto:</h3>\n        <ul>\n            <li>Gastos en software de gestión (JIRA, Monday.com), reuniones, y herramientas de comunicación (Slack, Zoom).</li>\n            <li>Tendencia actual: Las metodologías ágiles y los frameworks como SAFe (Scaled Agile Framework) están redefiniendo cómo se asignan los costos de gestión.</li>\n        </ul>\n        <h3>Capacitación:</h3>\n        <ul>\n            <li>Formación en tecnologías emergentes (IA, blockchain, big data) y metodologías modernas.</li>\n            <li>Tendencia actual: La capacitación continua es crítica debido a la rápida evolución tecnológica.</li>\n        </ul>\n        <h3>Otros:</h3>\n        <ul>\n            <li>Pruebas de seguridad, cumplimiento normativo (GDPR, CCPA), soporte post-lanzamiento y marketing.</li>  \n        </ul>\n\n\n        <h3>Técnicas Avanzadas para Estimar Costos</h3>\n        <h3>Estimación Paramétrica Avanzada:</h3>\n        <ul>\n            <li>Utiliza métricas como puntos de función ajustados por complejidad técnica y experiencia del equipo.</li>\n            <li>Herramientas: COCOMO II, SEER-SEM.</li>\n        </ul>\n        <h3>Estimación Predictiva Basada en IA:</h3>\n        <ul>\n            <li>Herramientas que usan aprendizaje automático para predecir costos basados en datos históricos.\n            </li>\n            <li>Tendencia actual: Plataformas como Planview o Clara.io integran IA para estimaciones más precisas.\n            </li>\n        </ul>\n        <h3>Evaluación de Riesgos Financieros:</h3>\n        <ul>\n            <li>Incorporar análisis de escenarios y técnicas Monte Carlo para prever desviaciones presupuestarias.\n            </li>\n        </ul>\n        <h3>Modelos Ágiles y Lean:</h3>\n        <ul>\n            <li>Dividir costos por iteraciones o MVPs (productos mínimos viables).\n            </li>\n            <li>Tendencia actual: Herramientas como Costimator permiten realizar estimaciones iterativas.\n            </li>\n        </ul>\n\n        <h3>Estrategias para el Control de Costos</h3>\n        <h3>Uso de KPIs Financieros:</h3>\n        <ul>\n            <li>Monitorizar métricas como el Valor Ganado (Earned Value), el Índice de Desempeño del Costo (CPI) y el Índice de Desempeño del Cronograma (SPI).\n            </li>\n            \n        </ul>\n        <h3>Automatización del Monitoreo:</h3>\n        <ul>\n            <li>Herramientas como SAP, Oracle Primavera, o Monday.com permiten realizar un seguimiento en tiempo real del presupuesto.\n\n            </li>\n            \n        </ul>\n        <h3>Gestión del Cambio en el Alcance:</h3>\n        <ul>\n            <li>Establecer procedimientos claros para evaluar el impacto financiero de nuevos requerimientos.\n            </li>\n            \n        </ul>\n        <h3>Revisión Continua:        </h3>\n        <ul>\n            <li>Realizar auditorías periódicas para ajustar proyecciones y optimizar el flujo de caja.\n            </li>\n            \n        </ul>\n\n\n\n        <h3>Tendencias Actuales en Gestión de Costos y Presupuestos</h3>\n        <h3>Costos de Nube y SaaS:</h3>\n        <ul>\n            <li>El uso de plataformas en la nube ha cambiado el modelo de costos de licencias únicas a suscripciones recurrentes.\n            </li>\n            <li>Recomendación: Implementar estrategias FinOps para optimizar costos en la nube.\n            </li>\n        </ul>\n        <h3>Adopción de DevOps y Automatización:        </h3>\n        <ul>\n            <li>Los costos de herramientas y automatización aumentan inicialmente, pero reducen significativamente los gastos a largo plazo.\n            </li>\n            \n        </ul>\n        <h3>Impacto de la Inteligencia Artificial:        </h3>\n        <ul>\n            <li>La incorporación de IA y ML en productos puede requerir inversiones adicionales en infraestructura especializada (GPUs, TPUs).\n            </li>\n            \n        </ul>\n        <h3>Enfoque en Sostenibilidad:        </h3>\n        <ul>\n            <li>Los proyectos están adoptando estrategias para reducir huellas de carbono y optimizar el uso energético.\n            </li>\n            \n        </ul>\n\n        <h3>Beneficios de una Gestión Financiera Eficiente        </h3>\n        \n        <ul>\n            <li><strong>Sostenibilidad Financiera:</strong> Reducción de riesgos financieros.                          \n            </li>\n            <li><strong>Mayor Transparencia:</strong> Mejora la comunicación con stakeholders.            \n            </li>\n            <li><strong>Entrega a Tiempo:</strong> Optimización del cronograma sin exceder el presupuesto.\n            </li>\n            <li><strong>Competitividad:</strong> Proyectos mejor gestionados aumentan la satisfacción del cliente y posicionan la empresa en el mercado.\n            </li>\n        </ul>\n\n    ",
+    "questions": [
+      {
+        "prompt": "1. ¿Qué es un presupuesto en el contexto del desarrollo de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Un pronóstico de los ingresos esperados"
+          },
+          {
+            "value": "b",
+            "text": "Un análisis de los costos de hardware y software"
+          },
+          {
+            "value": "c",
+            "text": "Un plan para administrar los recursos financieros en un proyecto de software"
+          }
+        ],
+        "answer": "c"
+      },
+      {
+        "prompt": "2. ¿Qué herramienta se utiliza comúnmente para calcular los costos en el desarrollo de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Análisis de costos"
+          },
+          {
+            "value": "b",
+            "text": "Modelos de estimación como COCOMO"
+          },
+          {
+            "value": "c",
+            "text": "Indicadores financieros"
+          }
+        ],
+        "answer": "b"
+      },
+      {
+        "prompt": "3. ¿Cuál es la principal dificultad en la estimación de costos en el desarrollo de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "La incertidumbre en los requisitos y el alcance del proyecto"
+          },
+          {
+            "value": "b",
+            "text": "La disponibilidad de recursos"
+          },
+          {
+            "value": "c",
+            "text": "El número de desarrolladores en el proyecto"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "4. ¿Qué es el costo de mantenimiento en el ciclo de vida del software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "El costo de corrección de errores después de la implementación"
+          },
+          {
+            "value": "b",
+            "text": "Los costos de la planificación y diseño inicial"
+          },
+          {
+            "value": "c",
+            "text": "Los costos asociados a la instalación del software"
+          }
+        ],
+        "answer": "a"
+      },
+      {
+        "prompt": "5. ¿Por qué es importante realizar una estimación precisa de costos en el desarrollo de software?",
+        "options": [
+          {
+            "value": "a",
+            "text": "Para ajustar el presupuesto y evitar sobrecostos"
+          },
+          {
+            "value": "b",
+            "text": "Para definir el precio de venta del software"
+          },
+          {
+            "value": "c",
+            "text": "Para determinar el tamaño del equipo de desarrollo"
+          }
+        ],
+        "answer": "a"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/Scz9te0Ylfo",
+      "https://www.youtube.com/embed/bPaniwXnpmU",
+      "https://www.youtube.com/embed/8hlZJe7NJDM",
+      "https://www.youtube.com/embed/eUX7e3WWicw",
+      "https://www.youtube.com/embed/JSuPbJypIFc",
+      "https://www.youtube.com/embed/pMC9ULm5ODA",
+      "https://www.youtube.com/embed/f_q9vIS7t0E",
+      "https://www.youtube.com/embed/ITCBFUeCn1k",
+      "https://www.youtube.com/embed/PX7kMUq271w",
+      "https://www.youtube.com/embed/J3jC-tYFx1U",
+      "https://www.youtube.com/embed/iXy8iG6ANlY",
+      "https://www.youtube.com/embed/EJwSkLl1LzU"
+    ],
+    "minutes": 8
+  }
+]
