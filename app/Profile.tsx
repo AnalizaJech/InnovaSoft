@@ -5,6 +5,7 @@ export default function Profile() {
   const [name, setName] = useStored("innovasoft:name", "");
   const [draft, setDraft] = useState(name);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
   return (
     <section className="profile-panel">
       <span className="eyebrow">TU ESPACIO PERSONAL</span>
@@ -16,6 +17,12 @@ export default function Profile() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          if (!draft.trim()) {
+            setError("Escribe un nombre antes de guardar.");
+            document.getElementById("name")?.focus();
+            return;
+          }
+          setError("");
           setName(draft.trim());
           setDone(true);
         }}
@@ -23,13 +30,24 @@ export default function Profile() {
         <label htmlFor="name">¿Cómo quieres que te llamemos?</label>
         <input
           id="name"
+          aria-invalid={Boolean(error)}
+          aria-describedby={error ? "name-error" : undefined}
           required
           maxLength={50}
           autoComplete="given-name"
           value={draft}
-          onChange={(e) => setDraft(e.target.value)}
+          onChange={(e) => {
+            setDraft(e.target.value);
+            setDone(false);
+            setError("");
+          }}
           placeholder="Tu nombre"
         />
+        {error && (
+          <p className="profile-error" id="name-error" role="alert">
+            {error}
+          </p>
+        )}
         <button className="button">
           Guardar mi perfil
           <ArrowRight size={18} />
@@ -39,12 +57,13 @@ export default function Profile() {
       <div className="profile-note">
         <ShieldCheck />
         <p>
-          Este proyecto no dispone de servidor de autenticación. No solicita
-          contraseñas ni crea cuentas en línea. El perfil y el progreso son
-          locales.
+          Tu nombre y progreso se guardan solo en este navegador. Puedes empezar
+          a aprender sin crear una cuenta ni usar una contraseña.
         </p>
       </div>
-      <a href="index.html">Volver a aprender →</a>
+      <a className="back-link" href="index.html">
+        Volver a aprender <ArrowRight size={18} aria-hidden="true" />
+      </a>
     </section>
   );
 }

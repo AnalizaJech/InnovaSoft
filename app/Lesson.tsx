@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -7,9 +7,18 @@ import {
   CheckCircle2,
   Download,
   Play,
-  Volume2,
+  ArrowLeft,
+  Sparkles,
+  Target,
+  RotateCcw,
+  Code2,
+  Layers,
+  ShieldCheck,
+  Wallet,
   GraduationCap,
 } from "lucide-react";
+import ArticleContent, { parseArticle } from "./ArticleContent";
+import AudioReader from "./AudioReader";
 import { scoreQuiz } from "./learning.js";
 import { updates } from "./updates";
 import type { Course, Progress } from "./types";
@@ -31,37 +40,23 @@ export default function Lesson({
   const [tab, setTab] = useState("article");
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [result, setResult] = useState<number | null>(null);
-  const [reading, setReading] = useState(false);
-  const article = useRef<HTMLDivElement>(null);
+
   const resultRef = useRef<HTMLDivElement>(null);
   const update = updates[c.id];
-  useEffect(
-    () => () => {
-      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
-    },
-    [],
+  const moduleVisuals: Record<string, { Icon: typeof Code2; color: string }> = {
+    engineering: { Icon: Code2, color: "mint" },
+    architecture: { Icon: Layers, color: "lavender" },
+    iso: { Icon: ShieldCheck, color: "pink" },
+    validation: { Icon: CheckCircle2, color: "blue" },
+    costs: { Icon: Wallet, color: "yellow" },
+  };
+  const visual = moduleVisuals[c.id];
+  const ModuleIcon = visual.Icon;
+  const narration = useMemo(
+    () =>
+      `${parseArticle(c.article).text} ${update.title}. ${update.body} Tu reto práctico. ${update.exercise}`,
+    [c.article, update],
   );
-  function speak() {
-    if (!("speechSynthesis" in window)) {
-      notify("La lectura en voz alta no está disponible en este navegador.");
-      return;
-    }
-    if (reading) {
-      speechSynthesis.cancel();
-      setReading(false);
-      return;
-    }
-    const utterance = new SpeechSynthesisUtterance(
-      article.current?.innerText || "",
-    );
-    utterance.lang = "es-ES";
-    utterance.voice =
-      speechSynthesis.getVoices().find((v) => v.lang.startsWith("es")) || null;
-    utterance.onend = () => setReading(false);
-    utterance.onerror = () => setReading(false);
-    speechSynthesis.speak(utterance);
-    setReading(true);
-  }
   function evaluate(e: React.FormEvent) {
     e.preventDefault();
     const score = scoreQuiz(c.questions, answers);
@@ -72,9 +67,12 @@ export default function Lesson({
   return (
     <>
       <a className="back-link" href="index.html">
-        ← Volver a la biblioteca
+        <ArrowLeft size={18} aria-hidden="true" /> Volver a la biblioteca
       </a>
-      <div className="lesson-heading">
+      <div className={`lesson-heading ${visual.color}`}>
+        <span className="module-symbol">
+          <ModuleIcon size={34} aria-hidden="true" />
+        </span>
         <span className="eyebrow">
           MÓDULO {c.number} / {c.category.toUpperCase()}
         </span>
@@ -95,7 +93,11 @@ export default function Lesson({
           </a>
         </div>
       </div>
-      <div className="lesson-tabs" aria-label="Contenido del módulo">
+      <div
+        className="lesson-tabs"
+        role="group"
+        aria-label="Contenido del módulo"
+      >
         {[
           ["article", "Contenido"],
           ["videos", `Videos (${c.videos.length})`],
@@ -108,9 +110,15 @@ export default function Lesson({
             onClick={() => {
               setTab(id);
               if ("speechSynthesis" in window) speechSynthesis.cancel();
-              setReading(false);
             }}
           >
+            {id === "article" ? (
+              <BookOpen size={18} aria-hidden="true" />
+            ) : id === "videos" ? (
+              <Play size={18} aria-hidden="true" />
+            ) : (
+              <GraduationCap size={18} aria-hidden="true" />
+            )}{" "}
             {label}
           </button>
         ))}
@@ -118,24 +126,20 @@ export default function Lesson({
       {tab === "article" ? (
         <div className="reading-layout">
           <div>
-            <div className="read-toolbar">
-              <span>LECTURA Y REFLEXIÓN</span>
-              <button onClick={speak}>
-                <Volume2 size={17} />
-                {reading ? "Detener lectura" : "Escuchar contenido"}
-              </button>
-            </div>
-            <div ref={article}>
-              <article
-                className="prose"
-                dangerouslySetInnerHTML={{ __html: c.article || "" }}
-              />
+            <AudioReader text={narration} notify={notify} />
+            <div>
+              <ArticleContent html={c.article} />
               <section className="update">
-                <span className="eyebrow">AMPLÍA TU PERSPECTIVA</span>
+                <span className="eyebrow">
+                  <Sparkles size={20} aria-hidden="true" />
+                  AMPLÍA TU PERSPECTIVA
+                </span>
                 <h2>{update.title}</h2>
                 <p>{update.body}</p>
                 <div className="exercise">
-                  <strong>Tu reto práctico</strong>
+                  <strong>
+                    <Target size={22} aria-hidden="true" /> Tu reto práctico
+                  </strong>
                   <p>{update.exercise}</p>
                 </div>
                 <a href={update.url} target="_blank" rel="noreferrer">
@@ -269,7 +273,7 @@ export default function Lesson({
                   setResult(null);
                 }}
               >
-                Volver a intentar
+                <RotateCcw size={18} aria-hidden="true" /> Volver a intentar
               </button>
             </div>
           )}
