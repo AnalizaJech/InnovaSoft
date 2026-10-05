@@ -45,6 +45,7 @@ export default function AccessibilityPanel({
         </span>
         <input
           type="checkbox"
+          role="switch"
           checked={value.contrast}
           onChange={(e) => onChange({ ...value, contrast: e.target.checked })}
         />
@@ -56,6 +57,7 @@ export default function AccessibilityPanel({
         </span>
         <input
           type="checkbox"
+          role="switch"
           checked={value.motion}
           onChange={(e) => onChange({ ...value, motion: e.target.checked })}
         />

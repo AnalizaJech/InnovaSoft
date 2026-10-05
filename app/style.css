@@ -941,11 +941,13 @@ kbd {
   color: var(--surface);
 }
 .chat-form:has(input:focus-visible) {
-  outline: 3px solid #2459d3;
-  outline-offset: 4px;
+  outline: none;
+  border-color: #2459d3;
+  box-shadow: 0 0 0 1px #2459d3;
 }
 [data-theme="dark"] .chat-form:has(input:focus-visible) {
-  outline-color: #ffed77;
+  border-color: #98ebca;
+  box-shadow: 0 0 0 1px #98ebca;
 }
 .chat-form input:focus-visible {
   outline: none;
@@ -2731,4 +2733,115 @@ html[data-contrast="high"] .lesson-heading {
 }
 .profile-panel > .back-link {
   text-decoration: none;
+}
+/* The mark is shared by the app and browser tab. */
+.brand {
+  gap: 10px;
+}
+.brand img.brand-mark {
+  width: 40px;
+  height: 40px;
+  max-height: none;
+  flex-shrink: 0;
+}
+.header-inner {
+  gap: 22px;
+}
+.preference-toggle input {
+  appearance: none;
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border: 2px solid var(--muted);
+  border-radius: 999px;
+  background: var(--soft);
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    border-color 0.18s;
+}
+.preference-toggle input:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  background: var(--text);
+  transition: transform 0.18s;
+}
+.preference-toggle input:checked {
+  background: #98ebca;
+  border-color: #171a21;
+}
+.preference-toggle input:checked:before {
+  transform: translateX(20px);
+  background: #171a21;
+}
+.quiz input[type="radio"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+  background: var(--surface);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+.quiz input[type="radio"]:before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #171a21;
+  transform: scale(0);
+}
+.quiz input[type="radio"]:checked {
+  background: #b7efda;
+  border-color: #171a21;
+}
+.quiz input[type="radio"]:checked:before {
+  transform: scale(1);
+}
+input[type="checkbox"],
+input[type="radio"],
+select,
+.quiz label {
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .brand {
+    gap: 7px;
+  }
+  .brand img.brand-mark {
+    width: 30px;
+    height: 30px;
+  }
+  .brand img:not(.brand-mark) {
+    width: 105px;
+  }
+  .header-inner {
+    gap: 8px;
+  }
+}
+@media (forced-colors: active) {
+  .preference-toggle input,
+  .quiz input[type="radio"] {
+    appearance: auto;
+    background: Canvas;
+  }
+  .preference-toggle input {
+    width: 28px;
+    height: 28px;
+  }
+  .preference-toggle input:before,
+  .quiz input[type="radio"]:before {
+    display: none;
+  }
+  .chat-form:has(input:focus-visible) {
+    border-color: Highlight;
+    box-shadow: 0 0 0 1px Highlight;
+  }
 }
