@@ -940,6 +940,16 @@ kbd {
   background: var(--text);
   color: var(--surface);
 }
+.chat-form:has(input:focus-visible) {
+  outline: 3px solid #2459d3;
+  outline-offset: 4px;
+}
+[data-theme="dark"] .chat-form:has(input:focus-visible) {
+  outline-color: #ffed77;
+}
+.chat-form input:focus-visible {
+  outline: none;
+}
 .empty {
   padding: 45px 25px;
   text-align: center;
