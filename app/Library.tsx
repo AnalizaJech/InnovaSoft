@@ -1,4 +1,4 @@
-import { courseHref } from "./routes";
+import { courseHref, homeHref, navigate } from "./routes";
 import { useEffect, useState, useRef } from "react";
 import {
   Search,
@@ -418,7 +418,7 @@ export default function Library({
                   onClick={() => {
                     setQuery("");
                     setCategory("Todos");
-                    location.hash = "library";
+                    navigate(homeHref());
                   }}
                 >
                   Explorar todos los módulos
@@ -447,7 +447,7 @@ export default function Library({
               Lecturas, videos, cuestionarios y retos para hacer tuyos los
               conceptos. Empieza donde tengas curiosidad.
             </p>
-            <a href="#/learn/engineering">
+            <a href={courseHref("engineering")}>
               Ir a los fundamentos
               <ArrowUpRight size={21} aria-hidden="true" />
             </a>

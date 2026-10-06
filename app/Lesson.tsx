@@ -1,3 +1,4 @@
+import { homeHref, basePath } from "./routes";
 import React, { useState, useMemo, useRef } from "react";
 import {
   ArrowUpRight,
@@ -66,7 +67,7 @@ export default function Lesson({
   }
   return (
     <>
-      <a className="back-link" href="#/library">
+      <a className="back-link" href={homeHref()}>
         <ArrowLeft size={18} aria-hidden="true" /> Volver a la biblioteca
       </a>
       <div className={`lesson-heading ${visual.color}`}>
@@ -88,7 +89,7 @@ export default function Lesson({
             {saved ? "Guardado" : "Guardar módulo"}
           </button>
           {c.pdf && (
-            <a href={`./PDF/${c.pdf}`} download>
+            <a href={`${basePath}PDF/${c.pdf}`} download>
               <Download size={17} />
               Descargar PDF original
             </a>

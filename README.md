@@ -80,7 +80,7 @@ npm run build
 npm run preview
 ```
 
-La interfaz es una aplicación React 19 escrita en TypeScript y compilada por Vite. La navegación usa rutas `#/library`, `#/saved`, `#/progress`, `#/space` y `#/learn/:id`, sin recargar entre vistas. Estas rutas funcionan en GitHub Pages sin reglas de servidor. Los HTML antiguos son entradas de compatibilidad que redirigen a la aplicación.
+La interfaz es una aplicación React 19 escrita en TypeScript y compilada por Vite. La navegación usa rutas `/InnovaSoft/`, `/InnovaSoft/saved/`, `/InnovaSoft/progress/`, `/InnovaSoft/space/` y `/InnovaSoft/learn/:id/`, sin recargar entre vistas. La compilación genera una entrada `index.html` por ruta, de modo que los enlaces directos y las recargas funcionan en GitHub Pages sin reglas de servidor. Los HTML antiguos son entradas de compatibilidad que redirigen a la aplicación.
 
 El catálogo se extiende en `app/extra-courses.json`; no exige duplicar páginas ni componentes. Los conteos, filtros, búsqueda, guardados y progreso se calculan a partir del catálogo.
 

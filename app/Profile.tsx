@@ -1,3 +1,4 @@
+import { homeHref } from "./routes";
 import React, { useState } from "react";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { useStored } from "./storage";
@@ -61,7 +62,7 @@ export default function Profile() {
           a aprender sin crear una cuenta ni usar una contraseña.
         </p>
       </div>
-      <a className="back-link" href="#/library">
+      <a className="back-link" href={homeHref()}>
         Volver a aprender <ArrowRight size={18} aria-hidden="true" />
       </a>
     </section>

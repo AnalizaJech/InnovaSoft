@@ -1,4 +1,4 @@
-import { courseHref } from "./routes";
+import { courseHref, basePath } from "./routes";
 import { useState, useEffect, useRef } from "react";
 import {
   MessageCircle,
@@ -52,7 +52,7 @@ export default function Chat() {
         aria-haspopup="dialog"
         onClick={() => setOpen(true)}
       >
-        <img src="./src/bot.svg" alt="" width="25" height="25" />
+        <img src={`${basePath}src/bot.svg`} alt="" width="25" height="25" />
         <span>Consulta a Jech</span>
       </button>
       <Modal

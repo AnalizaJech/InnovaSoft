@@ -1,3 +1,10 @@
+import {
+  courseHref,
+  homeHref,
+  basePath,
+  navigate,
+  currentRoute,
+} from "./routes";
 import { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { X, ArrowUpRight } from "lucide-react";
@@ -12,9 +19,7 @@ import courses from "./catalog";
 import type { Progress } from "./types";
 import "./style.css";
 function App() {
-  const [route, setRoute] = useState(
-    () => location.hash.slice(1).replace(/^\//, "") || "library",
-  );
+  const [route, setRoute] = useState(currentRoute);
   const selected = courses.find((c) => route === `learn/${c.id}`);
   const auth = route === "space";
   const home = !selected && !auth;
@@ -48,11 +53,40 @@ function App() {
   }, [dark, preferences]);
   useEffect(() => {
     const handler = () => {
-      setRoute(location.hash.slice(1).replace(/^\//, "") || "library");
+      setRoute(currentRoute());
       window.scrollTo({ top: 0 });
     };
-    window.addEventListener("hashchange", handler);
-    return () => window.removeEventListener("hashchange", handler);
+    const click = (event: MouseEvent) => {
+      const link = (event.target as Element).closest?.("a");
+      if (
+        !link ||
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey ||
+        event.altKey ||
+        link.target ||
+        link.hasAttribute("download")
+      )
+        return;
+      const url = new URL(link.href);
+      if (
+        url.origin !== location.origin ||
+        !url.pathname.startsWith(basePath) ||
+        url.hash ||
+        /\.(pdf|svg|png)$/i.test(url.pathname)
+      )
+        return;
+      event.preventDefault();
+      navigate(url.pathname + url.search);
+    };
+    window.addEventListener("popstate", handler);
+    document.addEventListener("click", click);
+    return () => {
+      window.removeEventListener("popstate", handler);
+      document.removeEventListener("click", click);
+    };
   }, []);
   useEffect(() => {
     document.title = selected
@@ -128,9 +162,9 @@ function App() {
       </main>
       <footer className="site-footer">
         <div>
-          <a href="#/library" className="footer-brand">
+          <a href={homeHref()} className="footer-brand">
             <img
-              src="./src/innovasoft-isologo-dark.svg"
+              src={`${basePath}src/innovasoft-isologo-dark.svg`}
               alt="InnovaSoft"
               width="226"
               height="52"
@@ -138,7 +172,7 @@ function App() {
           </a>
           <p>Curiosidad que se transforma en conocimiento.</p>
         </div>
-        <a href="#/library">
+        <a href={homeHref()}>
           Volver a explorar
           <ArrowUpRight size={18} aria-hidden="true" />
         </a>
@@ -173,14 +207,20 @@ function App() {
   );
 }
 const legacy = courses.find(
-  (c) => c.file === location.pathname.split("/").pop(),
+  (c) => c.file && c.file === location.pathname.split("/").pop(),
 );
-if (
-  location.pathname.endsWith(".html") &&
-  !location.pathname.endsWith("index.html")
-) {
-  const target = legacy ? `#/learn/${legacy.id}` : "#/space";
-  location.replace(new URL(`./${target}`, location.href).href);
-} else createRoot(document.getElementById("root")!).render(<App />);
+const oldHash = location.hash.slice(1).replace(/^\//, "");
+if (oldHash && oldHash !== "main")
+  history.replaceState(
+    null,
+    "",
+    oldHash.startsWith("learn/") ? `${basePath}${oldHash}/` : homeHref(oldHash),
+  );
+else if (legacy) history.replaceState(null, "", courseHref(legacy.id));
+else if (/\/(login|register)\.html$/.test(location.pathname))
+  history.replaceState(null, "", homeHref("space"));
+else if (location.pathname.endsWith("index.html"))
+  history.replaceState(null, "", homeHref());
+createRoot(document.getElementById("root")!).render(<App />);
 if (import.meta.env.DEV && new URLSearchParams(location.search).has("audit"))
   import("./dev-audit");

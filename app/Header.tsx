@@ -1,3 +1,4 @@
+import { homeHref, basePath } from "./routes";
 import { useState } from "react";
 import {
   Accessibility,
@@ -36,7 +37,7 @@ export default function Header({
       {links.map(({ id, label, Icon }) => (
         <a
           key={id}
-          href={`#/${id}`}
+          href={homeHref(id)}
           aria-current={home && view === id ? "page" : undefined}
           onClick={() => setOpen(false)}
         >
@@ -59,10 +60,10 @@ export default function Header({
     <>
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="#/library">
+          <a className="brand" href={homeHref()}>
             <img
               className="brand-isologo"
-              src="./src/innovasoft-isologo-dark.svg"
+              src={`${basePath}src/innovasoft-isologo-dark.svg`}
               alt="InnovaSoft"
               width="226"
               height="52"
@@ -92,7 +93,7 @@ export default function Header({
               <Accessibility size={22} aria-hidden="true" />
               <span>Accesibilidad</span>
             </button>
-            <a className="profile-link" href="#/space">
+            <a className="profile-link" href={homeHref("space")}>
               Mi espacio
               <ArrowUpRight size={17} aria-hidden="true" />
             </a>
@@ -116,7 +117,7 @@ export default function Header({
       >
         <nav aria-label="Navegación móvil">
           {nav}
-          <a href="#/space">
+          <a href={homeHref("space")}>
             Mi espacio
             <ArrowUpRight size={18} />
           </a>
