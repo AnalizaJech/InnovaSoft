@@ -3059,3 +3059,6 @@ input:focus, input:focus-visible,
   outline: none;
   box-shadow: none;
 }
+
+.brand img.brand-symbol { width: 52px; height: 52px; object-fit: contain; }
+@media (max-width: 600px) { .brand img.brand-symbol { width: 44px; height: 44px; } }
