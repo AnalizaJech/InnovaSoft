@@ -3046,3 +3046,16 @@ h2[tabindex]:focus-visible {
   outline: none;
   box-shadow: none;
 }
+
+/* Inputs use their existing surface and caret, without additional focus rings. */
+input:focus, input:focus-visible,
+[data-theme="dark"] input:focus-visible,
+.learning-stage input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.chat-form:has(input:focus-visible),
+[data-theme="dark"] .chat-form:has(input:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}

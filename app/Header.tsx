@@ -61,13 +61,6 @@ export default function Header({
         <div className="header-inner">
           <a className="brand" href="#/library">
             <img
-              className="brand-mark"
-              src="./src/innovasoft-mark.svg"
-              alt=""
-              width="40"
-              height="40"
-            />
-            <img
               src="./src/InnovaSoft.svg"
               alt="InnovaSoft"
               width="170"
