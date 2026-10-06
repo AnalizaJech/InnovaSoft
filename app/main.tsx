@@ -129,7 +129,12 @@ function App() {
       <footer className="site-footer">
         <div>
           <a href="#/library" className="footer-brand">
-            InnovaSoft<span>.</span>
+            <img
+              src="./src/innovasoft-isologo-dark.svg"
+              alt="InnovaSoft"
+              width="226"
+              height="52"
+            />
           </a>
           <p>Curiosidad que se transforma en conocimiento.</p>
         </div>

@@ -61,10 +61,10 @@ export default function Header({
         <div className="header-inner">
           <a className="brand" href="#/library">
             <img
-              className="brand-symbol"
-              src="./src/innovasoft-symbol.svg"
+              className="brand-isologo"
+              src="./src/innovasoft-isologo-dark.svg"
               alt="InnovaSoft"
-              width="52"
+              width="226"
               height="52"
             />
           </a>

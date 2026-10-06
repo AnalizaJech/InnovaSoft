@@ -1,6 +1,6 @@
 # InnovaSoft
 
-Una biblioteca para conectar ideas de ingeniería, arquitectura y calidad de software. Conserva los cinco módulos originales y su identidad: fotografía de realidad virtual, logotipo manuscrito, formas redondas y acentos rosa, menta y amarillo.
+Una biblioteca para conectar ideas de ingeniería, arquitectura y calidad de software. Conserva los cinco módulos originales y su identidad: fotografía de realidad virtual, isologo integrado, formas redondas y acentos rosa, menta y amarillo.
 
 **[Abrir la aplicación](https://analizajech.github.io/InnovaSoft/)** · [Validación de accesibilidad](docs/ACCESSIBILITY.md)
 
@@ -58,6 +58,15 @@ Son introducciones educativas con ejercicios; los cinco módulos originales y su
 El material está escrito en **español**. El selector permite español de Colombia, México o España; no traduce el contenido a otros idiomas. La lectura busca una voz de la región seleccionada, permite elegir otra voz en español y recuerda la velocidad.
 
 Las voces provienen del navegador y del dispositivo. Si no existe la variante regional, se informa de la voz en español disponible. Si no hay ninguna voz en español, se muestra un aviso y no se reproduce el contenido con una voz de otro idioma. La búsqueda por voz utiliza la misma preferencia regional. No hay reproducción automática.
+
+## Identidad visual
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/src/innovasoft-isologo-dark.png" />
+  <img src="public/src/innovasoft-isologo-light.png" alt="Isologo integrado de InnovaSoft" width="400" />
+</picture>
+
+Marca vectorial integrada y favicon simplificado. Fuentes alojadas localmente: Space Grotesk para títulos, Atkinson Hyperlegible para lectura e IBM Plex Mono para código. Consulta la [guía de marca](docs/BRAND.md) para colores, licencias, archivos, reglas de uso y briefs de diseño.
 
 ## Desarrollo
 

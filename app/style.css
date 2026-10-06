@@ -1,4 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/atkinson-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("/fonts/atkinson-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/fonts/plex-mono.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   font-family: "Atkinson Hyperlegible", sans-serif;
   font-synthesis: none;
@@ -3048,7 +3075,8 @@ h2[tabindex]:focus-visible {
 }
 
 /* Inputs use their existing surface and caret, without additional focus rings. */
-input:focus, input:focus-visible,
+input:focus,
+input:focus-visible,
 [data-theme="dark"] input:focus-visible,
 .learning-stage input:focus-visible {
   outline: none;
@@ -3060,5 +3088,69 @@ input:focus, input:focus-visible,
   box-shadow: none;
 }
 
-.brand img.brand-symbol { width: 52px; height: 52px; object-fit: contain; }
-@media (max-width: 600px) { .brand img.brand-symbol { width: 44px; height: 44px; } }
+.brand img.brand-symbol {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .brand img.brand-symbol {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+:root {
+  --brand-success: #286d52;
+  --brand-error: #a91e33;
+  --brand-focus: #2459d3;
+  --font-technical: "IBM Plex Mono", monospace;
+}
+.brand img.brand-isologo {
+  width: 226px;
+  height: 52px;
+  max-height: none;
+  object-fit: contain;
+}
+.footer-brand img {
+  width: 226px;
+  height: 52px;
+  object-fit: contain;
+}
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-technical);
+}
+.prose code {
+  background: var(--soft);
+  padding: 0.15em 0.4em;
+  border-radius: 0.4em;
+  font-size: 0.9em;
+}
+.prose pre {
+  background: var(--ink);
+  color: #f6f4ef;
+  border-radius: 24px;
+  padding: 24px;
+  overflow-x: auto;
+}
+.module-symbol,
+.concept-icon {
+  background: #ffffff80;
+}
+.profile-error {
+  color: var(--brand-error);
+}
+@media (max-width: 600px) {
+  .brand img.brand-isologo {
+    width: 178px;
+    height: 44px;
+  }
+}
+@media (max-width: 380px) {
+  .brand img.brand-isologo {
+    width: 140px;
+  }
+}
