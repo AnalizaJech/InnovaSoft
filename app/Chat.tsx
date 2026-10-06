@@ -1,3 +1,4 @@
+import { courseHref } from "./routes";
 import { useState, useEffect, useRef } from "react";
 import {
   MessageCircle,
@@ -9,7 +10,7 @@ import {
   Wallet,
 } from "lucide-react";
 import Modal from "./Modal";
-import courses from "./courses.json";
+import courses from "./catalog";
 import { searchCourses } from "./learning.js";
 type Message = { role: "bot" | "user"; text: string; file?: string };
 const greeting: Message = {
@@ -37,7 +38,7 @@ export default function Chat() {
         text: c
           ? `${c.title}. ${c.description}`
           : "Puedo ayudarte con normas ISO, costos, ingeniería, arquitectura y validación. Prueba con uno de esos temas.",
-        file: c?.file,
+        file: c ? courseHref(c.id) : undefined,
       },
     ]);
     setDraft("");

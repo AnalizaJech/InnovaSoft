@@ -1,3 +1,4 @@
+import { courseHref } from "./routes";
 import { useEffect, useState, useRef } from "react";
 import {
   Search,
@@ -17,7 +18,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { useStored } from "./storage";
-import courses from "./courses.json";
+import courses from "./catalog";
 import { searchCourses } from "./learning.js";
 import type { Progress } from "./types";
 const details: Record<
@@ -29,6 +30,10 @@ const details: Record<
   iso: { Icon: ShieldCheck, label: "ASEGURA", className: "pink" },
   validation: { Icon: CheckCircle2, label: "COMPRUEBA", className: "blue" },
   costs: { Icon: Wallet, label: "PLANIFICA", className: "yellow" },
+  git: { Icon: Code2, label: "COLABORA", className: "lavender" },
+  web: { Icon: Layers, label: "CONECTA", className: "blue" },
+  inclusive: { Icon: GraduationCap, label: "INCLUYE", className: "pink" },
+  security: { Icon: ShieldCheck, label: "PROTEGE", className: "mint" },
 };
 export default function Library({
   view,
@@ -195,7 +200,8 @@ export default function Library({
             )}
             <div className="stage-meta">
               <span>
-                <BookOpen size={17} aria-hidden="true" />5 módulos
+                <BookOpen size={17} aria-hidden="true" />
+                {courses.length} módulos
               </span>
               <span>
                 <Play size={16} aria-hidden="true" />
@@ -203,16 +209,15 @@ export default function Library({
               </span>
               <span>
                 <GraduationCap size={19} aria-hidden="true" />
-                25 preguntas
+                {courses.reduce((n, c) => n + c.questions.length, 0)} preguntas
               </span>
             </div>
 
             <a
               className="start-link"
-              href={
-                courses.find((c) => !progress[c.id]?.read)?.file ||
-                courses[0].file
-              }
+              href={courseHref(
+                courses.find((c) => !progress[c.id]?.read)?.id || courses[0].id,
+              )}
             >
               <span>
                 {completed
@@ -237,18 +242,26 @@ export default function Library({
                 <h2 id="modules-heading">Aprender también es avanzar.</h2>
               </div>
               <span className="count-label">
-                {completed} de 5 módulos leídos
+                {completed} de {courses.length} módulos leídos
               </span>
             </div>
             <div className="overall-progress">
               <label htmlFor="overall-progress">
                 Lectura completada: {completed * 20}%
               </label>
-              <progress id="overall-progress" max="5" value={completed} />
+              <progress
+                id="overall-progress"
+                max={courses.length}
+                value={completed}
+              />
             </div>
             <div className="progress-list">
               {courses.map((c) => {
-                const { Icon, className } = details[c.id];
+                const { Icon, className } = details[c.id] || {
+                  Icon: BookOpen,
+                  label: "EXPLORA",
+                  className: "mint",
+                };
                 return (
                   <article key={c.id}>
                     <span className={`progress-icon ${className}`}>
@@ -256,7 +269,7 @@ export default function Library({
                     </span>
                     <div>
                       <h3>
-                        <a href={c.file}>{c.title}</a>
+                        <a href={courseHref(c.id)}>{c.title}</a>
                       </h3>
                       <p>
                         {progress[c.id]?.read
@@ -270,7 +283,7 @@ export default function Library({
                     </div>
                     <a
                       className="icon-button"
-                      href={c.file}
+                      href={courseHref(c.id)}
                       aria-label={`Continuar ${c.title}`}
                     >
                       <ArrowUpRight aria-hidden="true" size={24} />
@@ -292,7 +305,7 @@ export default function Library({
                 <h2 id="modules-heading">
                   {view === "saved"
                     ? "Tu colección personal."
-                    : "Cinco temas. Infinitas conexiones."}
+                    : "Nuevos temas. Más conexiones."}
                 </h2>
               </div>
               <span className="count-label" role="status" aria-live="polite">
@@ -307,36 +320,36 @@ export default function Library({
               role="group"
               aria-label="Filtrar por categoría"
             >
-              {[
-                "Todos",
-                "Fundamentos",
-                "Diseño de sistemas",
-                "Calidad",
-                "Gestión",
-              ].map((cat) => (
-                <button
-                  key={cat}
-                  aria-pressed={category === cat}
-                  onClick={() => setCategory(cat)}
-                >
-                  {cat === "Todos" ? (
-                    <BookOpen size={16} aria-hidden="true" />
-                  ) : cat === "Fundamentos" ? (
-                    <Code2 size={16} aria-hidden="true" />
-                  ) : cat === "Diseño de sistemas" ? (
-                    <Layers size={16} aria-hidden="true" />
-                  ) : cat === "Calidad" ? (
-                    <ShieldCheck size={16} aria-hidden="true" />
-                  ) : (
-                    <Wallet size={16} aria-hidden="true" />
-                  )}{" "}
-                  {cat}
-                </button>
-              ))}
+              {["Todos", ...new Set(courses.map((c) => c.category))].map(
+                (cat) => (
+                  <button
+                    key={cat}
+                    aria-pressed={category === cat}
+                    onClick={() => setCategory(cat)}
+                  >
+                    {cat === "Todos" ? (
+                      <BookOpen size={16} aria-hidden="true" />
+                    ) : cat === "Fundamentos" ? (
+                      <Code2 size={16} aria-hidden="true" />
+                    ) : cat === "Diseño de sistemas" ? (
+                      <Layers size={16} aria-hidden="true" />
+                    ) : cat === "Calidad" ? (
+                      <ShieldCheck size={16} aria-hidden="true" />
+                    ) : (
+                      <Wallet size={16} aria-hidden="true" />
+                    )}{" "}
+                    {cat}
+                  </button>
+                ),
+              )}
             </div>
             <div className="course-grid">
               {filtered.map((c) => {
-                const { Icon, label, className } = details[c.id];
+                const { Icon, label, className } = details[c.id] || {
+                  Icon: BookOpen,
+                  label: "EXPLORA",
+                  className: "mint",
+                };
                 return (
                   <article className={`course-card ${className}`} key={c.id}>
                     <div className="card-top">
@@ -359,7 +372,7 @@ export default function Library({
                       <span>{label}</span>
                     </div>
                     <h3>
-                      <a className="course-link" href={c.file}>
+                      <a className="course-link" href={courseHref(c.id)}>
                         {c.title}
                       </a>
                     </h3>
@@ -371,7 +384,7 @@ export default function Library({
                       </span>
                       <a
                         className="course-open"
-                        href={c.file}
+                        href={courseHref(c.id)}
                         aria-label={`Explorar ${c.title}`}
                       >
                         <ArrowUpRight size={23} aria-hidden="true" />
@@ -434,7 +447,7 @@ export default function Library({
               Lecturas, videos, cuestionarios y retos para hacer tuyos los
               conceptos. Empieza donde tengas curiosidad.
             </p>
-            <a href="Software-Engineering.html">
+            <a href="#/learn/engineering">
               Ir a los fundamentos
               <ArrowUpRight size={21} aria-hidden="true" />
             </a>

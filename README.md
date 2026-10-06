@@ -8,13 +8,13 @@ Una biblioteca para conectar ideas de ingeniería, arquitectura y calidad de sof
 
 ## Recorrido del sistema
 
-GIF elaborado a partir de capturas reales: biblioteca → filtros → guardados → módulo → conceptos → cuestionario → accesibilidad → tema oscuro.
+GIF elaborado a partir de capturas reales: biblioteca → filtros → guardados → módulo → audio → conceptos → cuestionario → accesibilidad → tema oscuro.
 
 ![Recorrido animado de InnovaSoft](docs/media/demo.gif)
 
 ## Aprende a tu manera
 
-- **Cinco módulos**, 57 videos, 25 preguntas y cinco PDFs originales.
+- **Nueve módulos**, 57 videos originales, 45 preguntas y cinco PDFs originales. Los cuatro nuevos módulos incluyen documentación, audio, retos y evaluación.
 - Buscador que ignora acentos y consulta todo el contenido, filtros por categoría y búsqueda por voz en navegadores compatibles.
 - Conceptos organizados en temas desplegables, listas visuales, iconos y retos prácticos con fuentes primarias.
 - Lectura completa por fragmentos cortos: idioma regional, voz disponible y velocidad ajustables. El audio incluye los temas cerrados y se detiene al cambiar la configuración o salir de la lectura.
@@ -39,7 +39,21 @@ GIF elaborado a partir de capturas reales: biblioteca → filtros → guardados 
 
 ![Panel de ajustes de accesibilidad](docs/media/accessibility.jpg)
 
+## Nuevos temas
+
+- Git y colaboración: commits, ramas, revisión y conflictos. [Pro Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
+- Web, HTTP y APIs: peticiones, métodos, estados y contratos. [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview).
+- UX y accesibilidad: investigación, teclado, alternativas y evaluación. [MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility).
+- Seguridad de aplicaciones: permisos, entradas, secretos y dependencias. [OWASP](https://owasp.org/projects/top-ten).
+
+![Exploración de los módulos incorporados](docs/media/new-topics.jpg)
+
+Son introducciones educativas con ejercicios; los cinco módulos originales y sus recursos se conservan.
+
 ## Audio e idiomas
+
+![Menús de audio personalizados y redondeados](docs/media/audio.jpg)
+
 
 El material está escrito en **español**. El selector permite español de Colombia, México o España; no traduce el contenido a otros idiomas. La lectura busca una voz de la región seleccionada, permite elegir otra voz en español y recuerda la velocidad.
 
@@ -57,11 +71,13 @@ npm run build
 npm run preview
 ```
 
-Las ocho rutas HTML originales se mantienen. La base relativa de Vite permite publicar bajo `/InnovaSoft/`.
+La interfaz es una aplicación React 19 escrita en TypeScript y compilada por Vite. La navegación usa rutas `#/library`, `#/saved`, `#/progress`, `#/space` y `#/learn/:id`, sin recargar entre vistas. Estas rutas funcionan en GitHub Pages sin reglas de servidor. Los HTML antiguos son entradas de compatibilidad que redirigen a la aplicación.
+
+El catálogo se extiende en `app/extra-courses.json`; no exige duplicar páginas ni componentes. Los conteos, filtros, búsqueda, guardados y progreso se calculan a partir del catálogo.
 
 ## Verificación
 
-Cinco pruebas automatizadas cubren la conservación de recursos, búsqueda, puntuación, selección de voz e integridad de la lectura por fragmentos. Se verificaron en el navegador los filtros, guardados, progreso, cuestionario con correcciones, guía local, validación de nombre, cierre de diálogos por teclado y adaptación a pantallas pequeñas.
+Seis pruebas automatizadas cubren la conservación de recursos, búsqueda, puntuación, selección de voz e integridad de la lectura por fragmentos. Se verificaron en el navegador los filtros, guardados, progreso, cuestionario con correcciones, guía local, validación de nombre, cierre de diálogos por teclado y adaptación a pantallas pequeñas.
 
 La revisión con axe-core no detectó infracciones en los cinco módulos con contenido expandido, la biblioteca y el panel de accesibilidad. Algunos contrastes sobre fotografías requieren revisión manual. Esto no constituye una certificación WCAG; consulta el [alcance y las evidencias](docs/ACCESSIBILITY.md).
 

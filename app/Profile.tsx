@@ -61,7 +61,7 @@ export default function Profile() {
           a aprender sin crear una cuenta ni usar una contraseña.
         </p>
       </div>
-      <a className="back-link" href="index.html">
+      <a className="back-link" href="#/library">
         Volver a aprender <ArrowRight size={18} aria-hidden="true" />
       </a>
     </section>

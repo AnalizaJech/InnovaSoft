@@ -8,22 +8,17 @@ import Profile from "./Profile";
 import Chat from "./Chat";
 import AccessibilityPanel, { type Preferences } from "./AccessibilityPanel";
 import { useStored } from "./storage";
-import courses from "./courses.json";
+import courses from "./catalog";
 import type { Progress } from "./types";
 import "./style.css";
 function App() {
-  const selected = courses.find(
-    (c) => c.file === location.pathname.split("/").pop(),
+  const [route, setRoute] = useState(
+    () => location.hash.slice(1).replace(/^\//, "") || "library",
   );
-  const auth = ["login.html", "register.html"].includes(
-    location.pathname.split("/").pop() || "",
-  );
+  const selected = courses.find((c) => route === `learn/${c.id}`);
+  const auth = route === "space";
   const home = !selected && !auth;
-  const getView = () =>
-    ["saved", "progress"].includes(location.hash.slice(1))
-      ? location.hash.slice(1)
-      : "library";
-  const [view, setView] = useState(getView);
+  const view = ["saved", "progress"].includes(route) ? route : "library";
   const [saved, setSaved] = useStored<string[]>("innovasoft:saved", []);
   const [progress, setProgress] = useStored<Progress>(
     "innovasoft:progress",
@@ -52,7 +47,10 @@ function App() {
     document.documentElement.style.fontSize = `${preferences.scale}%`;
   }, [dark, preferences]);
   useEffect(() => {
-    const handler = () => setView(getView());
+    const handler = () => {
+      setRoute(location.hash.slice(1).replace(/^\//, "") || "library");
+      window.scrollTo({ top: 0 });
+    };
     window.addEventListener("hashchange", handler);
     return () => window.removeEventListener("hashchange", handler);
   }, []);
@@ -78,7 +76,14 @@ function App() {
   }
   return (
     <>
-      <a className="skip" href="#main">
+      <a
+        className="skip"
+        href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          document.getElementById("main")?.focus();
+        }}
+      >
         Saltar al contenido
       </a>
       <Header
@@ -123,12 +128,12 @@ function App() {
       </main>
       <footer className="site-footer">
         <div>
-          <a href="index.html" className="footer-brand">
+          <a href="#/library" className="footer-brand">
             InnovaSoft<span>.</span>
           </a>
           <p>Curiosidad que se transforma en conocimiento.</p>
         </div>
-        <a href="index.html#library">
+        <a href="#/library">
           Volver a explorar
           <ArrowUpRight size={18} aria-hidden="true" />
         </a>
@@ -162,6 +167,15 @@ function App() {
     </>
   );
 }
-createRoot(document.getElementById("root")!).render(<App />);
+const legacy = courses.find(
+  (c) => c.file === location.pathname.split("/").pop(),
+);
+if (
+  location.pathname.endsWith(".html") &&
+  !location.pathname.endsWith("index.html")
+) {
+  const target = legacy ? `#/learn/${legacy.id}` : "#/space";
+  location.replace(new URL(`./${target}`, location.href).href);
+} else createRoot(document.getElementById("root")!).render(<App />);
 if (import.meta.env.DEV && new URLSearchParams(location.search).has("audit"))
   import("./dev-audit");

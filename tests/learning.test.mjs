@@ -39,3 +39,36 @@ test("Evaluación distingue respuestas correctas, incorrectas e incompletas", ()
     assert.equal(scoreQuiz(c.questions, correct), 4);
   }
 });
+
+test("Los módulos nuevos tienen contenido, evaluación y búsquedas útiles", () => {
+  const extra = JSON.parse(
+    fs.readFileSync(
+      new URL("../app/extra-courses.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  assert.equal(new Set([...courses, ...extra].map((c) => c.id)).size, 9);
+  for (const c of extra) {
+    assert.ok(c.article.length > 1000);
+    assert.equal(c.questions.length, 5);
+    assert.equal(
+      scoreQuiz(
+        c.questions,
+        Object.fromEntries(c.questions.map((q, i) => [i, q.answer])),
+      ),
+      5,
+    );
+    for (const q of c.questions)
+      assert.equal(q.options.filter((o) => o.value === q.answer).length, 1);
+  }
+  assert.ok(
+    searchCourses([...courses, ...extra], "autorizacion").some(
+      (c) => c.id === "security",
+    ),
+  );
+  assert.ok(
+    searchCourses([...courses, ...extra], "conflicto").some(
+      (c) => c.id === "git",
+    ),
+  );
+});

@@ -41,3 +41,13 @@ El navegador de pruebas no dispone de voces de síntesis en español: se verific
 La referencia fue el repositorio original: fotografía de realidad virtual, logotipo manuscrito y acentos rosa, menta y amarillo. La biblioteca se presenta pronto, con filtros visibles y módulos identificables por icono y color. Las acciones con texto usan formas de cápsula; los controles solo con icono son circulares. Los artículos mantienen el contenido íntegro y añaden introducciones destacadas, temas desplegables y listas visuales.
 
 Se aplicó la skill `frontend-design` y una auditoría de Product Design sobre las capturas del diseño previo y del original. Se corrigieron la separación entre navegación y contenido, jerarquía, nombres accesibles, controles que parecían enlaces y el desbordamiento con texto ampliado.
+
+## Revisión de la ampliación (5 de octubre de 2026)
+
+- Rutas React con hash: navegación, enlace antiguo de ingeniería redirigido y salto al contenido sin perder la ruta.
+- Menús de audio personalizados: ratón, Home/End, flechas, Enter, Escape y Tab; no hay elementos select nativos en el módulo.
+- Foco redondeado azul en superficies claras y menta en superficies oscuras. Los anillos amarillos se sustituyeron manteniendo una indicación visible de teclado.
+- Biblioteca sin desbordamiento horizontal a 390 px y a 320 px con texto al 150%.
+- Cuestionario nuevo de UX y accesibilidad completado: 5/5, correcciones y puntuación visibles.
+- `new-module.json`: axe-core, cero infracciones y cero comprobaciones incompletas en la vista de lectura de UX y accesibilidad.
+- `custom-audio.json`: cero infracciones con el menú abierto; el informe anterior al ajuste de referencias ARIA conserva tres comprobaciones incompletas de atributos y una de contraste. No se presenta como una certificación.

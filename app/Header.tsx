@@ -36,7 +36,7 @@ export default function Header({
       {links.map(({ id, label, Icon }) => (
         <a
           key={id}
-          href={home ? `#${id}` : `index.html#${id}`}
+          href={`#/${id}`}
           aria-current={home && view === id ? "page" : undefined}
           onClick={() => setOpen(false)}
         >
@@ -59,7 +59,7 @@ export default function Header({
     <>
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="index.html">
+          <a className="brand" href="#/library">
             <img
               className="brand-mark"
               src="./src/innovasoft-mark.svg"
@@ -98,7 +98,7 @@ export default function Header({
               <Accessibility size={22} aria-hidden="true" />
               <span>Accesibilidad</span>
             </button>
-            <a className="profile-link" href="login.html">
+            <a className="profile-link" href="#/space">
               Mi espacio
               <ArrowUpRight size={17} aria-hidden="true" />
             </a>
@@ -122,7 +122,7 @@ export default function Header({
       >
         <nav aria-label="Navegación móvil">
           {nav}
-          <a href="login.html">
+          <a href="#/space">
             Mi espacio
             <ArrowUpRight size={18} />
           </a>

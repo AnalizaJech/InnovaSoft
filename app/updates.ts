@@ -2,6 +2,38 @@ export const updates: Record<
   string,
   { title: string; body: string; exercise: string; url: string; source: string }
 > = {
+  git: {
+    title: "Llévalo a la práctica",
+    body: "Consulta la documentación de referencia y contrasta los conceptos del módulo con un proyecto real.",
+    exercise:
+      "Escribe un cambio pequeño con un mensaje que explique por qué existe; revisa su diff y prepara una lista de comprobación para quien lo revise.",
+    url: "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+    source: "Pro Git",
+  },
+  web: {
+    title: "Llévalo a la práctica",
+    body: "Consulta la documentación de referencia y contrasta los conceptos del módulo con un proyecto real.",
+    exercise:
+      "Dibuja una petición para buscar libros. Define entrada, respuesta, resultado vacío y error; diseña qué verá la persona en cada estado.",
+    url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+    source: "MDN · HTTP",
+  },
+  inclusive: {
+    title: "Llévalo a la práctica",
+    body: "Consulta la documentación de referencia y contrasta los conceptos del módulo con un proyecto real.",
+    exercise:
+      "Prueba un formulario con teclado y texto ampliado. Registra la tarea, el obstáculo observado y una propuesta verificable de mejora.",
+    url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility",
+    source: "MDN · Accesibilidad",
+  },
+  security: {
+    title: "Llévalo a la práctica",
+    body: "Consulta la documentación de referencia y contrasta los conceptos del módulo con un proyecto real.",
+    exercise:
+      "Para una biblioteca con cuentas, describe un escenario de acceso indebido y especifica qué permiso debe comprobar el servidor.",
+    url: "https://owasp.org/projects/top-ten",
+    source: "OWASP · Top 10",
+  },
   engineering: {
     title: "Accesibilidad desde los requisitos",
     body: "WCAG 2.2 amplía las pautas de accesibilidad. Integra navegación por teclado, foco visible, objetivos táctiles y mensajes de error comprensibles en tus criterios de aceptación.",

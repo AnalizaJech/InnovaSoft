@@ -50,7 +50,7 @@ export default function Lesson({
     validation: { Icon: CheckCircle2, color: "blue" },
     costs: { Icon: Wallet, color: "yellow" },
   };
-  const visual = moduleVisuals[c.id];
+  const visual = moduleVisuals[c.id] || { Icon: BookOpen, color: "mint" };
   const ModuleIcon = visual.Icon;
   const narration = useMemo(
     () =>
@@ -66,7 +66,7 @@ export default function Lesson({
   }
   return (
     <>
-      <a className="back-link" href="index.html">
+      <a className="back-link" href="#/library">
         <ArrowLeft size={18} aria-hidden="true" /> Volver a la biblioteca
       </a>
       <div className={`lesson-heading ${visual.color}`}>
@@ -87,10 +87,12 @@ export default function Lesson({
             <Bookmark size={17} />
             {saved ? "Guardado" : "Guardar módulo"}
           </button>
-          <a href={`./PDF/${c.pdf}`} download>
-            <Download size={17} />
-            Descargar PDF original
-          </a>
+          {c.pdf && (
+            <a href={`./PDF/${c.pdf}`} download>
+              <Download size={17} />
+              Descargar PDF original
+            </a>
+          )}
         </div>
       </div>
       <div
@@ -100,7 +102,10 @@ export default function Lesson({
       >
         {[
           ["article", "Contenido"],
-          ["videos", `Videos (${c.videos.length})`],
+          [
+            "videos",
+            c.videos.length ? `Videos (${c.videos.length})` : "Documentación",
+          ],
           ["quiz", "Cuestionario"],
         ].map(([id, label]) => (
           <button
@@ -166,7 +171,9 @@ export default function Lesson({
             </p>
             <button onClick={() => setTab("videos")}>
               <Play size={18} />
-              Ver recursos en video
+              {c.videos.length
+                ? "Ver recursos en video"
+                : "Consultar documentación"}
               <ArrowRight size={16} />
             </button>
             <button onClick={() => setTab("quiz")}>
@@ -187,6 +194,24 @@ export default function Lesson({
         </div>
       ) : tab === "videos" ? (
         <section className="video-grid">
+          {!c.videos.length && (
+            <article className="concept-intro">
+              <BookOpen size={32} aria-hidden="true" />
+              <div>
+                <h2>Profundiza con la fuente original.</h2>
+                <p>{update.source}: lectura de referencia para este módulo.</p>
+                <a
+                  className="button"
+                  href={update.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Abrir documentación{" "}
+                  <ArrowUpRight size={18} aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          )}
           {c.videos.map((url, i) => (
             <article key={url}>
               <iframe

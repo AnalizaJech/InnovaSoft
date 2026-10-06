@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Volume2, Square, Languages, Gauge } from "lucide-react";
+import ChoiceMenu from "./ChoiceMenu";
 import { useStored } from "./storage";
 import { selectVoice, speechChunks } from "./speech.js";
 export default function AudioReader({
@@ -88,56 +89,63 @@ export default function AudioReader({
         </div>
       </div>
       <div className="audio-settings">
-        <label>
+        <div className="audio-setting">
           <span>
             <Languages size={16} aria-hidden="true" />
             Idioma del audio
           </span>
-          <select
+          <ChoiceMenu
+            label="Idioma del audio"
             value={locale}
-            onChange={(e) => {
-              setLocale(e.target.value);
+            onChange={(value) => {
+              setLocale(value);
               setPreferred("");
             }}
-          >
-            <option value="es-CO">Español · Colombia</option>
-            <option value="es-MX">Español · México</option>
-            <option value="es-ES">Español · España</option>
-          </select>
-        </label>
-        <label>
+            options={[
+              { value: "es-CO", label: "Español · Colombia" },
+              { value: "es-MX", label: "Español · México" },
+              { value: "es-ES", label: "Español · España" },
+            ]}
+          />
+        </div>
+        <div className="audio-setting">
           <span>
             <Volume2 size={16} aria-hidden="true" />
             Voz disponible
           </span>
-          <select
+          <ChoiceMenu
+            label="Voz disponible"
             value={voice?.voiceURI || ""}
-            onChange={(e) => setPreferred(e.target.value)}
-          >
-            {!voice && <option value="">Sin voz en español</option>}
-            {voices
-              .filter((v) => v.lang.toLowerCase().startsWith("es"))
-              .map((v) => (
-                <option key={v.voiceURI} value={v.voiceURI}>
-                  {v.name} · {v.lang}
-                </option>
-              ))}
-          </select>
-        </label>
-        <label>
+            onChange={setPreferred}
+            disabled={!voice}
+            options={
+              voice
+                ? voices
+                    .filter((v) => v.lang.toLowerCase().startsWith("es"))
+                    .map((v) => ({
+                      value: v.voiceURI,
+                      label: `${v.name} · ${v.lang}`,
+                    }))
+                : [{ value: "", label: "Sin voz en español" }]
+            }
+          />
+        </div>
+        <div className="audio-setting">
           <span>
             <Gauge size={16} aria-hidden="true" />
             Velocidad
           </span>
-          <select
-            value={rate}
-            onChange={(e) => setRate(Number(e.target.value))}
-          >
-            <option value={0.8}>Pausada · 0.8×</option>
-            <option value={1}>Normal · 1×</option>
-            <option value={1.2}>Ágil · 1.2×</option>
-          </select>
-        </label>
+          <ChoiceMenu
+            label="Velocidad"
+            value={String(rate)}
+            onChange={(value) => setRate(Number(value))}
+            options={[
+              { value: "0.8", label: "Pausada · 0.8×" },
+              { value: "1", label: "Normal · 1×" },
+              { value: "1.2", label: "Ágil · 1.2×" },
+            ]}
+          />
+        </div>
       </div>
       <div className="audio-controls">
         <button
