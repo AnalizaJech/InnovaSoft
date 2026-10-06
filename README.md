@@ -4,13 +4,13 @@ Una biblioteca para conectar ideas de ingeniería, arquitectura y calidad de sof
 
 **[Abrir la aplicación](https://analizajech.github.io/InnovaSoft/)** · [Validación de accesibilidad](docs/ACCESSIBILITY.md)
 
-![Biblioteca con buscador, filtros e iconos por módulo](docs/media/library.jpg)
+![Biblioteca con buscador, filtros e iconos por módulo](docs/media/library.jpg?v=clean-routes-20261005)
 
 ## Recorrido del sistema
 
 GIF elaborado a partir de capturas reales: biblioteca → filtros → guardados → módulo → audio → conceptos → cuestionario → accesibilidad → tema oscuro.
 
-![Recorrido animado de InnovaSoft](docs/media/demo.gif)
+![Recorrido animado de InnovaSoft](docs/media/demo.gif?v=clean-routes-20261005)
 
 ## Aprende a tu manera
 
@@ -24,20 +24,20 @@ GIF elaborado a partir de capturas reales: biblioteca → filtros → guardados 
 
 ## Contenido y controles
 
-![Módulo con acciones redondas y controles de lectura](docs/media/module.jpg)
+![Módulo con acciones redondas y controles de lectura](docs/media/module.jpg?v=clean-routes-20261005)
 
-![Introducción destacada, temas visuales y acciones del módulo](docs/media/content.jpg)
+![Introducción destacada, temas visuales y acciones del módulo](docs/media/content.jpg?v=clean-routes-20261005)
 
-![Cuestionario con opciones redondas y foco visible](docs/media/quiz.jpg)
+![Cuestionario con opciones redondas y foco visible](docs/media/quiz.jpg?v=clean-routes-20261005)
 
 ## Móvil y accesibilidad
 
 <p>
-  <img src="docs/media/mobile.jpg" alt="Biblioteca en una pantalla móvil de 390 píxeles" width="300" />
-  <img src="docs/media/mobile-large-text.jpg" alt="Biblioteca a 320 píxeles con texto al 150 por ciento" width="246" />
+  <img src="docs/media/mobile.jpg?v=clean-routes-20261005" alt="Biblioteca en una pantalla móvil de 390 píxeles" width="300" />
+  <img src="docs/media/mobile-large-text.jpg?v=clean-routes-20261005" alt="Biblioteca a 320 píxeles con texto al 150 por ciento" width="246" />
 </p>
 
-![Panel de ajustes de accesibilidad](docs/media/accessibility.jpg)
+![Panel de ajustes de accesibilidad](docs/media/accessibility.jpg?v=clean-routes-20261005)
 
 ## Nuevos temas
 
@@ -46,13 +46,13 @@ GIF elaborado a partir de capturas reales: biblioteca → filtros → guardados 
 - UX y accesibilidad: investigación, teclado, alternativas y evaluación. [MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility).
 - Seguridad de aplicaciones: permisos, entradas, secretos y dependencias. [OWASP](https://owasp.org/projects/top-ten).
 
-![Exploración de los módulos incorporados](docs/media/new-topics.jpg)
+![Exploración de los módulos incorporados](docs/media/new-topics.jpg?v=clean-routes-20261005)
 
 Son introducciones educativas con ejercicios; los cinco módulos originales y sus recursos se conservan.
 
 ## Audio e idiomas
 
-![Menús de audio personalizados y redondeados](docs/media/audio.jpg)
+![Menús de audio personalizados y redondeados](docs/media/audio.jpg?v=clean-routes-20261005)
 
 
 El material está escrito en **español**. El selector permite español de Colombia, México o España; no traduce el contenido a otros idiomas. La lectura busca una voz de la región seleccionada, permite elegir otra voz en español y recuerda la velocidad.
